@@ -8,6 +8,7 @@ TagManager:
   - ObjetoAgarrable
   - Plato
   - MiniJuego
+  - Enchufe
   layers:
   - Default
   - TransparentFX
