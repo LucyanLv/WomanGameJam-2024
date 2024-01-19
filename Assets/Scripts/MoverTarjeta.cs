@@ -2,17 +2,20 @@ using UnityEngine;
 
 public class MoverTarjeta : MonoBehaviour
 {
-    public Transform llegarTarjeta; // Objeto de destino con el componente Transform
-    public float velocidad = 5f; // Velocidad de movimiento
-    public float velocidadHorizontal = 2f; // Velocidad de movimiento horizontal después de llegar a llegarTarjeta
-    public GameObject rangoMinObject; // Objeto que marca el límite mínimo horizontal
-    public GameObject rangoMaxObject; // Objeto que marca el límite máximo horizontal
+    public Transform llegarTarjeta;
+    public float velocidad;
+    public float velocidadRegreso;
+    public GameObject rangoMinObject;
+    public GameObject rangoMaxObject;
 
     private bool enMovimiento = false;
-    private bool seMovio = false; // Nueva variable para controlar si ya se movió
+    private bool seMovio = false;
 
     private float rangoHorizontalMin;
     private float rangoHorizontalMax;
+    private Vector3 posicionInicial;
+
+    private Transform objetoDetectado; // Nuevo: almacenar el objeto detectado
 
     void Start()
     {
@@ -26,6 +29,9 @@ public class MoverTarjeta : MonoBehaviour
         {
             rangoHorizontalMax = rangoMaxObject.transform.position.x;
         }
+
+        // Almacenar la posición inicial al inicio
+        posicionInicial = transform.position;
     }
 
     void Update()
@@ -56,6 +62,9 @@ public class MoverTarjeta : MonoBehaviour
                 {
                     enMovimiento = false;
                     seMovio = true; // Desactivar la capacidad de moverse después de llegar al destino
+
+                    // Actualizar la posición inicial al llegar a llegarTarjeta
+                    posicionInicial = transform.position;
                 }
             }
             else
@@ -69,10 +78,53 @@ public class MoverTarjeta : MonoBehaviour
         if (seMovio && Input.GetMouseButton(0))
         {
             float movimientoHorizontal = Input.GetAxis("Mouse X");
-            float nuevaPosicionX = transform.position.x + movimientoHorizontal * velocidadHorizontal * Time.deltaTime;
+            float nuevaPosicionX = transform.position.x + movimientoHorizontal;
             float posicionXClamp = Mathf.Clamp(nuevaPosicionX, rangoHorizontalMin, rangoHorizontalMax);
 
             transform.position = new Vector3(posicionXClamp, transform.position.y, transform.position.z);
         }
+
+        // Verificar si se soltó el botón del mouse y regresar a la posición inicial solo si seMovio es verdadero
+        if (seMovio && !Input.GetMouseButton(0))
+        {
+            enMovimiento = false; // Detener el movimiento horizontal
+            transform.position = Vector3.MoveTowards(transform.position, posicionInicial, velocidadRegreso * Time.deltaTime);
+        }
+
+        // Nuevo: verificar si se detectó un objeto y emparentarlo
+        if (objetoDetectado != null)
+        {
+            // Calcular la posición relativa al emparentar
+            Vector3 posicionRelativa = transform.position - objetoDetectado.position;
+
+            // Emparentar al objeto detectado
+            transform.parent = objetoDetectado;
+
+            // Ajustar la posición para evitar movimientos bruscos
+            transform.position = objetoDetectado.position + posicionRelativa;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // Nuevo: verificar si el objeto tiene el tag "DetectoTarjeta"
+        if (other.CompareTag("DetectoTarjeta"))
+        {
+            // Nuevo: almacenar el objeto detectado
+            objetoDetectado = other.transform;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        // Nuevo: verificar si el objeto tiene el tag "DetectoTarjeta"
+        if (other.CompareTag("DetectoTarjeta"))
+        {
+            // Nuevo: resetear el objeto detectado al salir de la colisión
+            objetoDetectado = null;
+            // Nuevo: resetear el padre al salir de la colisión para evitar problemas de posición
+            transform.parent = null;
+        }
     }
 }
+
