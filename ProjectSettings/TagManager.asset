@@ -7,8 +7,10 @@ TagManager:
   - AgarrarCaja
   - ObjetoAgarrable
   - Plato
-  - MiniJuego
   - Enchufe
+  - Roseta
+  - JuegoEnchufe
+  - JuegoLuz
   layers:
   - Default
   - TransparentFX

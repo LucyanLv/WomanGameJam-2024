@@ -5,13 +5,14 @@ using UnityEngine;
 public class MovimientoPlayer : MonoBehaviour
 {
     public float velocidadMovimiento; // Velocidad de movimiento del jugador
-    public GameObject juegoEnchufe; // Referencia al objeto que se activa y desactiva
+    public GameObject juegoEnchufe; // Referencia al primer minijuego
     public GameObject fondoUse; // Primer objeto a desactivar
     public GameObject use; // Segundo objeto a desactivar
-    public float tiempoDesactivacion; // Tiempo en segundos antes de desactivar el objeto
 
-    private Rigidbody2D rb;
+    private Rigidbody2D rb; // rigidbody del objeto
     private bool estaEnMiniJuego = false;
+
+    public MoverEnchufe moverEnchufe;
 
     void Start()
     {
@@ -29,6 +30,10 @@ public class MovimientoPlayer : MonoBehaviour
         {
             ActivarDesactivarObjeto();
         }
+        if (moverEnchufe.EmparentadoAEnchufe)
+        {
+            StartCoroutine(TerminoJuego());
+        }
     }
 
     void MoverJugador()
@@ -36,8 +41,8 @@ public class MovimientoPlayer : MonoBehaviour
         // Verificar si el objeto está activo antes de permitir el movimiento del jugador
         if (juegoEnchufe == null || !juegoEnchufe.activeSelf)
         {
-            float movimientoHorizontal = Input.GetAxis("Horizontal"); // Obtener la entrada horizontal del teclado
-            float movimientoVertical = Input.GetAxis("Vertical"); // Obtener la entrada vertical del teclado
+            float movimientoHorizontal = Input.GetAxis("Horizontal"); 
+            float movimientoVertical = Input.GetAxis("Vertical"); 
 
             Vector2 movimiento = new Vector2(movimientoHorizontal, movimientoVertical) * velocidadMovimiento * Time.fixedDeltaTime;
 
@@ -47,7 +52,7 @@ public class MovimientoPlayer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("MiniJuego"))
+        if (other.CompareTag("JuegoEnchufe"))
         {
             estaEnMiniJuego = true;
             use.SetActive(true);
@@ -56,7 +61,7 @@ public class MovimientoPlayer : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("MiniJuego"))
+        if (other.CompareTag("JuegoEnchufe"))
         {
             estaEnMiniJuego = false;
             use.SetActive(false);
@@ -80,25 +85,12 @@ public class MovimientoPlayer : MonoBehaviour
             {
                 use.SetActive(false);
             }
-
-            StartCoroutine(DesactivarObjetoConRetardo());
         }
     }
 
-    IEnumerator DesactivarObjetoConRetardo()
+    IEnumerator TerminoJuego()
     {
-        yield return new WaitForSeconds(tiempoDesactivacion);
-
-        // Desactivar el objeto después del tiempo especificado
-        if (juegoEnchufe != null)
-        {
-            juegoEnchufe.SetActive(false);
-
-            // Volver a activar los otros dos objetos
-            if (fondoUse != null)
-            {
-                fondoUse.SetActive(true);
-            }
-        }
+        yield return new WaitForSeconds(1);
+        juegoEnchufe.SetActive(false);
     }
 }

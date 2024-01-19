@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoverEnchufe : MonoBehaviour
+public class MoverBombillo : MonoBehaviour
 {
     private Vector3 posicionInicial;
     private Vector3 offset;
     public bool estaSiendoArrastrado = false;
-    public bool estaDetectandoEnchufe = false; // Nuevo booleano para indicar si está detectando el enchufe
-    public bool EmparentadoAEnchufe = false; // Nuevo booleano para indicar si está emparentado con el enchufe
+    public bool estaDetectandoEnchufe = false;
+    public bool EmparentadoARoseta = false;
+    public int iD;
 
     void OnEnable()
     {
@@ -20,7 +21,7 @@ public class MoverEnchufe : MonoBehaviour
     {
         // Restablecer la posición inicial al desactivarse
         transform.position = posicionInicial;
-        EmparentadoAEnchufe = false; // Resetear el booleano al desactivarse
+        EmparentadoARoseta = false; // Resetear el booleano al desactivarse
     }
 
     void OnMouseDown()
@@ -34,30 +35,27 @@ public class MoverEnchufe : MonoBehaviour
     {
         estaSiendoArrastrado = false;
 
-        // Si está detectando el enchufe y está emparentado con el enchufe, activar el booleano
-        if (estaDetectandoEnchufe && EmparentadoAEnchufe)
+        // Si está detectando el enchufe y está emparentado con Roseta, activar el booleano
+        if (estaDetectandoEnchufe && EmparentadoARoseta)
         {
-            // Tu código aquí para activar el booleano según tus necesidades
-            // Puedes usar un booleano adicional o realizar alguna acción específica
-            // dependiendo de tus requerimientos.
-            Debug.Log("El objeto está emparentado con el enchufe y detectando el enchufe.");
+            Debug.Log("El objeto está emparentado con Roseta y detectando el enchufe.");
         }
 
-        // Si está detectando el enchufe, cambiar la posición al enchufe
-        if (estaDetectandoEnchufe)
+        if (estaDetectandoEnchufe && !EmparentadoARoseta)
         {
-            // Obtener la posición del objeto con el tag "Enchufe"
-            GameObject enchufe = GameObject.FindGameObjectWithTag("Enchufe");
-            if (enchufe != null)
+            // Obtener la posición del objeto con el tag "Roseta"
+            GameObject Roseta = GameObject.FindGameObjectWithTag("Roseta");
+            if (Roseta != null)
             {
-                transform.position = enchufe.transform.position;
-                EmparentadoAEnchufe = true; // Activar el booleano al emparentarse
+                transform.position = Roseta.transform.position;
+                EmparentadoARoseta = true; // Activar el booleano al emparentarse
             }
         }
         else
         {
-            // Si no está detectando el enchufe, restablecer la posición inicial
+            // Si no está detectando el enchufe, restablecer la posición inicial y desactivar el booleano
             transform.position = posicionInicial;
+            EmparentadoARoseta = false;
         }
 
         // Apagar el booleano al soltar el objeto
@@ -66,8 +64,8 @@ public class MoverEnchufe : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Verificar si el objeto colisionado tiene el tag "Enchufe"
-        if (other.CompareTag("Enchufe"))
+        // Verificar si el objeto colisionado tiene el tag "Roseta"
+        if (other.CompareTag("Roseta"))
         {
             estaDetectandoEnchufe = true; // Encender el booleano al detectar el enchufe
         }
@@ -75,11 +73,11 @@ public class MoverEnchufe : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        // Verificar si el objeto deja de colisionar con el objeto que tiene el tag "Enchufe"
-        if (other.CompareTag("Enchufe"))
+        // Verificar si el objeto deja de colisionar con el objeto que tiene el tag "Roseta"
+        if (other.CompareTag("Roseta"))
         {
             estaDetectandoEnchufe = false; // Apagar el booleano al salir de la colisión con el enchufe
-            EmparentadoAEnchufe = false; // Resetear el booleano al salir de la colisión con el enchufe
+            EmparentadoARoseta = false; // Resetear el booleano al salir de la colisión con Roseta
         }
     }
 
