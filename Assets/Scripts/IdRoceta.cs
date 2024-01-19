@@ -14,7 +14,7 @@ public class IdRoceta : MonoBehaviour
     }
     void ValidarRespuesta()
     {
-        if (moverBombillo.EmparentadoARoseta)
+        if (moverBombillo.emparentadoARoseta)
         {
             if (idRoceta == moverBombillo.iD)
             {

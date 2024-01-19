@@ -6,10 +6,16 @@ public class MoverBombillo : MonoBehaviour
 {
     private Vector3 posicionInicial;
     private Vector3 offset;
-    public bool estaSiendoArrastrado = false;
-    public bool estaDetectandoEnchufe = false;
-    public bool EmparentadoARoseta = false;
+    private bool estaSiendoArrastrado = false;
+    private bool estaDetectandoEnchufe = false;
+    public bool emparentadoARoseta = false;
     public int iD;
+
+    // Almacena la referencia al objeto de Roseta actualmente detectado
+    public GameObject rosetaDetectada;
+
+    // Variable para almacenar el objeto emparentado
+    public GameObject objetoEmparentado;
 
     void OnEnable()
     {
@@ -21,7 +27,8 @@ public class MoverBombillo : MonoBehaviour
     {
         // Restablecer la posición inicial al desactivarse
         transform.position = posicionInicial;
-        EmparentadoARoseta = false; // Resetear el booleano al desactivarse
+        emparentadoARoseta = false;
+        rosetaDetectada = null;
     }
 
     void OnMouseDown()
@@ -36,26 +43,24 @@ public class MoverBombillo : MonoBehaviour
         estaSiendoArrastrado = false;
 
         // Si está detectando el enchufe y está emparentado con Roseta, activar el booleano
-        if (estaDetectandoEnchufe && EmparentadoARoseta)
+        if (estaDetectandoEnchufe && emparentadoARoseta)
         {
             Debug.Log("El objeto está emparentado con Roseta y detectando el enchufe.");
+            // Almacena el objeto emparentado en la variable correspondiente
+            objetoEmparentado = rosetaDetectada;
         }
 
-        if (estaDetectandoEnchufe && !EmparentadoARoseta)
+        if (estaDetectandoEnchufe && !emparentadoARoseta && rosetaDetectada != null)
         {
-            // Obtener la posición del objeto con el tag "Roseta"
-            GameObject Roseta = GameObject.FindGameObjectWithTag("Roseta");
-            if (Roseta != null)
-            {
-                transform.position = Roseta.transform.position;
-                EmparentadoARoseta = true; // Activar el booleano al emparentarse
-            }
+            // Obtener la posición del objeto con el tag "Roseta" almacenado en rosetaDetectada
+            transform.position = rosetaDetectada.transform.position;
+            emparentadoARoseta = true;
         }
         else
         {
             // Si no está detectando el enchufe, restablecer la posición inicial y desactivar el booleano
             transform.position = posicionInicial;
-            EmparentadoARoseta = false;
+            emparentadoARoseta = false;
         }
 
         // Apagar el booleano al soltar el objeto
@@ -67,7 +72,10 @@ public class MoverBombillo : MonoBehaviour
         // Verificar si el objeto colisionado tiene el tag "Roseta"
         if (other.CompareTag("Roseta"))
         {
-            estaDetectandoEnchufe = true; // Encender el booleano al detectar el enchufe
+            estaDetectandoEnchufe = true;
+
+            // Almacenar la referencia al objeto de Roseta detectado más recientemente
+            rosetaDetectada = other.gameObject;
         }
     }
 
@@ -76,8 +84,11 @@ public class MoverBombillo : MonoBehaviour
         // Verificar si el objeto deja de colisionar con el objeto que tiene el tag "Roseta"
         if (other.CompareTag("Roseta"))
         {
-            estaDetectandoEnchufe = false; // Apagar el booleano al salir de la colisión con el enchufe
-            EmparentadoARoseta = false; // Resetear el booleano al salir de la colisión con Roseta
+            estaDetectandoEnchufe = false;
+            emparentadoARoseta = false;
+
+            // Limpiar la referencia al objeto de Roseta al salir
+            rosetaDetectada = null;
         }
     }
 

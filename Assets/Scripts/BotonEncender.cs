@@ -23,7 +23,7 @@ public class BotonEncender : MonoBehaviour
             {
                 // El objeto ha sido clickeado
                 Debug.Log("Objeto clickeado: " + gameObject.name);
-                if (moverBombillo.EmparentadoARoseta && idRoceta.respuestaCorrecta)
+                if (moverBombillo.emparentadoARoseta && idRoceta.respuestaCorrecta)
                 {
                     Debug.Log("Ganaste mini juego");
                 }
