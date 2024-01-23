@@ -3112,10 +3112,13 @@ MonoBehaviour:
   velocidadVuelta: 5
   objetoRangoMinimo: {fileID: 1494970270}
   objetoRangoMaximo: {fileID: 1925229743}
-  contadorInicial: 5
+  contadorInicial: 4
   contadorActual: 0
   mensajeEnviado: 0
   EmpezoTiempo: 0
+  rCorecta: {fileID: 1624307122}
+  rIncorecta: {fileID: 1359753147}
+  desactivar: 1
 --- !u!1 &1701222634
 GameObject:
   m_ObjectHideFlags: 0

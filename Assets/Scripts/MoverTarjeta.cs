@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MoverTarjeta : MonoBehaviour
@@ -17,6 +19,11 @@ public class MoverTarjeta : MonoBehaviour
     public float contadorActual; // Contador que disminuirá
     public bool mensajeEnviado = false; // Variable para controlar si ya se ha enviado el mensaje
     public bool EmpezoTiempo = false;
+
+    // Para activar y desactivar y activar las respuestas
+    public GameObject rCorecta;
+    public GameObject rIncorecta;
+    public float desactivar;
 
     void Start()
     {
@@ -88,6 +95,7 @@ public class MoverTarjeta : MonoBehaviour
                     mensajeEnviado = true;
                 }
             }
+            
         }
     }
 
@@ -129,6 +137,27 @@ public class MoverTarjeta : MonoBehaviour
             contadorActual = contadorInicial;
             mensajeEnviado = false; // Permitir enviar el mensaje nuevamente
             EmpezoTiempo = true;
+            
         }
+        if (collision.gameObject.CompareTag("DetectoTarjeta"))
+        {
+            if (contadorActual <= 0)
+            {
+                rCorecta.SetActive(true);
+                StartCoroutine(Desactivar());
+            }
+            else
+            {
+                rIncorecta.SetActive(true);
+                StartCoroutine(Desactivar());
+            }
+        }
+    }
+
+    IEnumerator Desactivar()
+    {
+        yield return new WaitForSeconds(desactivar);
+        rCorecta.SetActive(false);
+        rIncorecta.SetActive(false);
     }
 }
