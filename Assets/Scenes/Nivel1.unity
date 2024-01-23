@@ -2644,7 +2644,7 @@ Transform:
   m_GameObject: {fileID: 1494970269}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.507, y: 0, z: 0}
+  m_LocalPosition: {x: -0.4, y: 0, z: 0}
   m_LocalScale: {x: 0.06435501, y: 0.39401102, z: 0.39401102}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3109,6 +3109,13 @@ MonoBehaviour:
   haLlegado: 0
   puedeMoverHorizontal: 0
   velocidad: 5
+  velocidadVuelta: 5
+  objetoRangoMinimo: {fileID: 1494970270}
+  objetoRangoMaximo: {fileID: 1925229743}
+  contadorInicial: 5
+  contadorActual: 0
+  mensajeEnviado: 0
+  EmpezoTiempo: 0
 --- !u!1 &1701222634
 GameObject:
   m_ObjectHideFlags: 0

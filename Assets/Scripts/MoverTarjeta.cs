@@ -3,21 +3,29 @@ using UnityEngine;
 public class MoverTarjeta : MonoBehaviour
 {
     public Transform objetivoDestino;
-    private Vector3 posicionInicial; // Nueva variable para almacenar la posición inicial
+    private Vector3 posicionInicial;
     public bool enMovimiento = false;
     public bool haLlegado = false;
     public bool puedeMoverHorizontal = false;
     public float velocidad = 5f;
+    public float velocidadVuelta = 5f;
+    public Transform objetoRangoMinimo;
+    public Transform objetoRangoMaximo;
+
+    // Nuevas variables para el contador
+    public float contadorInicial = 10f; // Número inicial del contador definido desde el Inspector
+    public float contadorActual; // Contador que disminuirá
+    public bool mensajeEnviado = false; // Variable para controlar si ya se ha enviado el mensaje
+    public bool EmpezoTiempo = false;
 
     void Start()
     {
-        // Al inicio, guarda la posición inicial del objeto
         posicionInicial = transform.position;
+        contadorActual = contadorInicial; // Inicializar el contador al valor inicial definido desde el Inspector
     }
 
     void Update()
     {
-        // Verificar si el usuario está manteniendo presionado el clic sobre el objeto
         if (Input.GetMouseButton(0))
         {
             Vector3 posicionMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -27,37 +35,59 @@ public class MoverTarjeta : MonoBehaviour
             {
                 if (!enMovimiento && !haLlegado)
                 {
-                    // Iniciar el movimiento hacia el objetivo si no está en movimiento ni ha llegado
                     enMovimiento = true;
                 }
                 else if (haLlegado)
                 {
-                    // Habilitar el movimiento horizontal si ha llegado y se mantiene clic
                     puedeMoverHorizontal = true;
                 }
             }
             else
             {
-                // Desactivar el movimiento horizontal si se mantiene clic fuera del objeto
                 puedeMoverHorizontal = false;
             }
         }
         else
         {
-            // Desactivar el movimiento horizontal si se suelta el clic
+            if (puedeMoverHorizontal)
+            {
+                enMovimiento = false;
+                haLlegado = false;
+            }
             puedeMoverHorizontal = false;
         }
 
-        // Mover el objeto hacia el objetivo si está en movimiento
         if (enMovimiento)
         {
             MoverHaciaObjetivo();
         }
 
-        // Mover horizontalmente solo si ha llegado y se mantiene clic sobre el objeto
         if (puedeMoverHorizontal)
         {
             MoverHorizontalConMouse();
+        }
+        else if (!enMovimiento)
+        {
+            VolverAPosicionInicial();
+        }
+
+        // Reducir el contador y enviar el mensaje cuando llega a cero
+        if (EmpezoTiempo)
+        {
+            if (contadorActual > 0)
+            {
+                contadorActual -= Time.deltaTime;
+            }
+            else
+            {
+                // Acciones a realizar cuando el contador llega a cero
+                if (!mensajeEnviado)
+                {
+                    Debug.Log("Tiempo ha llegado a 0");
+                    Debug.Log("Registrado");
+                    mensajeEnviado = true;
+                }
+            }
         }
     }
 
@@ -72,16 +102,33 @@ public class MoverTarjeta : MonoBehaviour
         {
             enMovimiento = false;
             haLlegado = true;
-
-            // Actualizar la posición inicial al llegar al destino
             posicionInicial = transform.position;
         }
     }
 
     void MoverHorizontalConMouse()
     {
-        // Obtener la posición del mouse en el mundo y asignarla al objeto en el eje X
+        float rangoMinimoX = objetoRangoMinimo.position.x;
+        float rangoMaximoX = objetoRangoMaximo.position.x;
+
         Vector3 posicionMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector3(posicionMouse.x, transform.position.y, transform.position.z);
+        float nuevaPosX = Mathf.Clamp(posicionMouse.x, rangoMinimoX, rangoMaximoX);
+        transform.position = new Vector3(nuevaPosX, transform.position.y, transform.position.z);
+    }
+
+    void VolverAPosicionInicial()
+    {
+        transform.position = Vector3.Lerp(transform.position, posicionInicial, velocidadVuelta * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("DetectoTarjeta") && !EmpezoTiempo)
+        {
+            // Reiniciar el contador al valor inicial definido desde el Inspector
+            contadorActual = contadorInicial;
+            mensajeEnviado = false; // Permitir enviar el mensaje nuevamente
+            EmpezoTiempo = true;
+        }
     }
 }
