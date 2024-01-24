@@ -25,8 +25,12 @@ public class MoverTarjeta : MonoBehaviour
     public GameObject rIncorecta;
     public float desactivar;
 
+    // Termino juego
+    public bool terminoJuego;
+
     void Start()
     {
+        terminoJuego = false;
         posicionInicial = transform.position;
         contadorActual = contadorInicial; // Inicializar el contador al valor inicial definido desde el Inspector
     }
@@ -144,6 +148,7 @@ public class MoverTarjeta : MonoBehaviour
             if (contadorActual <= 0)
             {
                 rCorecta.SetActive(true);
+                terminoJuego = true;
                 StartCoroutine(Desactivar());
             }
             else

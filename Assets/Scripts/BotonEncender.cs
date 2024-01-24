@@ -19,19 +19,19 @@ public class BotonEncender : MonoBehaviour
             Collider2D collider = GetComponent<Collider2D>();
 
             // Verificar si la posición del ratón está dentro del collider del objeto
-            if (collider.OverlapPoint(mousePosition))
-            {
-                // El objeto ha sido clickeado
-                Debug.Log("Objeto clickeado: " + gameObject.name);
-                if (moverBombillo.emparentadoARoseta && idRoceta.respuestaCorrecta)
-                {
-                    Debug.Log("Ganaste mini juego");
-                }
-                else
-                {
-                    Debug.Log("Aun no puedes salir");
-                }
-            }
+            //if (collider.OverlapPoint(mousePosition))
+            //{
+            //    // El objeto ha sido clickeado
+            //    Debug.Log("Objeto clickeado: " + gameObject.name);
+            //    if (moverBombillo.emparentadoARoseta && idRoceta.respuestaCorrecta)
+            //    {
+            //        Debug.Log("Ganaste mini juego");
+            //    }
+            //    else
+            //    {
+            //        Debug.Log("Aun no puedes salir");
+            //    }
+            //}
         }
     }
 }

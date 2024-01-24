@@ -14,18 +14,18 @@ public class IdRoceta : MonoBehaviour
     }
     void ValidarRespuesta()
     {
-        if (moverBombillo.emparentadoARoseta)
-        {
-            if (idRoceta == moverBombillo.iD)
-            {
-                respuestaCorrecta = true;
-                Debug.Log("Los Id coinsiden");
-            }
-            else
-            {
-                respuestaCorrecta = false;
-                Debug.Log("Los Id no coinsiden");
-            }
-        }
+        //if (moverBombillo.emparentadoARoseta)
+        //{
+        //    //if (idRoceta == moverBombillo.iD)
+        //    //{
+        //    //    respuestaCorrecta = true;
+        //    //    Debug.Log("Los Id coinsiden");
+        //    //}
+        //    //else
+        //    //{
+        //    //    respuestaCorrecta = false;
+        //    //    Debug.Log("Los Id no coinsiden");
+        //    //}
+        //}
     }
 }

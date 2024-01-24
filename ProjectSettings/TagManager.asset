@@ -12,6 +12,7 @@ TagManager:
   - JuegoEnchufe
   - JuegoLuz
   - DetectoTarjeta
+  - JuegoTarjeta
   layers:
   - Default
   - TransparentFX

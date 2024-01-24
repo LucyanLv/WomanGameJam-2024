@@ -4,103 +4,68 @@ using UnityEngine;
 
 public class MoverBombillo : MonoBehaviour
 {
-    private Vector3 posicionInicial;
+    private bool isMouseDrag;
     private Vector3 offset;
-    private bool estaSiendoArrastrado = false;
-    private bool estaDetectandoEnchufe = false;
-    public bool emparentadoARoseta = false;
-    public int iD;
+    private Vector3 initialPosition;
+    public bool detecto;
+    public string nombreObjetoEnContacto;
+    public string id;
 
-    // Almacena la referencia al objeto de Roseta actualmente detectado
-    public GameObject rosetaDetectada;
-
-    // Variable para almacenar el objeto emparentado
-    public GameObject objetoEmparentado;
-
-    void OnEnable()
+    void Start()
     {
-        // Guardar la posición inicial del objeto al activarse
-        posicionInicial = transform.position;
-    }
-
-    void OnDisable()
-    {
-        // Restablecer la posición inicial al desactivarse
-        transform.position = posicionInicial;
-        emparentadoARoseta = false;
-        rosetaDetectada = null;
+        initialPosition = transform.position;
     }
 
     void OnMouseDown()
     {
-        // Calcular el desplazamiento desde el centro del objeto hasta el punto donde se hizo clic
-        offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        estaSiendoArrastrado = true;
+        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+        isMouseDrag = true;
     }
 
     void OnMouseUp()
     {
-        estaSiendoArrastrado = false;
+        isMouseDrag = false;
 
-        // Si está detectando el enchufe y está emparentado con Roseta, activar el booleano
-        if (estaDetectandoEnchufe && emparentadoARoseta)
-        {
-            Debug.Log("El objeto está emparentado con Roseta y detectando el enchufe.");
-            // Almacena el objeto emparentado en la variable correspondiente
-            objetoEmparentado = rosetaDetectada;
-        }
+        transform.position = initialPosition;
+    }
 
-        if (estaDetectandoEnchufe && !emparentadoARoseta && rosetaDetectada != null)
+    void Update()
+    {
+        if (isMouseDrag)
         {
-            // Obtener la posición del objeto con el tag "Roseta" almacenado en rosetaDetectada
-            transform.position = rosetaDetectada.transform.position;
-            emparentadoARoseta = true;
+            Vector3 currentScreenSpace = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+            Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenSpace) + offset;
+            transform.position = currentPosition;
         }
-        else
-        {
-            // Si no está detectando el enchufe, restablecer la posición inicial y desactivar el booleano
-            transform.position = posicionInicial;
-            emparentadoARoseta = false;
-        }
-
-        // Apagar el booleano al soltar el objeto
-        estaDetectandoEnchufe = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Verificar si el objeto colisionado tiene el tag "Roseta"
         if (other.CompareTag("Roseta"))
         {
-            estaDetectandoEnchufe = true;
+            detecto = true;
 
-            // Almacenar la referencia al objeto de Roseta detectado más recientemente
-            rosetaDetectada = other.gameObject;
+            nombreObjetoEnContacto = other.gameObject.name;
+
+            Debug.Log("en contacto con " + nombreObjetoEnContacto);
+
+            if (nombreObjetoEnContacto == id)
+            {
+                Debug.Log("¡coincide con el ID!");
+            }
+            else
+            {
+                Debug.Log("El nombre del objeto en contacto NO coincide con el ID.");
+            }
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        // Verificar si el objeto deja de colisionar con el objeto que tiene el tag "Roseta"
         if (other.CompareTag("Roseta"))
         {
-            estaDetectandoEnchufe = false;
-            emparentadoARoseta = false;
-
-            // Limpiar la referencia al objeto de Roseta al salir
-            rosetaDetectada = null;
-        }
-    }
-
-    void Update()
-    {
-        if (estaSiendoArrastrado)
-        {
-            // Convertir la posición del mouse a coordenadas del mundo
-            Vector3 posicionMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            // Aplicar el desplazamiento y actualizar la posición del objeto al puntero del mouse
-            transform.position = new Vector3(posicionMouse.x + offset.x, posicionMouse.y + offset.y, transform.position.z);
+            detecto = false;
+            Debug.Log("El nombre del objeto en contacto NO coincide con el ID.");
         }
     }
 }

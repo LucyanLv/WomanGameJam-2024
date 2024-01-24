@@ -4,58 +4,71 @@ using UnityEngine;
 
 public class MovimientoPlayer : MonoBehaviour
 {
-    public float velocidadMovimiento; // Velocidad de movimiento del jugador
-    public GameObject juegoEnchufe; // Referencia al primer minijuego
-    public GameObject fondoUse; // Primer objeto a desactivar
-    public GameObject use; // Segundo objeto a desactivar
+    public float speed = 5f;
 
-    private Rigidbody2D rb; // rigidbody del objeto
-    private bool estaEnMiniJuego = false;
+    // Activar MiniJuegos
+    public GameObject miniJuegoEnchufe;
+    public GameObject miniJuegoTarjeta;
 
+    // Puede jugar miniJuegos
+    public bool estaEnMiniJuego = false;
+    public bool juegoEnchufe = false;
+    public bool juegoTarjeta = false;
+
+    // Referencias de scripts
     public MoverEnchufe moverEnchufe;
+    public MoverTarjeta moverTarjeta;
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>(); // Obtener el componente Rigidbody2D del jugador
-    }
-
-    void FixedUpdate()
-    {
-        MoverJugador();
-    }
+    public float tiempoDesactivar;
 
     void Update()
     {
-        if (estaEnMiniJuego && Input.GetKeyDown(KeyCode.Space))
+        if (!estaEnMiniJuego)
         {
-            ActivarDesactivarObjeto();
+            // Obtener la entrada del teclado
+            float horizontalInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
+
+            // Calcular la dirección del movimiento
+            Vector2 movement = new Vector2(horizontalInput, verticalInput);
+
+            // Mover el personaje usando Rigidbody
+            transform.Translate(movement * speed * Time.deltaTime);
+        }
+
+        // 1 si esta en el mini juego y preciona espacio MINIJUEGO ENCHUFE
+        if (juegoEnchufe && Input.GetKeyDown(KeyCode.Space))
+        {
+            miniJuegoEnchufe.SetActive(true);
+            estaEnMiniJuego = true;
         }
         if (moverEnchufe.EmparentadoAEnchufe)
         {
-            StartCoroutine(TerminoJuego());
+            StartCoroutine(EsperarParaDesactivar());
         }
-    }
 
-    void MoverJugador()
-    {
-        // Verificar si el objeto está activo antes de permitir el movimiento del jugador
-        if (juegoEnchufe == null || !juegoEnchufe.activeSelf)
+        // 2
+        if (juegoTarjeta && Input.GetKeyDown(KeyCode.Space))
         {
-            float movimientoHorizontal = Input.GetAxis("Horizontal"); 
-            float movimientoVertical = Input.GetAxis("Vertical"); 
-
-            Vector2 movimiento = new Vector2(movimientoHorizontal, movimientoVertical) * velocidadMovimiento * Time.fixedDeltaTime;
-
-            rb.MovePosition(rb.position + movimiento);
+            miniJuegoTarjeta.SetActive(true);
+            estaEnMiniJuego = true;
+        }
+        if (moverTarjeta.terminoJuego)
+        {
+            StartCoroutine(EsperarParaDesactivar());
         }
     }
 
+    // Método llamado cuando se produce una colisión en 2D
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("JuegoEnchufe"))
+        if(other.CompareTag("JuegoEnchufe"))
         {
-            estaEnMiniJuego = true;
-            use.SetActive(true);
+            juegoEnchufe = true;
+        }
+        if (other.CompareTag("JuegoTarjeta"))
+        {
+            juegoTarjeta = true;
         }
     }
 
@@ -63,34 +76,19 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (other.CompareTag("JuegoEnchufe"))
         {
-            estaEnMiniJuego = false;
-            use.SetActive(false);
+            juegoEnchufe = false;
         }
-    }
-
-    void ActivarDesactivarObjeto()
-    {
-        // Si está en detección con el tag "MiniJuego", activar el objeto y desactivar otros dos
-        if (juegoEnchufe != null)
+        if (other.CompareTag("JuegoTarjeta"))
         {
-            juegoEnchufe.SetActive(true);
-
-            // Desactivar otros dos objetos
-            if (fondoUse != null)
-            {
-                fondoUse.SetActive(false);
-            }
-
-            if (use != null)
-            {
-                use.SetActive(false);
-            }
+            juegoTarjeta = false;
         }
     }
-
-    IEnumerator TerminoJuego()
+    
+    IEnumerator EsperarParaDesactivar()
     {
-        yield return new WaitForSeconds(1);
-        juegoEnchufe.SetActive(false);
+        yield return new WaitForSeconds(tiempoDesactivar);
+        miniJuegoEnchufe.SetActive(false);
+        miniJuegoTarjeta.SetActive(false);
+        estaEnMiniJuego = false;
     }
 }
