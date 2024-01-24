@@ -9,17 +9,26 @@ public class MovimientoPlayer : MonoBehaviour
     // Activar MiniJuegos
     public GameObject miniJuegoEnchufe;
     public GameObject miniJuegoTarjeta;
+    public GameObject miniJuegoLuz;
 
     // Puede jugar miniJuegos
     public bool estaEnMiniJuego = false;
     public bool juegoEnchufe = false;
     public bool juegoTarjeta = false;
+    public bool juegoLuz = false;
 
     // Referencias de scripts
     public MoverEnchufe moverEnchufe;
     public MoverTarjeta moverTarjeta;
+    public BotonEncender botonEncender;
 
+    // Tiempo antes de desactivar los minijuegos
     public float tiempoDesactivar;
+
+    // Colaiders para desactivarlos
+    public Collider2D enchufe;
+    public Collider2D tarjeta;
+    public Collider2D luz;
 
     void Update()
     {
@@ -44,7 +53,7 @@ public class MovimientoPlayer : MonoBehaviour
         }
         if (moverEnchufe.EmparentadoAEnchufe)
         {
-            StartCoroutine(EsperarParaDesactivar());
+            StartCoroutine(DesactivarEnchufe());
         }
 
         // 2
@@ -55,7 +64,32 @@ public class MovimientoPlayer : MonoBehaviour
         }
         if (moverTarjeta.terminoJuego)
         {
-            StartCoroutine(EsperarParaDesactivar());
+            StartCoroutine(DesactivarTarjeta());
+        }
+
+        // 3
+        if (juegoLuz && Input.GetKeyDown(KeyCode.Space))
+        {
+            miniJuegoLuz.SetActive(true);
+            estaEnMiniJuego = true;
+        }
+        if (botonEncender.terminoJuego)
+        {
+            StartCoroutine(DesactivarLuz());
+        }
+
+        // Desactivar Colaiders
+        if (estaEnMiniJuego)
+        {
+            enchufe.enabled = false;
+            tarjeta.enabled = false;
+            luz.enabled = false;
+        }
+        else
+        {
+            enchufe.enabled = true;
+            tarjeta.enabled = true;
+            luz.enabled = true;
         }
     }
 
@@ -70,6 +104,10 @@ public class MovimientoPlayer : MonoBehaviour
         {
             juegoTarjeta = true;
         }
+        if (other.CompareTag("JuegoLuz"))
+        {
+            juegoLuz = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -82,13 +120,30 @@ public class MovimientoPlayer : MonoBehaviour
         {
             juegoTarjeta = false;
         }
+        if (other.CompareTag("JuegoLuz"))
+        {
+            juegoLuz = false;
+        }
     }
     
-    IEnumerator EsperarParaDesactivar()
+    IEnumerator DesactivarEnchufe()
     {
         yield return new WaitForSeconds(tiempoDesactivar);
         miniJuegoEnchufe.SetActive(false);
+        estaEnMiniJuego = false;
+    }
+
+    IEnumerator DesactivarTarjeta()
+    {
+        yield return new WaitForSeconds(tiempoDesactivar);
         miniJuegoTarjeta.SetActive(false);
+        estaEnMiniJuego = false;
+    }
+
+    IEnumerator DesactivarLuz()
+    {
+        yield return new WaitForSeconds(tiempoDesactivar);
+        miniJuegoLuz.SetActive(false);
         estaEnMiniJuego = false;
     }
 }

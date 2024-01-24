@@ -7,8 +7,10 @@ public class MoverBombillo : MonoBehaviour
     private bool isMouseDrag;
     private Vector3 offset;
     private Vector3 initialPosition;
+    private Transform parentRoseta;  // Agrega una variable para almacenar la referencia al objeto Roseta
+
     public bool detecto;
-    public string nombreObjetoEnContacto;
+    public string objetoEnContacto;
     public string id;
 
     void Start()
@@ -26,7 +28,24 @@ public class MoverBombillo : MonoBehaviour
     {
         isMouseDrag = false;
 
-        transform.position = initialPosition;
+        if (detecto && parentRoseta != null && parentRoseta.childCount == 0)
+        {
+            // Verifica que no haya un hijo emparentado con el objeto Roseta
+
+            // Calcula la posición centrada en el objeto Roseta
+            Vector3 centeredPosition = parentRoseta.position;
+
+            // Establece el objeto actual como hijo del objeto Roseta en la posición centrada
+            transform.SetParent(parentRoseta);
+            transform.position = centeredPosition;
+        }
+        else
+        {
+            // Si ya hay un hijo emparentado o no estás sobre un objeto Roseta, regresa a la posición inicial
+            transform.position = initialPosition;
+            // Desemparenta el objeto al salir de la zona de la Roseta
+            transform.SetParent(null);
+        }
     }
 
     void Update()
@@ -45,17 +64,20 @@ public class MoverBombillo : MonoBehaviour
         {
             detecto = true;
 
-            nombreObjetoEnContacto = other.gameObject.name;
+            // Almacena la referencia al objeto Roseta
+            parentRoseta = other.transform;
 
-            Debug.Log("en contacto con " + nombreObjetoEnContacto);
+            objetoEnContacto = other.gameObject.name;
 
-            if (nombreObjetoEnContacto == id)
+            //Debug.Log("en contacto con " + objetoEnContacto);
+
+            if (objetoEnContacto == id)
             {
                 Debug.Log("¡coincide con el ID!");
             }
             else
             {
-                Debug.Log("El nombre del objeto en contacto NO coincide con el ID.");
+                Debug.Log("NO coincide con el ID.");
             }
         }
     }
@@ -65,6 +87,7 @@ public class MoverBombillo : MonoBehaviour
         if (other.CompareTag("Roseta"))
         {
             detecto = false;
+            parentRoseta = null;  // Resetea la referencia al objeto Roseta
             Debug.Log("El nombre del objeto en contacto NO coincide con el ID.");
         }
     }
