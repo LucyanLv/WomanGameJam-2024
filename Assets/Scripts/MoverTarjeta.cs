@@ -6,6 +6,8 @@ public class MoverTarjeta : MonoBehaviour
 {
     public Transform objetivoDestino;
     private Vector3 posicionInicial;
+    private bool estadoInicialActivado = false;
+
     public bool enMovimiento = false;
     public bool haLlegado = false;
     public bool puedeMoverHorizontal = false;
@@ -15,9 +17,9 @@ public class MoverTarjeta : MonoBehaviour
     public Transform objetoRangoMaximo;
 
     // Nuevas variables para el contador
-    public float contadorInicial = 10f; // Número inicial del contador definido desde el Inspector
-    public float contadorActual; // Contador que disminuirá
-    public bool mensajeEnviado = false; // Variable para controlar si ya se ha enviado el mensaje
+    public float contadorInicial = 10f;
+    public float contadorActual;
+    public bool mensajeEnviado = false;
     public bool EmpezoTiempo = false;
 
     // Para activar y desactivar y activar las respuestas
@@ -26,13 +28,30 @@ public class MoverTarjeta : MonoBehaviour
     public float desactivar;
 
     // Termino juego
-    public bool terminoJuego;
+    public bool terminoJuego = false;
 
     void Start()
     {
-        terminoJuego = false;
         posicionInicial = transform.position;
-        contadorActual = contadorInicial; // Inicializar el contador al valor inicial definido desde el Inspector
+        if (!estadoInicialActivado)
+        {
+            estadoInicialActivado = true;
+            EstablecerEstadoInicial();
+        }
+    }
+
+    void OnEnable()
+    {
+        if (estadoInicialActivado)
+        {
+            EstablecerEstadoInicial();
+        }
+    }
+
+    void OnDisable()
+    {
+        // Aquí puedes realizar acciones de limpieza o guardar estado si es necesario
+        ReiniciarEstado();
     }
 
     void Update()
@@ -82,7 +101,6 @@ public class MoverTarjeta : MonoBehaviour
             VolverAPosicionInicial();
         }
 
-        // Reducir el contador y enviar el mensaje cuando llega a cero
         if (EmpezoTiempo)
         {
             if (contadorActual > 0)
@@ -91,7 +109,6 @@ public class MoverTarjeta : MonoBehaviour
             }
             else
             {
-                // Acciones a realizar cuando el contador llega a cero
                 if (!mensajeEnviado)
                 {
                     Debug.Log("Tiempo ha llegado a 0");
@@ -99,7 +116,6 @@ public class MoverTarjeta : MonoBehaviour
                     mensajeEnviado = true;
                 }
             }
-            
         }
     }
 
@@ -137,11 +153,9 @@ public class MoverTarjeta : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("DetectoTarjeta") && !EmpezoTiempo)
         {
-            // Reiniciar el contador al valor inicial definido desde el Inspector
             contadorActual = contadorInicial;
-            mensajeEnviado = false; // Permitir enviar el mensaje nuevamente
+            mensajeEnviado = false;
             EmpezoTiempo = true;
-            
         }
         if (collision.gameObject.CompareTag("DetectoTarjeta"))
         {
@@ -165,4 +179,36 @@ public class MoverTarjeta : MonoBehaviour
         rCorecta.SetActive(false);
         rIncorecta.SetActive(false);
     }
+
+    void EstablecerEstadoInicial()
+    {
+        enMovimiento = false;
+        haLlegado = false;
+        puedeMoverHorizontal = false;
+        mensajeEnviado = false;
+        EmpezoTiempo = false;
+        terminoJuego = false;
+
+        transform.position = posicionInicial;
+
+        rCorecta.SetActive(false);
+        rIncorecta.SetActive(false);
+    }
+
+    void ReiniciarEstado()
+    {
+        // Almacena la posición actual antes de reiniciar
+        posicionInicial = transform.position;
+
+        enMovimiento = false;
+        haLlegado = false;
+        puedeMoverHorizontal = false;
+        mensajeEnviado = false;
+        EmpezoTiempo = false;
+        terminoJuego = false;
+
+        rCorecta.SetActive(false);
+        rIncorecta.SetActive(false);
+    }
+
 }

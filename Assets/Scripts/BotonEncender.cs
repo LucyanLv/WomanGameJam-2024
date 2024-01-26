@@ -14,19 +14,14 @@ public class BotonEncender : MonoBehaviour
 
     void Update()
     {
-        // Verificar si se ha hecho clic en el objeto
         if (Input.GetMouseButtonDown(0))
         {
-            // Obtener la posición del ratón en el mundo
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            // Obtener el collider del objeto
             Collider2D collider = GetComponent<Collider2D>();
 
-            // Verificar si la posición del ratón está dentro del collider del objeto
             if (collider.OverlapPoint(mousePosition))
             {
-                // El objeto ha sido clickeado
                 Debug.Log("Objeto clickeado: " + gameObject.name);
                 if (moverBombillo1.detecto && moverBombillo1.objetoEnContacto == moverBombillo1.id)
                 {
@@ -60,5 +55,11 @@ public class BotonEncender : MonoBehaviour
                 }
             }
         }
+    }
+
+    void OnDisable()
+    {
+        // Al desactivarse, establecer terminoJuego a false
+        terminoJuego = false;
     }
 }
