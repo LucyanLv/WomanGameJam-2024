@@ -17,6 +17,12 @@ public class Validar : MonoBehaviour
         terminoJuegoInterruptor = false;
     }
 
+    private void OnDisable()
+    {
+        // Desactiva el GameObject "correcto" cuando este script se desactive.
+        correcto.SetActive(false);
+    }
+
     private void Update()
     {
         if (interruptor.encendido)
@@ -67,6 +73,7 @@ public class Validar : MonoBehaviour
             Debug.Log("NO HAS COMPLETADO EL JUEGO");
         }
     }
+
     IEnumerator Desactivar()
     {
         correcto.SetActive(true);
