@@ -7,15 +7,25 @@ public class DetectarProducto : MonoBehaviour
     public Sprite nuevoSprite; // Nuevo sprite a asignar cuando entra en contacto con el objeto que tiene el tag "DetectoProducto"
     public bool detecto;
     public int contador = 0; // Contador que se incrementará cada vez que cambie el sprite
-    public bool terminoJuego = false;
+    public bool terminoJuegoMaquina = false;
+    private Vector3 tamanoOriginal; // Almacena el tamaño original del objeto
+    public GameObject correcto;
+
+    private void Start()
+    {
+        // Guardar el tamaño original del objeto al inicio
+        tamanoOriginal = transform.localScale;
+    }
 
     private void Update()
     {
-        if (contador > 9)
+        if (contador == 10)
         {
-            terminoJuego = true;
+            terminoJuegoMaquina = true;
+            StartCoroutine(Desactivar());
         }
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         // Verificar si el objeto entrante tiene el tag "DetectoProducto"
@@ -23,21 +33,38 @@ public class DetectarProducto : MonoBehaviour
         {
             detecto = true;
 
+            // Guardar el tamaño actual del objeto antes de cambiar el sprite
+            Vector3 tamanoActual = transform.localScale;
+
             // Cambiar el sprite del objeto que entró en contacto al nuevo sprite
             if (other.GetComponent<SpriteRenderer>() != null && nuevoSprite != null)
             {
                 other.GetComponent<SpriteRenderer>().sprite = nuevoSprite;
 
-                // Ajustar la escala para que tenga el mismo tamaño que el objeto
-                Vector3 newSize = transform.localScale;
-                newSize.x = other.bounds.size.x / nuevoSprite.bounds.size.x;
-                newSize.y = other.bounds.size.y / nuevoSprite.bounds.size.y;
-                other.transform.localScale = newSize;
+                // Restaurar el tamaño original del objeto
+                transform.localScale = tamanoOriginal;
 
                 // Incrementar el contador
                 contador++;
                 Debug.Log("Contador: " + contador);
             }
         }
+    }
+
+    IEnumerator Desactivar()
+    {
+        correcto.SetActive(true);
+        yield return new WaitForSeconds(1.2f);
+        correcto.SetActive(false);
+
+        // Restaurar el valor de terminoJuego cuando el objeto se desactiva
+        terminoJuegoMaquina = false;
+    }
+
+    // Método que se llama cuando el objeto se desactiva
+    private void OnDisable()
+    {
+        // Restaurar el valor de terminoJuego cuando el objeto se desactiva
+        terminoJuegoMaquina = false;
     }
 }

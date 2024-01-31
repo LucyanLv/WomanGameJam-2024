@@ -28,7 +28,7 @@ public class MoverTarjeta : MonoBehaviour
     public float desactivar;
 
     // Termino juego
-    public bool terminoJuego = false;
+    public bool terminoJuegoTarjeta = false;
 
     void Start()
     {
@@ -162,7 +162,7 @@ public class MoverTarjeta : MonoBehaviour
             if (contadorActual <= 0)
             {
                 rCorecta.SetActive(true);
-                terminoJuego = true;
+                terminoJuegoTarjeta = true;
                 StartCoroutine(Desactivar());
             }
             else
@@ -187,7 +187,7 @@ public class MoverTarjeta : MonoBehaviour
         puedeMoverHorizontal = false;
         mensajeEnviado = false;
         EmpezoTiempo = false;
-        terminoJuego = false;
+        terminoJuegoTarjeta = false;
 
         transform.position = posicionInicial;
 
@@ -205,7 +205,7 @@ public class MoverTarjeta : MonoBehaviour
         puedeMoverHorizontal = false;
         mensajeEnviado = false;
         EmpezoTiempo = false;
-        terminoJuego = false;
+        terminoJuegoTarjeta = false;
 
         rCorecta.SetActive(false);
         rIncorecta.SetActive(false);

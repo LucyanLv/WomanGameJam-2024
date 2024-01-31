@@ -10,7 +10,9 @@ public class BotonEncender : MonoBehaviour
     public MoverBombillo moverBombillo4;
     public float desactivarJuego;
 
-    public bool terminoJuego = false;
+    public bool terminoJuegoLuz = false;
+    public GameObject correcto;
+    public GameObject incorrecto;
 
     void Update()
     {
@@ -32,25 +34,30 @@ public class BotonEncender : MonoBehaviour
                             if (moverBombillo4.detecto && moverBombillo4.objetoEnContacto == moverBombillo4.id)
                             {
                                 Debug.Log("Ganaste mini juego");
-                                terminoJuego = true;
+                                terminoJuegoLuz = true;
+                                StartCoroutine(Correcto());
                             }
                             else
                             {
+                                StartCoroutine(Incorrecto());
                                 Debug.Log("Aun no puedes salir");
                             }
                         }
                         else
                         {
+                            StartCoroutine(Incorrecto());
                             Debug.Log("Aun no puedes salir");
                         }
                     }
                     else
                     {
+                        StartCoroutine(Incorrecto());
                         Debug.Log("Aun no puedes salir");
                     }
                 }
                 else
                 {
+                    StartCoroutine(Incorrecto());
                     Debug.Log("Aun no puedes salir");
                 }
             }
@@ -60,6 +67,20 @@ public class BotonEncender : MonoBehaviour
     void OnDisable()
     {
         // Al desactivarse, establecer terminoJuego a false
-        terminoJuego = false;
+        terminoJuegoLuz = false;
+    }
+    IEnumerator Correcto()
+    {
+        correcto.SetActive(true);
+        yield return new WaitForSeconds(1.2f);
+        correcto.SetActive(false);
+        terminoJuegoLuz = false;
+    }
+    IEnumerator Incorrecto()
+    {
+        incorrecto.SetActive(true);
+        correcto.SetActive(false);
+        yield return new WaitForSeconds(1.2f);
+        incorrecto.SetActive(false);
     }
 }

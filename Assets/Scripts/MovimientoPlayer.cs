@@ -10,8 +10,9 @@ public class MovimientoPlayer : MonoBehaviour
     [Header("Activar MiniJuegos")]
     public GameObject miniJuegoEnchufe;
     public GameObject miniJuegoTarjeta;
-    public GameObject miniJuegoLuz;
+    public GameObject miniJuegoLuces;
     public GameObject miniJuegoMaquina;
+    public GameObject miniJuegoEncenderLuz;
 
     // Puede jugar miniJuegos
     [Header("Puede Jugar MiniJuegos")]
@@ -20,6 +21,7 @@ public class MovimientoPlayer : MonoBehaviour
     public bool juegoTarjeta = false;
     public bool juegoLuz = false;
     public bool juegoMaquina = false;
+    public bool juegoInterruptor = false;
 
     // Referencias de scripts
     [Header("Referencias de Script")]
@@ -27,6 +29,7 @@ public class MovimientoPlayer : MonoBehaviour
     public MoverTarjeta moverTarjeta;
     public BotonEncender botonEncender;
     public DetectarProducto detectarProducto;
+    public Validar validar;
 
     // Tiempo antes de desactivar los minijuegos
     public float tiempoDesactivar;
@@ -38,6 +41,7 @@ public class MovimientoPlayer : MonoBehaviour
     public Collider2D tarjeta;
     public Collider2D luz;
     public Collider2D maquina;
+    public Collider2D encenderLuz;
 
     void Update()
     {
@@ -58,6 +62,7 @@ public class MovimientoPlayer : MonoBehaviour
         if (juegoEnchufe && Input.GetKeyDown(KeyCode.Space))
         {
             miniJuegoEnchufe.SetActive(true);
+            enchufe.enabled = false;
             estaEnMiniJuego = true;
         }
         if (moverEnchufe.EmparentadoAEnchufe)
@@ -69,9 +74,10 @@ public class MovimientoPlayer : MonoBehaviour
         if (juegoTarjeta && Input.GetKeyDown(KeyCode.Space))
         {
             miniJuegoTarjeta.SetActive(true);
+            tarjeta.enabled = false;
             estaEnMiniJuego = true;
         }
-        if (moverTarjeta.terminoJuego)
+        if (moverTarjeta.terminoJuegoTarjeta)
         {
             StartCoroutine(DesactivarTarjeta());
         }
@@ -79,10 +85,11 @@ public class MovimientoPlayer : MonoBehaviour
         // 3
         if (juegoLuz && Input.GetKeyDown(KeyCode.Space))
         {
-            miniJuegoLuz.SetActive(true);
+            miniJuegoLuces.SetActive(true);
+            luz.enabled = false;
             estaEnMiniJuego = true;
         }
-        if (botonEncender.terminoJuego)
+        if (botonEncender.terminoJuegoLuz)
         {
             StartCoroutine(DesactivarLuz());
         }
@@ -91,29 +98,34 @@ public class MovimientoPlayer : MonoBehaviour
         if (juegoMaquina && Input.GetKeyDown(KeyCode.Space))
         {
             miniJuegoMaquina.SetActive(true);
+            maquina.enabled = false;
             estaEnMiniJuego = true;
         }
-        if (detectarProducto.terminoJuego)
+        if (detectarProducto.terminoJuegoMaquina)
         {
             StartCoroutine(DesactivarMaquina());
+        }
+
+        // 5
+        if (juegoInterruptor && Input.GetKeyDown(KeyCode.Space))
+        {
+            miniJuegoEncenderLuz.SetActive(true);
+            encenderLuz.enabled = false;
+            estaEnMiniJuego = true;
+        }
+        if (validar.terminoJuegoInterruptor)
+        {
+            StartCoroutine(DesactivarEncenderLuz());
         }
 
         // Desactivar Colaiders
         if (estaEnMiniJuego)
         {
             personaje.enabled = false;
-            enchufe.enabled = false;
-            tarjeta.enabled = false;
-            luz.enabled = false;
-            maquina.enabled = false;
         }
         else
         {
             personaje.enabled = true;
-            enchufe.enabled = true;
-            tarjeta.enabled = true;
-            luz.enabled = true;
-            maquina.enabled = true;
         }
     }
 
@@ -136,6 +148,10 @@ public class MovimientoPlayer : MonoBehaviour
         {
             juegoMaquina = true;
         }
+        if (other.CompareTag("JuegoInterruptor"))
+        {
+            juegoInterruptor = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -156,6 +172,10 @@ public class MovimientoPlayer : MonoBehaviour
         {
             juegoMaquina = false;
         }
+        if (other.CompareTag("JuegoInterruptor"))
+        {
+            juegoInterruptor = false;
+        }
     }
     
     IEnumerator DesactivarEnchufe()
@@ -175,13 +195,19 @@ public class MovimientoPlayer : MonoBehaviour
     IEnumerator DesactivarLuz()
     {
         yield return new WaitForSeconds(tiempoDesactivar);
-        miniJuegoLuz.SetActive(false);
+        miniJuegoLuces.SetActive(false);
         estaEnMiniJuego = false;
     }
     IEnumerator DesactivarMaquina()
     {
         yield return new WaitForSeconds(tiempoDesactivar);
         miniJuegoMaquina.SetActive(false);
+        estaEnMiniJuego = false;
+    }
+    IEnumerator DesactivarEncenderLuz()
+    {
+        yield return new WaitForSeconds(tiempoDesactivar);
+        miniJuegoEncenderLuz.SetActive(false);
         estaEnMiniJuego = false;
     }
 }
