@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - AgarrarCaja
   - ObjetoAgarrable
   - Plato
   - Enchufe
@@ -17,6 +16,8 @@ TagManager:
   - DetectoProducto
   - Devolverse
   - JuegoInterruptor
+  - JuegoCaja
+  - LlegoCaja
   layers:
   - Default
   - TransparentFX

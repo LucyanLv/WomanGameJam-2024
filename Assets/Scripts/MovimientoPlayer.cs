@@ -5,6 +5,9 @@ using UnityEngine;
 public class MovimientoPlayer : MonoBehaviour
 {
     public float speed = 5f;
+    public float velocidadEnJuegoCaja;
+    public bool manteniendoEspacio = false;
+    public int llegadasACaja = 0;
 
     // Activar MiniJuegos
     [Header("Activar MiniJuegos")]
@@ -13,6 +16,8 @@ public class MovimientoPlayer : MonoBehaviour
     public GameObject miniJuegoLuces;
     public GameObject miniJuegoMaquina;
     public GameObject miniJuegoEncenderLuz;
+    public GameObject puedeUsar;
+    public GameObject fondoPuedeUsar;
 
     // Puede jugar miniJuegos
     [Header("Puede Jugar MiniJuegos")]
@@ -22,6 +27,7 @@ public class MovimientoPlayer : MonoBehaviour
     public bool juegoLuz = false;
     public bool juegoMaquina = false;
     public bool juegoInterruptor = false;
+    public bool juegoCaja = false;
 
     // Referencias de scripts
     [Header("Referencias de Script")]
@@ -42,6 +48,10 @@ public class MovimientoPlayer : MonoBehaviour
     public Collider2D luz;
     public Collider2D maquina;
     public Collider2D encenderLuz;
+    public Collider2D caja;
+    public Collider2D llegarCaja;
+
+    public GameObject correcto;
 
     void Update()
     {
@@ -56,6 +66,24 @@ public class MovimientoPlayer : MonoBehaviour
 
             // Mover el personaje usando Rigidbody
             transform.Translate(movement * speed * Time.deltaTime);
+            fondoPuedeUsar.SetActive(true);
+        }
+        else
+        {
+            fondoPuedeUsar.SetActive(false);
+        }
+
+        if ((juegoCaja || manteniendoEspacio) && Input.GetKey(KeyCode.Space))
+        {
+            speed = velocidadEnJuegoCaja;
+            manteniendoEspacio = true;
+            puedeUsar.SetActive(true);
+        }
+        else
+        {
+            speed = 5f;
+            manteniendoEspacio = false;
+            puedeUsar.SetActive(false);
         }
 
         // 1 si esta en el mini juego y preciona espacio MINIJUEGO ENCHUFE
@@ -118,6 +146,14 @@ public class MovimientoPlayer : MonoBehaviour
             StartCoroutine(DesactivarEncenderLuz());
         }
 
+        // 6
+        if (llegadasACaja == 2)
+        {
+            StartCoroutine(Correcto());
+            caja.enabled = false;
+            llegarCaja.enabled = false;
+        }
+
         // Desactivar Colaiders
         if (estaEnMiniJuego)
         {
@@ -135,22 +171,41 @@ public class MovimientoPlayer : MonoBehaviour
         if(other.CompareTag("JuegoEnchufe"))
         {
             juegoEnchufe = true;
+            puedeUsar.SetActive(true);
         }
         if (other.CompareTag("JuegoTarjeta"))
         {
             juegoTarjeta = true;
+            puedeUsar.SetActive(true);
         }
         if (other.CompareTag("JuegoLuz"))
         {
             juegoLuz = true;
+            puedeUsar.SetActive(true);
         }
         if (other.CompareTag("JuegoMaquina"))
         {
             juegoMaquina = true;
+            puedeUsar.SetActive(true);
         }
         if (other.CompareTag("JuegoInterruptor"))
         {
             juegoInterruptor = true;
+            puedeUsar.SetActive(true);
+        }
+        if (other.CompareTag("JuegoCaja"))
+        {
+            puedeUsar.SetActive(true);
+            juegoCaja = true;
+        }
+        if (other.CompareTag("LlegoCaja"))
+        {
+            if (Mathf.Approximately(speed, velocidadEnJuegoCaja))
+            {
+                manteniendoEspacio = false;
+                llegadasACaja++;
+                speed = 5;
+            }
         }
     }
 
@@ -159,22 +214,37 @@ public class MovimientoPlayer : MonoBehaviour
         if (other.CompareTag("JuegoEnchufe"))
         {
             juegoEnchufe = false;
+            puedeUsar.SetActive(false);
         }
         if (other.CompareTag("JuegoTarjeta"))
         {
             juegoTarjeta = false;
+            puedeUsar.SetActive(false);
         }
         if (other.CompareTag("JuegoLuz"))
         {
             juegoLuz = false;
+            puedeUsar.SetActive(false);
         }
         if (other.CompareTag("JuegoMaquina"))
         {
             juegoMaquina = false;
+            puedeUsar.SetActive(false);
         }
         if (other.CompareTag("JuegoInterruptor"))
         {
             juegoInterruptor = false;
+            puedeUsar.SetActive(false);
+        }
+        if (other.CompareTag("JuegoCaja"))
+        {
+            puedeUsar.SetActive(false);
+            juegoCaja = false;
+            manteniendoEspacio = Input.GetKey(KeyCode.Space);
+        }
+        if (other.CompareTag("LlegoCaja"))
+        {
+            speed = 5;
         }
     }
     
@@ -209,5 +279,12 @@ public class MovimientoPlayer : MonoBehaviour
         yield return new WaitForSeconds(tiempoDesactivar);
         miniJuegoEncenderLuz.SetActive(false);
         estaEnMiniJuego = false;
+    }
+
+    IEnumerator Correcto()
+    {
+        correcto.SetActive(true);
+        yield return new WaitForSeconds(tiempoDesactivar);
+        correcto.SetActive(false);
     }
 }

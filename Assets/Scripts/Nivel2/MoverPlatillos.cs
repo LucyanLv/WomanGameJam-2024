@@ -4,46 +4,39 @@ using UnityEngine;
 
 public class MoverPlatillos : MonoBehaviour
 {
-    private Vector3 initialPosition;
     private bool isDragging = false;
-    private SpriteRenderer platoSpriteRenderer; // Referencia al SpriteRenderer del objeto "Plato"
+    private Vector3 offset;
+    private Vector3 initialPosition;
 
-    public Sprite nuevoSprite; // Variable para asignar el nuevo sprite por el Inspector
-
-    private void Start()
+    void Start()
     {
+        // Almacena la posición inicial del objeto al inicio
         initialPosition = transform.position;
-        platoSpriteRenderer = GameObject.FindGameObjectWithTag("Plato").GetComponent<SpriteRenderer>();
     }
 
-    private void OnMouseDown()
+    void OnMouseDown()
     {
         isDragging = true;
+        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f));
     }
 
-    private void OnMouseDrag()
+    void OnMouseUp()
     {
         if (isDragging)
         {
-            Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            newPosition.z = initialPosition.z; // Mantener la misma profundidad z
-            transform.position = newPosition;
-
-            // Detectar el objeto "Plato" al mover y cambiar su sprite si se detecta
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f);
-            foreach (Collider2D collider in colliders)
-            {
-                if (collider.CompareTag("Plato"))
-                {
-                    platoSpriteRenderer.sprite = nuevoSprite; // Usar el nuevo sprite asignado por el Inspector
-                }
-            }
+            isDragging = false;
+            // Restaura la posición inicial solo si el objeto estaba siendo arrastrado
+            transform.position = initialPosition;
         }
     }
 
-    private void OnMouseUp()
+    void Update()
     {
-        isDragging = false;
-        transform.position = initialPosition;
+        if (isDragging)
+        {
+            Vector3 currentScreenSpace = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10.0f);
+            Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenSpace) + offset;
+            transform.position = currentPosition;
+        }
     }
 }
