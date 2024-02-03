@@ -9,20 +9,19 @@ public class Validar : MonoBehaviour
     public Interruptor interruptor2;
     public Interruptor interruptor3;
     public Interruptor interruptor4;
+    public Interruptor interruptor5;
     public bool terminoJuegoInterruptor = false;
-    public GameObject correcto;
+
+    private SpriteRenderer spriteRenderer;
+    public Sprite spriteDefault;
+    public Sprite spriteCambio;
 
     private void Start()
     {
         terminoJuegoInterruptor = false;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = spriteDefault;
     }
-
-    private void OnDisable()
-    {
-        // Desactiva el GameObject "correcto" cuando este script se desactive.
-        correcto.SetActive(false);
-    }
-
     private void Update()
     {
         if (interruptor.encendido)
@@ -35,50 +34,49 @@ public class Validar : MonoBehaviour
                     {
                         if (interruptor4.encendido)
                         {
-                            terminoJuegoInterruptor = true;
-                            StartCoroutine(Desactivar());
+                            if (interruptor5.encendido)
+                            {
+                                // Cambia el sprite del objeto vinculado si interruptor5 es verdadero
+                                spriteRenderer.sprite = interruptor5.encendido ? spriteCambio : spriteDefault;
+                                terminoJuegoInterruptor = true;
+                            }
+                            else
+                            {
+                                // Restaura el sprite original del objeto vinculado si interruptor5 es falso
+                                spriteRenderer.sprite = spriteDefault;
+
+                                terminoJuegoInterruptor = false;
+                                Debug.Log("NO HAS COMPLETADO EL JUEGO");
+                            }
                         }
                         else
                         {
-                            correcto.SetActive(false);
                             terminoJuegoInterruptor = false;
                             Debug.Log("NO HAS COMPLETADO EL JUEGO");
                         }
                     }
                     else
                     {
-                        correcto.SetActive(false);
                         terminoJuegoInterruptor = false;
                         Debug.Log("NO HAS COMPLETADO EL JUEGO");
                     }
                 }
                 else
                 {
-                    correcto.SetActive(false);
                     terminoJuegoInterruptor = false;
                     Debug.Log("NO HAS COMPLETADO EL JUEGO");
                 }
             }
             else
             {
-                correcto.SetActive(false);
                 terminoJuegoInterruptor = false;
                 Debug.Log("NO HAS COMPLETADO EL JUEGO");
             }
         }
         else
         {
-            correcto.SetActive(false);
             terminoJuegoInterruptor = false;
             Debug.Log("NO HAS COMPLETADO EL JUEGO");
         }
-    }
-
-    IEnumerator Desactivar()
-    {
-        correcto.SetActive(true);
-        yield return new WaitForSeconds(1.2f);
-        correcto.SetActive(false);
-        terminoJuegoInterruptor = false;
     }
 }

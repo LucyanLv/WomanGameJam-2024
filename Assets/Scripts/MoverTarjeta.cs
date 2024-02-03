@@ -30,6 +30,9 @@ public class MoverTarjeta : MonoBehaviour
     // Termino juego
     public bool terminoJuegoTarjeta = false;
 
+    // Animacion de la cartera
+    public Animator salirCartera;
+
     void Start()
     {
         posicionInicial = transform.position;
@@ -58,11 +61,14 @@ public class MoverTarjeta : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+
             Vector3 posicionMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(posicionMouse, Vector2.zero);
 
             if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
+                salirCartera.SetBool("SalirCartera", true);
+
                 if (!enMovimiento && !haLlegado)
                 {
                     enMovimiento = true;
