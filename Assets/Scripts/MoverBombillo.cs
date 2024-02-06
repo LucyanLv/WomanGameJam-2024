@@ -7,15 +7,28 @@ public class MoverBombillo : MonoBehaviour
     private bool isMouseDrag;
     private Vector3 offset;
     private Vector3 initialPosition;
-    private Transform parentRoseta;  // Agrega una variable para almacenar la referencia al objeto Roseta
+    private Transform parentRoseta;
 
     public bool detecto;
     public string objetoEnContacto;
     public string id;
 
+    public GameObject objetoConSprite;  
+    public Sprite spriteEmparentado; 
+    public Sprite spriteNoEmparentado;
+
+    public SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteEste;
+
+    public Sprite focoApagado;
+    public Sprite focoEncendido;
+
     void Start()
     {
         initialPosition = transform.position;
+
+        // Almacena el SpriteRenderer del objeto original
+        spriteRenderer = objetoConSprite.GetComponent<SpriteRenderer>();
     }
 
     void OnMouseDown()
@@ -30,21 +43,30 @@ public class MoverBombillo : MonoBehaviour
 
         if (detecto && parentRoseta != null && parentRoseta.childCount == 0)
         {
-            // Verifica que no haya un hijo emparentado con el objeto Roseta
-
-            // Calcula la posición centrada en el objeto Roseta
+            spriteEste.sprite = focoEncendido;
             Vector3 centeredPosition = parentRoseta.position;
-
-            // Establece el objeto actual como hijo del objeto Roseta en la posición centrada
             transform.SetParent(parentRoseta);
             transform.position = centeredPosition;
+
+            // Cambia el sprite del objeto con SpriteRenderer cuando está emparentado y las variables son iguales
+            if (objetoEnContacto == id)
+            {
+                spriteRenderer.sprite = spriteEmparentado;
+            }
         }
         else
         {
-            // Si ya hay un hijo emparentado o no estás sobre un objeto Roseta, regresa a la posición inicial
+
             transform.position = initialPosition;
-            // Desemparenta el objeto al salir de la zona de la Roseta
             transform.SetParent(null);
+
+            // Cambia el sprite del objeto con SpriteRenderer cuando no está emparentado y las variables son iguales
+            if (objetoEnContacto == id)
+            {
+                spriteRenderer.sprite = spriteNoEmparentado;
+            }
+            spriteEste.sprite = focoApagado;
+
         }
     }
 
@@ -63,13 +85,8 @@ public class MoverBombillo : MonoBehaviour
         if (other.CompareTag("Roseta"))
         {
             detecto = true;
-
-            // Almacena la referencia al objeto Roseta
             parentRoseta = other.transform;
-
             objetoEnContacto = other.gameObject.name;
-
-            //Debug.Log("en contacto con " + objetoEnContacto);
 
             if (objetoEnContacto == id)
             {
@@ -87,7 +104,13 @@ public class MoverBombillo : MonoBehaviour
         if (other.CompareTag("Roseta"))
         {
             detecto = false;
-            parentRoseta = null;  // Resetea la referencia al objeto Roseta
+            parentRoseta = null;
+
+            // Cambia el sprite del objeto con SpriteRenderer cuando no está emparentado y las variables son iguales
+            if (objetoEnContacto == id)
+            {
+                spriteRenderer.sprite = spriteNoEmparentado;
+            }
             Debug.Log("El nombre del objeto en contacto NO coincide con el ID.");
         }
     }

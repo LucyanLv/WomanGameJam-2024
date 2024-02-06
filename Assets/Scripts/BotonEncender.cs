@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BotonEncender : MonoBehaviour
@@ -11,8 +10,22 @@ public class BotonEncender : MonoBehaviour
     public float desactivarJuego;
 
     public bool terminoJuegoLuz = false;
-    public GameObject correcto;
-    public GameObject incorrecto;
+
+    public SpriteRenderer spriteRenderer;
+    public Sprite nuevoSprite;
+    public Sprite spriteOriginal;
+    public float tiempoCambioSprite;
+    public GameObject objetoACambiarSprite;
+    public Sprite nuevoSpriteObjeto;
+
+    void Start()
+    {
+        // Asegúrate de que el objeto tenga un componente SpriteRenderer
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // Almacena el sprite original
+        spriteOriginal = spriteRenderer.sprite;
+    }
 
     void Update()
     {
@@ -24,6 +37,8 @@ public class BotonEncender : MonoBehaviour
 
             if (collider.OverlapPoint(mousePosition))
             {
+                CambiarSpriteObjeto();
+
                 Debug.Log("Objeto clickeado: " + gameObject.name);
                 if (moverBombillo1.detecto && moverBombillo1.objetoEnContacto == moverBombillo1.id)
                 {
@@ -35,31 +50,33 @@ public class BotonEncender : MonoBehaviour
                             {
                                 Debug.Log("Ganaste mini juego");
                                 terminoJuegoLuz = true;
+
+                                CambiarSpriteOtroObjeto();
                                 StartCoroutine(Correcto());
                             }
                             else
                             {
-                                StartCoroutine(Incorrecto());
                                 Debug.Log("Aun no puedes salir");
                             }
                         }
                         else
                         {
-                            StartCoroutine(Incorrecto());
                             Debug.Log("Aun no puedes salir");
                         }
                     }
                     else
                     {
-                        StartCoroutine(Incorrecto());
                         Debug.Log("Aun no puedes salir");
                     }
                 }
                 else
                 {
-                    StartCoroutine(Incorrecto());
                     Debug.Log("Aun no puedes salir");
                 }
+            }
+            else
+            {
+                Debug.Log("Aun no puedes salir");
             }
         }
     }
@@ -69,18 +86,67 @@ public class BotonEncender : MonoBehaviour
         // Al desactivarse, establecer terminoJuego a false
         terminoJuegoLuz = false;
     }
+
     IEnumerator Correcto()
     {
-        correcto.SetActive(true);
         yield return new WaitForSeconds(1.2f);
-        correcto.SetActive(false);
-        terminoJuegoLuz = false;
+
+        // Vuelve al sprite original después de un tiempo
+        VolverSpriteOriginal();
     }
-    IEnumerator Incorrecto()
+
+    // Método para cambiar el sprite del objeto actual cuando se cumple la condición
+    void CambiarSpriteObjeto()
     {
-        incorrecto.SetActive(true);
-        correcto.SetActive(false);
-        yield return new WaitForSeconds(1.2f);
-        incorrecto.SetActive(false);
+        // Asegúrate de que el objeto tenga un componente SpriteRenderer
+        if (spriteRenderer != null)
+        {
+            // Cambia el sprite del objeto al nuevo sprite definido en el Inspector
+            spriteRenderer.sprite = nuevoSprite;
+            StartCoroutine(VolverSpriteOriginal());
+        }
+        else
+        {
+            Debug.LogError("El objeto no tiene un componente SpriteRenderer.");
+        }
+    }
+
+    // Método para cambiar el sprite de otro objeto cuando se cumple la condición
+    void CambiarSpriteOtroObjeto()
+    {
+        // Asegúrate de que el objeto a cambiar tenga un componente SpriteRenderer
+        if (objetoACambiarSprite != null)
+        {
+            SpriteRenderer spriteRendererObjeto = objetoACambiarSprite.GetComponent<SpriteRenderer>();
+
+            // Asegúrate de que el objeto a cambiar tenga un componente SpriteRenderer
+            if (spriteRendererObjeto != null)
+            {
+                // Cambia el sprite del objeto al nuevo sprite definido en el Inspector
+                spriteRendererObjeto.sprite = nuevoSpriteObjeto;
+            }
+            else
+            {
+                Debug.LogError("El objeto a cambiar de sprite no tiene un componente SpriteRenderer.");
+            }
+        }
+        else
+        {
+            Debug.LogError("La referencia al objeto a cambiar de sprite no está asignada.");
+        }
+    }
+
+    IEnumerator VolverSpriteOriginal()
+    {
+        yield return new WaitForSeconds(tiempoCambioSprite);
+        if (spriteRenderer != null)
+        {
+            // Vuelve al sprite original
+            spriteRenderer.sprite = spriteOriginal;
+        }
+        else
+        {
+            Debug.LogError("El objeto no tiene un componente SpriteRenderer.");
+        }
     }
 }
