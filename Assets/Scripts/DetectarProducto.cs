@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class DetectarProducto : MonoBehaviour
 {
-    public Sprite nuevoSprite; // Nuevo sprite a asignar cuando entra en contacto con el objeto que tiene el tag "DetectoProducto"
+    public Sprite nuevoSprite;
     public bool detecto;
-    public int contador = 0; // Contador que se incrementará cada vez que cambie el sprite
+    public int contador = 0;
     public bool terminoJuegoMaquina = false;
-    private Vector3 tamanoOriginal; // Almacena el tamaño original del objeto
-    public GameObject correcto;
+    private Vector3 tamanoOriginal;
+
+    [Header("Sprite Correcto")]
+    public SpriteRenderer spriteCorrecto;
+    public Sprite luzVerde;
+
+    [Header("Sprite Incorrecto")]
+    public SpriteRenderer spriteIncorrecto;
+    public Sprite luzRoja;
 
     private void Start()
     {
@@ -19,9 +26,11 @@ public class DetectarProducto : MonoBehaviour
 
     private void Update()
     {
-        if (contador == 10)
+        if (contador >= 10)
         {
             terminoJuegoMaquina = true;
+            spriteCorrecto.sprite = luzVerde;
+            spriteIncorrecto.sprite = luzRoja;
             StartCoroutine(Desactivar());
         }
     }
@@ -53,18 +62,11 @@ public class DetectarProducto : MonoBehaviour
 
     IEnumerator Desactivar()
     {
-        correcto.SetActive(true);
         yield return new WaitForSeconds(1.2f);
-        correcto.SetActive(false);
-
-        // Restaurar el valor de terminoJuego cuando el objeto se desactiva
-        terminoJuegoMaquina = false;
     }
 
-    // Método que se llama cuando el objeto se desactiva
     private void OnDisable()
     {
-        // Restaurar el valor de terminoJuego cuando el objeto se desactiva
         terminoJuegoMaquina = false;
     }
 }

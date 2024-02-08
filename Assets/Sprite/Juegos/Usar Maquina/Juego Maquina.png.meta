@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: a5d6ab3c2b349e64da530acd71cefbce
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Juego Maquina_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2793
+        width: 209
+        height: 670
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67805fc83b9f06e4f8228aba08b82cdc
+      internalID: 219561774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_1
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 2804
+        width: 210
+        height: 659
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9fbe7231a975434896ea00eebc122f4
+      internalID: -1503867133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_2
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 2820
+        width: 211
+        height: 643
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c19913b96cedd942ade005082557b07
+      internalID: 1279726922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_3
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 2825
+        width: 209
+        height: 634
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eadc52d5003a421498f987bb219fe60d
+      internalID: -486976263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_4
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 2837
+        width: 208
+        height: 620
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85e99b7a166397449338e9cadf0e796
+      internalID: -1317955961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_5
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 2842
+        width: 210
+        height: 610
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ffd2801dc01884fb2f810c32b3de1a
+      internalID: 2396437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_6
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 2850
+        width: 211
+        height: 594
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e43ef2b883ed7479c9a54f1ab7c3c8
+      internalID: 304767537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_7
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1996
+        width: 209
+        height: 585
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb74826cced94b94ba88415e0ac894ca
+      internalID: 1973545400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_8
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 2013
+        width: 210
+        height: 573
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fff8a27223d8b241910ab418ca0f0bd
+      internalID: -1199593521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_9
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 2025
+        width: 210
+        height: 561
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63f3ce0039b9590499238e3e374e00ab
+      internalID: -1308918685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_10
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 2040
+        width: 211
+        height: 549
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328d78a1a546d254fbe276b344919a08
+      internalID: 1231369674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_11
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 2055
+        width: 210
+        height: 536
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a31be784a98f44baf3d087821a94c9
+      internalID: 1666782874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_12
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 2067
+        width: 209
+        height: 526
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b39c20758bdf7d44a7f57a2caefd6ea
+      internalID: -1584726955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_13
+      rect:
+        serializedVersion: 2
+        x: 1981
+        y: 2081
+        width: 209
+        height: 512
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c474114e94a510a4daafa6b2b88c0d61
+      internalID: 1387696647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_14
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1328
+        width: 209
+        height: 502
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e983b692f91b94d8c3f039d522a45a
+      internalID: -649654166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_15
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 1335
+        width: 209
+        height: 489
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3e294d742dbc647951b4c99798daf4
+      internalID: 1306398144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_16
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 1343
+        width: 211
+        height: 477
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5744a6ce9fc26f44f80ae4af94d6f965
+      internalID: -1796416526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_17
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 1355
+        width: 210
+        height: 465
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9ac387971fad24d9a7d1264f96663d
+      internalID: -1046011005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_18
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 1365
+        width: 211
+        height: 453
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eacfb508c1fded344a9a2356df79193c
+      internalID: 1686711635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_19
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 1369
+        width: 209
+        height: 441
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e20193ec3f5656c4fa2e5be305867479
+      internalID: 2095271846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_20
+      rect:
+        serializedVersion: 2
+        x: 1967
+        y: 1381
+        width: 210
+        height: 422
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b985228e5013e4d88f5c0caef452e5
+      internalID: 566229768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_21
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 1000
+        width: 84
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b378e271955ac074ea386105f6a31b7c
+      internalID: -672213201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_22
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1000
+        width: 86
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4385e312d7298b54586f1d466ef98e71
+      internalID: 53910502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_23
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1097
+        width: 165
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bfb3095390c40049b488ec9df274cc3
+      internalID: -494893257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_24
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 1139
+        width: 63
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0f29f68da465042959b45ea88005c2
+      internalID: -1868282868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_25
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 290
+        width: 476
+        height: 708
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27148c5ba85cae54a9ae9b27a493b249
+      internalID: -1967073704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_26
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 970
+        width: 106
+        height: 89
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930d575468b007c46b70e73d42f19e12
+      internalID: 305851737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_27
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 966
+        width: 108
+        height: 114
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752d96047e2a9cb4d96a9e892e469a19
+      internalID: 190478191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_28
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 826
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772d9b9ad31326b409dafba8b800b444
+      internalID: 66935133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_29
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 831
+        width: 109
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b43fd519a42bdf499a40c1822dc777f
+      internalID: -1489138482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_30
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 828
+        width: 106
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa21bab24d053f49bb2dcd739ca9bb3
+      internalID: 1327357357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_31
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 838
+        width: 108
+        height: 113
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1bb6e3f6300f8b43b97498c24271344
+      internalID: -1553285396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_32
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 274
+        width: 482
+        height: 481
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da28d966ed4a4e4c8163241932aee90
+      internalID: 86642557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_33
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 282
+        width: 963
+        height: 399
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b737579adabfbef4ea6ca307c81ae92b
+      internalID: -85207560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juego Maquina_34
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 0
+        width: 1988
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 104821f76eec96849adbf592abdb0a40
+      internalID: -275166156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Juego Maquina_0: 219561774
+      Juego Maquina_1: -1503867133
+      Juego Maquina_10: 1231369674
+      Juego Maquina_11: 1666782874
+      Juego Maquina_12: -1584726955
+      Juego Maquina_13: 1387696647
+      Juego Maquina_14: -649654166
+      Juego Maquina_15: 1306398144
+      Juego Maquina_16: -1796416526
+      Juego Maquina_17: -1046011005
+      Juego Maquina_18: 1686711635
+      Juego Maquina_19: 2095271846
+      Juego Maquina_2: 1279726922
+      Juego Maquina_20: 566229768
+      Juego Maquina_21: -672213201
+      Juego Maquina_22: 53910502
+      Juego Maquina_23: -494893257
+      Juego Maquina_24: -1868282868
+      Juego Maquina_25: -1967073704
+      Juego Maquina_26: 305851737
+      Juego Maquina_27: 190478191
+      Juego Maquina_28: 66935133
+      Juego Maquina_29: -1489138482
+      Juego Maquina_3: -486976263
+      Juego Maquina_30: 1327357357
+      Juego Maquina_31: -1553285396
+      Juego Maquina_32: 86642557
+      Juego Maquina_33: -85207560
+      Juego Maquina_34: -275166156
+      Juego Maquina_4: -1317955961
+      Juego Maquina_5: 2396437
+      Juego Maquina_6: 304767537
+      Juego Maquina_7: 1973545400
+      Juego Maquina_8: -1199593521
+      Juego Maquina_9: -1308918685
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -31,6 +31,7 @@ public class MoverTarjeta : MonoBehaviour
     public bool terminoJuegoTarjeta = false;
 
     // Animacion de la cartera
+    [Header("Animators")]
     public Animator salirCartera;
 
     void Start()

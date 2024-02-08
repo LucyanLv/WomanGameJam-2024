@@ -1,13 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OperarMaquina : MonoBehaviour
 {
-    public Animator animadorObjetoAAnimar; // Animator del objeto que se va a animar asignado desde el Inspector
-    public float tiempoBloqueo = 1.0f; // Tiempo en segundos antes de permitir otro clic
+    public Animator animadorObjetoAAnimar;
+    private bool puedeClic = true;
 
-    private bool puedeClic = true; // Variable para controlar si se puede hacer clic
+    [Header("Cambiar Sprite de este Objeto")]
+    public float tiempoBloqueo;
+    public Sprite spriteNormal;
+    public Sprite spriteCambio;
+
+    [Header("Cambiar Sprite de otro Objeto")]
+    public SpriteRenderer spriteRenderer;
+    public Sprite nuevoSprite;
+    public Sprite originalSprite;
 
     void Start()
     {
@@ -31,7 +38,10 @@ public class OperarMaquina : MonoBehaviour
     void ActivarAnimacion()
     {
         // Activar la animación en el objeto deseado
-        animadorObjetoAAnimar.SetTrigger("Activar"); // Asegúrate de tener un trigger en el Animator con el nombre adecuado
+        animadorObjetoAAnimar.SetTrigger("Activar");
+        // Cambiar el sprite del objeto a spriteCambio
+        GetComponent<SpriteRenderer>().sprite = spriteCambio;
+        spriteRenderer.sprite = nuevoSprite;
     }
 
     IEnumerator BloquearClic()
@@ -39,6 +49,9 @@ public class OperarMaquina : MonoBehaviour
         // Bloquear clic durante un tiempo determinado
         puedeClic = false;
         yield return new WaitForSeconds(tiempoBloqueo);
+        // Cambiar el sprite del objeto a spriteNormal
+        GetComponent<SpriteRenderer>().sprite = spriteNormal;
+        spriteRenderer.sprite = originalSprite;
         puedeClic = true;
     }
 }
