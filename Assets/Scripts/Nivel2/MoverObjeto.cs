@@ -5,30 +5,39 @@ using UnityEngine;
 public class MoverObjeto : MonoBehaviour
 {
     private Vector3 posicionInicial;
-    private bool estaSiendoArrastrado = false;
+    private Vector3 offset;
+    private bool arrastrando = false;
 
-    void OnMouseDown()
+    private void Start()
     {
-        // Al hacer clic en el objeto
         posicionInicial = transform.position;
-        estaSiendoArrastrado = true;
     }
 
-    void OnMouseUp()
+    private void OnMouseDown()
     {
-        // Al soltar el clic
-        estaSiendoArrastrado = false;
+        offset = transform.position - ObtenerPosicionMouse();
+        arrastrando = true;
     }
 
-    void Update()
+    private void OnMouseUp()
     {
-        if (estaSiendoArrastrado)
+        arrastrando = false;
+        transform.position = posicionInicial;
+    }
+
+    private void Update()
+    {
+        if (arrastrando)
         {
-            // Convertir la posición del mouse a coordenadas del mundo
-            Vector3 posicionMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            // Actualizar la posición del objeto al puntero del mouse
-            transform.position = new Vector3(posicionMouse.x, posicionMouse.y, transform.position.z);
+            Vector3 nuevaPosicion = ObtenerPosicionMouse() + offset;
+            transform.position = nuevaPosicion;
         }
+    }
+
+    private Vector3 ObtenerPosicionMouse()
+    {
+        Vector3 posicionMouse = Input.mousePosition;
+        posicionMouse.z = Mathf.Abs(Camera.main.transform.position.z);
+        return Camera.main.ScreenToWorldPoint(posicionMouse);
     }
 }
