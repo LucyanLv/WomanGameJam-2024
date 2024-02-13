@@ -13,8 +13,8 @@ public class MoverBombillo : MonoBehaviour
     public string objetoEnContacto;
     public string id;
 
-    public GameObject objetoConSprite;  
-    public Sprite spriteEmparentado; 
+    public GameObject objetoConSprite;
+    public Sprite spriteEmparentado;
     public Sprite spriteNoEmparentado;
 
     public SpriteRenderer spriteRenderer;
@@ -23,12 +23,23 @@ public class MoverBombillo : MonoBehaviour
     public Sprite focoApagado;
     public Sprite focoEncendido;
 
+    public float tiempoParaPosicionInicial = 2f; // Tiempo para establecer la posición inicial
+
     void Start()
     {
+        // Se establece la posición inicial después de un tiempo definido
+        Invoke("EstablecerPosicionInicial", tiempoParaPosicionInicial);
+
+        // Se almacena la posición inicial
         initialPosition = transform.position;
 
         // Almacena el SpriteRenderer del objeto original
         spriteRenderer = objetoConSprite.GetComponent<SpriteRenderer>();
+    }
+
+    void EstablecerPosicionInicial()
+    {
+        initialPosition = transform.position;
     }
 
     void OnMouseDown()

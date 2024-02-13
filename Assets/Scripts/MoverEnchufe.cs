@@ -7,25 +7,24 @@ public class MoverEnchufe : MonoBehaviour
     private Vector3 posicionInicial;
     private Vector3 offset;
     public bool estaSiendoArrastrado = false;
-    public bool estaDetectandoEnchufe = false; // Nuevo booleano para indicar si está detectando el enchufe
-    public bool EmparentadoAEnchufe = false; // Nuevo booleano para indicar si está emparentado con el enchufe
+    public bool estaDetectandoEnchufe = false;
+    public bool EmparentadoAEnchufe = false;
+    public Transform objetoApuntar; // Objeto al que se apuntará desde el Inspector
+    public Transform objetoEscalar;
 
     void OnEnable()
     {
-        // Guardar la posición inicial del objeto al activarse
         posicionInicial = transform.position;
     }
 
     void OnDisable()
     {
-        // Restablecer la posición inicial al desactivarse
         transform.position = posicionInicial;
-        EmparentadoAEnchufe = false; // Resetear el booleano al desactivarse
+        EmparentadoAEnchufe = false;
     }
 
     void OnMouseDown()
     {
-        // Calcular el desplazamiento desde el centro del objeto hasta el punto donde se hizo clic
         offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         estaSiendoArrastrado = true;
     }
@@ -34,52 +33,42 @@ public class MoverEnchufe : MonoBehaviour
     {
         estaSiendoArrastrado = false;
 
-        // Si está detectando el enchufe y está emparentado con el enchufe, activar el booleano
         if (estaDetectandoEnchufe && EmparentadoAEnchufe)
         {
-            // Tu código aquí para activar el booleano según tus necesidades
-            // Puedes usar un booleano adicional o realizar alguna acción específica
-            // dependiendo de tus requerimientos.
             Debug.Log("El objeto está emparentado con el enchufe y detectando el enchufe.");
         }
 
-        // Si está detectando el enchufe, cambiar la posición al enchufe
         if (estaDetectandoEnchufe)
         {
-            // Obtener la posición del objeto con el tag "Enchufe"
             GameObject enchufe = GameObject.FindGameObjectWithTag("Enchufe");
             if (enchufe != null)
             {
                 transform.position = enchufe.transform.position;
-                EmparentadoAEnchufe = true; // Activar el booleano al emparentarse
+                EmparentadoAEnchufe = true;
             }
         }
         else
         {
-            // Si no está detectando el enchufe, restablecer la posición inicial
             transform.position = posicionInicial;
         }
 
-        // Apagar el booleano al soltar el objeto
         estaDetectandoEnchufe = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Verificar si el objeto colisionado tiene el tag "Enchufe"
         if (other.CompareTag("Enchufe"))
         {
-            estaDetectandoEnchufe = true; // Encender el booleano al detectar el enchufe
+            estaDetectandoEnchufe = true;
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        // Verificar si el objeto deja de colisionar con el objeto que tiene el tag "Enchufe"
         if (other.CompareTag("Enchufe"))
         {
-            estaDetectandoEnchufe = false; // Apagar el booleano al salir de la colisión con el enchufe
-            EmparentadoAEnchufe = false; // Resetear el booleano al salir de la colisión con el enchufe
+            estaDetectandoEnchufe = false;
+            EmparentadoAEnchufe = false;
         }
     }
 
@@ -87,11 +76,16 @@ public class MoverEnchufe : MonoBehaviour
     {
         if (estaSiendoArrastrado)
         {
-            // Convertir la posición del mouse a coordenadas del mundo
             Vector3 posicionMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            // Aplicar el desplazamiento y actualizar la posición del objeto al puntero del mouse
             transform.position = new Vector3(posicionMouse.x + offset.x, posicionMouse.y + offset.y, transform.position.z);
+        }
+
+        // Apuntar hacia el objeto definido en el Inspector
+        if (objetoApuntar != null)
+        {
+            Vector3 direccion = objetoApuntar.position - transform.position;
+            float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angulo, Vector3.forward);
         }
     }
 }

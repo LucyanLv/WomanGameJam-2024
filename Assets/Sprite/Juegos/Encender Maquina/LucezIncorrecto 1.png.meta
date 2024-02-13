@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a2c2ce1cee91874aa95e3b4a949e322
+guid: 65066cb71ac3d624fadd0b2fa9a4c26c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,169 +123,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Platos_0
+      name: LucezIncorrecto 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3074
-        width: 2642
-        height: 2643
+        x: 130
+        y: 903
+        width: 310
+        height: 292
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5f2bfac711e3d749b7dba210b2f8c39
-      internalID: 107845805
+      spriteID: 0eb00986fa8210743a01e960202fc763
+      internalID: -1745586910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Platos_1
-      rect:
-        serializedVersion: 2
-        x: 3143
-        y: 3074
-        width: 2646
-        height: 2643
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1cd4d1f13bb23854bbaf90ee357c6eaa
-      internalID: -2105943702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Platos_2
-      rect:
-        serializedVersion: 2
-        x: 6278
-        y: 3074
-        width: 2646
-        height: 2643
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a00a52d1b0097fa4eb7ed35d76b70cb6
-      internalID: 938926504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Platos_3
-      rect:
-        serializedVersion: 2
-        x: 9424
-        y: 3074
-        width: 2643
-        height: 2643
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a1addaaf1101de4f8e3b38a57c6c07f
-      internalID: 1598962815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Platos_4
+      name: LucezIncorrecto 1_1
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2642
-        height: 2643
+        width: 569
+        height: 569
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa5ed001b5e3c4a4db720d96f788003e
-      internalID: -1277508642
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Platos_5
-      rect:
-        serializedVersion: 2
-        x: 3143
-        y: 0
-        width: 2646
-        height: 2643
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: acede7ef1e8682a4f81ffd070250921f
-      internalID: 553437320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Platos_6
-      rect:
-        serializedVersion: 2
-        x: 6278
-        y: 0
-        width: 2646
-        height: 2643
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f50cd3fb60a2a764f9bd051ae559e1df
-      internalID: 740874920
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Platos_7
-      rect:
-        serializedVersion: 2
-        x: 9425
-        y: 0
-        width: 2642
-        height: 2643
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56707e69227d5da4abc37a8746a29211
-      internalID: -1142983651
+      spriteID: c50789a0389bb634a9bd10588d08b98e
+      internalID: 358765437
       vertices: []
       indices: 
       edges: []
@@ -301,14 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Platos_0: 107845805
-      Platos_1: -2105943702
-      Platos_2: 938926504
-      Platos_3: 1598962815
-      Platos_4: -1277508642
-      Platos_5: 553437320
-      Platos_6: 740874920
-      Platos_7: -1142983651
+      LucezIncorrecto 1_0: -1745586910
+      LucezIncorrecto 1_1: 358765437
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

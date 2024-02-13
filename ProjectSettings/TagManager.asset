@@ -18,6 +18,7 @@ TagManager:
   - JuegoInterruptor
   - JuegoCaja
   - LlegoCaja
+  - Limite
   layers:
   - Default
   - TransparentFX

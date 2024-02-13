@@ -6,11 +6,20 @@ public class MoverObjeto : MonoBehaviour
 {
     private Vector3 posicionInicial;
     private Vector3 offset;
-    private bool arrastrando = false;
+    public bool arrastrando = false;
+    public bool enPlato = false;
+
+    public GameObject objetoACambiarSprite;
+    public Sprite nuevoSpriteEnPlato;
+
+    private SpriteRenderer spriteRendererObjetoACambiar;
 
     private void Start()
     {
         posicionInicial = transform.position;
+
+        // Obtener el SpriteRenderer del objeto a cambiar sprite
+        spriteRendererObjetoACambiar = objetoACambiarSprite.GetComponent<SpriteRenderer>();
     }
 
     private void OnMouseDown()
@@ -22,7 +31,13 @@ public class MoverObjeto : MonoBehaviour
     private void OnMouseUp()
     {
         arrastrando = false;
+        // Siempre regresa a la posición inicial
         transform.position = posicionInicial;
+
+        if (enPlato && nuevoSpriteEnPlato != null && spriteRendererObjetoACambiar != null)
+        {
+            spriteRendererObjetoACambiar.sprite = nuevoSpriteEnPlato;
+        }
     }
 
     private void Update()
@@ -31,6 +46,21 @@ public class MoverObjeto : MonoBehaviour
         {
             Vector3 nuevaPosicion = ObtenerPosicionMouse() + offset;
             transform.position = nuevaPosicion;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Plato"))
+        {
+            enPlato = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Plato"))
+        {
+            enPlato = false;
         }
     }
 

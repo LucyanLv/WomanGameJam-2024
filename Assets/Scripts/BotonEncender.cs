@@ -18,6 +18,12 @@ public class BotonEncender : MonoBehaviour
     public GameObject objetoACambiarSprite;
     public Sprite nuevoSpriteObjeto;
 
+    [Header("Sprite Luz Validadora")]
+    public SpriteRenderer luzValidadora;
+    public float terminoError;
+    public Sprite error;
+    public Sprite normalError;
+
     void Start()
     {
         // Asegúrate de que el objeto tenga un componente SpriteRenderer
@@ -57,21 +63,25 @@ public class BotonEncender : MonoBehaviour
                             else
                             {
                                 Debug.Log("Aun no puedes salir");
+                                StartCoroutine(Incorrecto());
                             }
                         }
                         else
                         {
                             Debug.Log("Aun no puedes salir");
+                            StartCoroutine(Incorrecto());
                         }
                     }
                     else
                     {
                         Debug.Log("Aun no puedes salir");
+                        StartCoroutine(Incorrecto());
                     }
                 }
                 else
                 {
                     Debug.Log("Aun no puedes salir");
+                    StartCoroutine(Incorrecto());
                 }
             }
             else
@@ -94,6 +104,13 @@ public class BotonEncender : MonoBehaviour
         // Vuelve al sprite original después de un tiempo
         VolverSpriteOriginal();
     }
+    IEnumerator Incorrecto()
+    {
+        luzValidadora.sprite = error;
+        yield return new WaitForSeconds(terminoError);
+        luzValidadora.sprite = normalError;
+    }
+
 
     // Método para cambiar el sprite del objeto actual cuando se cumple la condición
     void CambiarSpriteObjeto()
