@@ -8,6 +8,9 @@ public class MovimientoPlayer : MonoBehaviour
     public float velocidadEnJuegoCaja;
     public bool manteniendoEspacio = false;
     public int llegadasACaja = 0;
+    private Animator playerAnimator;
+    private Rigidbody2D playerRb;
+    private Vector2 movement;
 
     // Activar MiniJuegos
     [Header("Activar MiniJuegos")]
@@ -51,26 +54,54 @@ public class MovimientoPlayer : MonoBehaviour
     public Collider2D caja;
     public Collider2D llegarCaja;
 
+    // Colaiders Que se desactivan si esta en minijuego
+    public Collider2D enchufe2;
+    public Collider2D tarjeta2;
+    public Collider2D luz2;
+    public Collider2D maquina2;
+    public Collider2D encenderLuz2;
+    public Collider2D caja2;
+    public Collider2D llegarCaja2;
+
     public GameObject correcto;
 
+    private void Start()
+    {
+        playerRb = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
+    }
+    
     void Update()
     {
         if (!estaEnMiniJuego)
         {
-            // Obtener la entrada del teclado
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
+            float movimientoX = Input.GetAxisRaw("Horizontal");
+            float movimientoY = Input.GetAxisRaw("Vertical");
+            movement = new Vector2(movimientoX, movimientoY).normalized;
 
-            // Calcular la dirección del movimiento
-            Vector2 movement = new Vector2(horizontalInput, verticalInput);
+            playerAnimator.SetFloat("Horizontal", movimientoX);
+            playerAnimator.SetFloat("Vertical", movimientoY);
+            playerAnimator.SetFloat("Velocidad", movement.sqrMagnitude);
 
-            // Mover el personaje usando Rigidbody
-            transform.Translate(movement * speed * Time.deltaTime);
-            fondoPuedeUsar.SetActive(true);
+            //fondoPuedeUsar.SetActive(true);
+            enchufe2.enabled = true;
+            tarjeta2.enabled = true;
+            luz2.enabled = true;
+            maquina2.enabled = true;
+            encenderLuz2.enabled = true;
+            caja2.enabled = true;
+            llegarCaja2.enabled = true;
         }
         else
         {
-            fondoPuedeUsar.SetActive(false);
+            enchufe2.enabled = false;
+            tarjeta2.enabled = false;
+            luz2.enabled = false;
+            maquina2.enabled = false;
+            encenderLuz2.enabled = false;
+            caja2.enabled = false;
+            llegarCaja2.enabled = false;
+            //fondoPuedeUsar.SetActive(false);
         }
 
         if ((juegoCaja || manteniendoEspacio) && Input.GetKey(KeyCode.Space))
@@ -163,6 +194,10 @@ public class MovimientoPlayer : MonoBehaviour
         {
             personaje.enabled = true;
         }
+    }
+    private void FixedUpdate()
+    {
+        playerRb.MovePosition(playerRb.position + movement * speed * Time.fixedDeltaTime);
     }
 
     // Método llamado cuando se produce una colisión en 2D

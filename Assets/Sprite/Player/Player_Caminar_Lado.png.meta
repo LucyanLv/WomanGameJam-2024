@@ -1,0 +1,580 @@
+fileFormatVersion: 2
+guid: be071bf91b97f8c469e0b4e8cdc8051d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_0
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 384
+        width: 166
+        height: 308
+      alignment: 9
+      pivot: {x: 0.43968615, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 800df90e66ccdf3419973f73ba76d510
+      internalID: 725913552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_1
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 384
+        width: 148
+        height: 312
+      alignment: 9
+      pivot: {x: 0.4763229, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db368638b4a5df24ea29f3ca5cc2827d
+      internalID: 1948762993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_2
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 385
+        width: 126
+        height: 314
+      alignment: 9
+      pivot: {x: 0.5178787, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a132f6638deee7342bcfec8a536b69d0
+      internalID: 21796293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_3
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 386
+        width: 103
+        height: 317
+      alignment: 9
+      pivot: {x: 0.5777641, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dba178308251c2a4f83c166b22423365
+      internalID: -1666295064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_4
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 387
+        width: 98
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5332031, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5741dae0059e8d946afc50fa00bc18b8
+      internalID: 1831811215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_5
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 386
+        width: 85
+        height: 319
+      alignment: 9
+      pivot: {x: 0.4823314, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e4de955621d0746ab8c9cab1890f68
+      internalID: 830600234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_6
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 384
+        width: 86
+        height: 319
+      alignment: 9
+      pivot: {x: 0.45634282, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef709335f746094da74a972f637281d
+      internalID: 870948592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_7
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 384
+        width: 97
+        height: 317
+      alignment: 9
+      pivot: {x: 0.52327263, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8c44a865f13bc41b1322dbc75aa3f5
+      internalID: 1480516230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_8
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 384
+        width: 128
+        height: 315
+      alignment: 9
+      pivot: {x: 0.48352146, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f071dff545ee6479c28881e970d346
+      internalID: 1081084371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_9
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 386
+        width: 157
+        height: 311
+      alignment: 9
+      pivot: {x: 0.4596966, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e20a4ebeaee8249a5f982f23517487
+      internalID: 1821929302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_10
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 43
+        width: 143
+        height: 314
+      alignment: 9
+      pivot: {x: 0.48597124, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c2c7a1181e7b0439acdf238c6485a7
+      internalID: 547114574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_11
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 45
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.5174951, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad70925d0eb0784488db104218b4b099
+      internalID: 2079616859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_12
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 45
+        width: 112
+        height: 316
+      alignment: 9
+      pivot: {x: 0.5512494, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6c5c08878272b4caa27dcb4d1e9291
+      internalID: -1177233883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_13
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 45
+        width: 99
+        height: 319
+      alignment: 9
+      pivot: {x: 0.5800664, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf26fb43dff4d442981531b62c2ecb4
+      internalID: -2143113525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_14
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 45
+        width: 97
+        height: 320
+      alignment: 9
+      pivot: {x: 0.5338135, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da7c27ef8162fb48b97d59783240d39
+      internalID: 2095515652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_15
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 43
+        width: 83
+        height: 320
+      alignment: 9
+      pivot: {x: 0.47652572, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a6f272ccbeded45bcbaef83340f2b3
+      internalID: -1076143569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_16
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 41
+        width: 89
+        height: 319
+      alignment: 9
+      pivot: {x: 0.47810826, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbfdc01ccb6be3d4bb0c1e95ef2c67e1
+      internalID: 72603986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_17
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 40
+        width: 101
+        height: 317
+      alignment: 9
+      pivot: {x: 0.5192931, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f221b1a7058fe34f8604341113f744f
+      internalID: -1081066779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_18
+      rect:
+        serializedVersion: 2
+        x: 1628
+        y: 41
+        width: 135
+        height: 313
+      alignment: 9
+      pivot: {x: 0.47113535, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0b601adfb9bacd4a8e867f04a0ad7a3
+      internalID: 1423830103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_19
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 42
+        width: 166
+        height: 309
+      alignment: 9
+      pivot: {x: 0.44131285, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d10b3ad9505a4f1438ec0c29c0d8d80e
+      internalID: -329132401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Player_Caminar_Lado_0: 725913552
+      Player_Caminar_Lado_1: 1948762993
+      Player_Caminar_Lado_10: 547114574
+      Player_Caminar_Lado_11: 2079616859
+      Player_Caminar_Lado_12: -1177233883
+      Player_Caminar_Lado_13: -2143113525
+      Player_Caminar_Lado_14: 2095515652
+      Player_Caminar_Lado_15: -1076143569
+      Player_Caminar_Lado_16: 72603986
+      Player_Caminar_Lado_17: -1081066779
+      Player_Caminar_Lado_18: 1423830103
+      Player_Caminar_Lado_19: -329132401
+      Player_Caminar_Lado_2: 21796293
+      Player_Caminar_Lado_3: -1666295064
+      Player_Caminar_Lado_4: 1831811215
+      Player_Caminar_Lado_5: 830600234
+      Player_Caminar_Lado_6: 870948592
+      Player_Caminar_Lado_7: 1480516230
+      Player_Caminar_Lado_8: 1081084371
+      Player_Caminar_Lado_9: 1821929302
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
