@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovimientoPlayer : MonoBehaviour
 {
     public float speed = 5f;
-    public float velocidadEnJuegoCaja;
+    public float velocidadCaja;
     public bool manteniendoEspacio = false;
     public int llegadasACaja = 0;
     private Animator playerAnimator;
@@ -20,7 +20,6 @@ public class MovimientoPlayer : MonoBehaviour
     public GameObject miniJuegoMaquina;
     public GameObject miniJuegoEncenderLuz;
     public GameObject puedeUsar;
-    public GameObject fondoPuedeUsar;
 
     // Puede jugar miniJuegos
     [Header("Puede Jugar MiniJuegos")]
@@ -83,7 +82,6 @@ public class MovimientoPlayer : MonoBehaviour
             playerAnimator.SetFloat("Vertical", movimientoY);
             playerAnimator.SetFloat("Velocidad", movement.sqrMagnitude);
 
-            //fondoPuedeUsar.SetActive(true);
             enchufe2.enabled = true;
             tarjeta2.enabled = true;
             luz2.enabled = true;
@@ -101,20 +99,19 @@ public class MovimientoPlayer : MonoBehaviour
             encenderLuz2.enabled = false;
             caja2.enabled = false;
             llegarCaja2.enabled = false;
-            //fondoPuedeUsar.SetActive(false);
         }
 
         if ((juegoCaja || manteniendoEspacio) && Input.GetKey(KeyCode.Space))
         {
-            speed = velocidadEnJuegoCaja;
+            speed = velocidadCaja;
             manteniendoEspacio = true;
-            puedeUsar.SetActive(true);
+            playerAnimator.SetBool("TieneCaja", true);
         }
         else
         {
+            playerAnimator.SetBool("TieneCaja", false);
             speed = 5f;
             manteniendoEspacio = false;
-            puedeUsar.SetActive(false);
         }
 
         // 1 si esta en el mini juego y preciona espacio MINIJUEGO ENCHUFE
@@ -235,7 +232,9 @@ public class MovimientoPlayer : MonoBehaviour
         }
         if (other.CompareTag("LlegoCaja"))
         {
-            if (Mathf.Approximately(speed, velocidadEnJuegoCaja))
+            playerAnimator.SetBool("TieneCaja", false);
+
+            if (Mathf.Approximately(speed, velocidadCaja))
             {
                 manteniendoEspacio = false;
                 llegadasACaja++;

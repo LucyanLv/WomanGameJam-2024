@@ -1,0 +1,580 @@
+fileFormatVersion: 2
+guid: 8d5f8a7ca5cb1934d8f34c3981b53d8f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 823
+        width: 209
+        height: 310
+      alignment: 9
+      pivot: {x: 0.36136624, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94cebd0d3f523c64aa91fb35919f60b9
+      internalID: -952884915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_1
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 821
+        width: 202
+        height: 317
+      alignment: 9
+      pivot: {x: 0.3387924, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17c11045cb901f4eb8c85fc7397fdff
+      internalID: 671029309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_2
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 824
+        width: 194
+        height: 317
+      alignment: 9
+      pivot: {x: 0.3142565, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01199f641468ab94ead078d1c332df2a
+      internalID: 221939563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_3
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 824
+        width: 186
+        height: 320
+      alignment: 9
+      pivot: {x: 0.28743228, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 035bb3ef27cbaa3419ec9468dc5c4d57
+      internalID: -1444044222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_4
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 826
+        width: 186
+        height: 321
+      alignment: 9
+      pivot: {x: 0.29146847, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba7fa2f12ffef9c42ab6d16ad3995890
+      internalID: 572626658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_5
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 824
+        width: 174
+        height: 322
+      alignment: 9
+      pivot: {x: 0.23394214, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4684b09c408afb41b20dfd0c1a9681e
+      internalID: -1913546474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_6
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 823
+        width: 175
+        height: 321
+      alignment: 9
+      pivot: {x: 0.23500349, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf46a50ae0e61bd4fa5053d299d6e11b
+      internalID: 897100776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_7
+      rect:
+        serializedVersion: 2
+        x: 2247
+        y: 821
+        width: 187
+        height: 320
+      alignment: 9
+      pivot: {x: 0.28375146, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12aaf657c2306be42bdd124e111ea136
+      internalID: 1044093602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_8
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 471
+        width: 196
+        height: 318
+      alignment: 9
+      pivot: {x: 0.31792855, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8a19e62e7210b94f9de9600f3ef1595
+      internalID: -93059195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_9
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 472
+        width: 207
+        height: 314
+      alignment: 9
+      pivot: {x: 0.35556, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027d741db833e6a428654598d0b45f89
+      internalID: 1956337604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_10
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 472
+        width: 205
+        height: 317
+      alignment: 9
+      pivot: {x: 0.3494462, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74a12789f92e1f46b3a9d043dc0f87e
+      internalID: 572339318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_11
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 475
+        width: 202
+        height: 316
+      alignment: 9
+      pivot: {x: 0.337661, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4c11f16888b934b88a9e47a1a25dbf
+      internalID: 1326400757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_12
+      rect:
+        serializedVersion: 2
+        x: 1310
+        y: 475
+        width: 196
+        height: 318
+      alignment: 9
+      pivot: {x: 0.32284918, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e09f048bdd4d1042987f6b27ee423e0
+      internalID: -1650076448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_13
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 475
+        width: 192
+        height: 321
+      alignment: 9
+      pivot: {x: 0.30660057, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eb10017cd770ed4ebb8956e280ea41e
+      internalID: 722548301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_14
+      rect:
+        serializedVersion: 2
+        x: 1937
+        y: 476
+        width: 187
+        height: 322
+      alignment: 9
+      pivot: {x: 0.28466666, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def454fe7783c254896d29c69143693b
+      internalID: -592213889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_15
+      rect:
+        serializedVersion: 2
+        x: 2261
+        y: 473
+        width: 172
+        height: 322
+      alignment: 9
+      pivot: {x: 0.22242914, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3fb2b9bc6591064986e46a62a1414f5
+      internalID: -339961276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_16
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 119
+        width: 176
+        height: 320
+      alignment: 9
+      pivot: {x: 0.24516383, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cec78245b2f0824788893a6cdaa62c8
+      internalID: -1234368376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_17
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 118
+        width: 187
+        height: 318
+      alignment: 9
+      pivot: {x: 0.2854012, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5242841db5961b5489492163fc4d1fda
+      internalID: -1370153555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_18
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 118
+        width: 197
+        height: 315
+      alignment: 9
+      pivot: {x: 0.32282764, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2785e6d5ea184104f8d48000d0719264
+      internalID: 447438418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Lado_Caja_19
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 118
+        width: 209
+        height: 312
+      alignment: 9
+      pivot: {x: 0.35639626, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb2c3d48c0678a44b5d85f3c54fecc2
+      internalID: -1470173077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Player_Caminar_Lado_Caja_0: -952884915
+      Player_Caminar_Lado_Caja_1: 671029309
+      Player_Caminar_Lado_Caja_10: 572339318
+      Player_Caminar_Lado_Caja_11: 1326400757
+      Player_Caminar_Lado_Caja_12: -1650076448
+      Player_Caminar_Lado_Caja_13: 722548301
+      Player_Caminar_Lado_Caja_14: -592213889
+      Player_Caminar_Lado_Caja_15: -339961276
+      Player_Caminar_Lado_Caja_16: -1234368376
+      Player_Caminar_Lado_Caja_17: -1370153555
+      Player_Caminar_Lado_Caja_18: 447438418
+      Player_Caminar_Lado_Caja_19: -1470173077
+      Player_Caminar_Lado_Caja_2: 221939563
+      Player_Caminar_Lado_Caja_3: -1444044222
+      Player_Caminar_Lado_Caja_4: 572626658
+      Player_Caminar_Lado_Caja_5: -1913546474
+      Player_Caminar_Lado_Caja_6: 897100776
+      Player_Caminar_Lado_Caja_7: 1044093602
+      Player_Caminar_Lado_Caja_8: -93059195
+      Player_Caminar_Lado_Caja_9: 1956337604
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

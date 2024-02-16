@@ -1,0 +1,580 @@
+fileFormatVersion: 2
+guid: a232f4f4cc65b3c438195824e711c041
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 430
+        width: 148
+        height: 318
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f034509a68846e84daa72cd92f251c03
+      internalID: -1407809586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_1
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 420
+        width: 148
+        height: 323
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f7fd5c2adb2f844980d2f509cf09e5
+      internalID: -1198341290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_2
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 410
+        width: 148
+        height: 327
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c78cf3739b06644b99402a7af597285
+      internalID: 1273599020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_3
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 418
+        width: 148
+        height: 323
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f02cf5732dcd7bf4f936bebd54786f74
+      internalID: 1334587167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_4
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 426
+        width: 148
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3688ded0c73004e8b2dd9559776b79
+      internalID: 1777809229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_5
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 427
+        width: 148
+        height: 319
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96047a50d6bd7e541970eced4992b5ac
+      internalID: 1956925729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_6
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 420
+        width: 148
+        height: 321
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 882a0471e2f704f4aa427ead51d49de7
+      internalID: 1184864577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_7
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 414
+        width: 148
+        height: 323
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6633de892bea2f0459d7bb3a05f848af
+      internalID: 698125301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_8
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 420
+        width: 148
+        height: 321
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1960aa6ec01efb14d872ebb2fbb128c4
+      internalID: 1827841263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_9
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 427
+        width: 148
+        height: 319
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de6fac80a5dc3cd46b2245ac5fe628c7
+      internalID: -1738987528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 75
+        width: 148
+        height: 320
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 256cb5694d64f5c46bce298b9f21eb28
+      internalID: 1805431529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_11
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 65
+        width: 148
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c952ecc4daa03ae4894c49d07666054d
+      internalID: 2034556342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_12
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 64
+        width: 148
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 114f8f58dc50ea44288a14e6332f0a85
+      internalID: 880275865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_13
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 72
+        width: 148
+        height: 322
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eca0cc47e444a04e8ac96b53a3d79f7
+      internalID: 2035677734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_14
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 80
+        width: 148
+        height: 318
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 590fc80ed406ce04eb717ba2538d352b
+      internalID: -853210657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_15
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 73
+        width: 148
+        height: 321
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ec2adda6bbb664c89dd903d8437f99
+      internalID: 728491071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_16
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 67
+        width: 148
+        height: 322
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce681b503e3a060459805ecffb5f94e8
+      internalID: -503719311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_17
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 67
+        width: 148
+        height: 322
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 619e82873fcaa3940b1779831104d1f3
+      internalID: -1983837324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_18
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 73
+        width: 148
+        height: 321
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e427b2cd3cd60e4ca304d6ff9c7df06
+      internalID: -943649408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Caminar_Arriba_Caja_19
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 80
+        width: 148
+        height: 318
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 150a92ab6feffd944869933a40e983f5
+      internalID: -582841877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Player_Caminar_Arriba_Caja_0: -1407809586
+      Player_Caminar_Arriba_Caja_1: -1198341290
+      Player_Caminar_Arriba_Caja_10: 1805431529
+      Player_Caminar_Arriba_Caja_11: 2034556342
+      Player_Caminar_Arriba_Caja_12: 880275865
+      Player_Caminar_Arriba_Caja_13: 2035677734
+      Player_Caminar_Arriba_Caja_14: -853210657
+      Player_Caminar_Arriba_Caja_15: 728491071
+      Player_Caminar_Arriba_Caja_16: -503719311
+      Player_Caminar_Arriba_Caja_17: -1983837324
+      Player_Caminar_Arriba_Caja_18: -943649408
+      Player_Caminar_Arriba_Caja_19: -582841877
+      Player_Caminar_Arriba_Caja_2: 1273599020
+      Player_Caminar_Arriba_Caja_3: 1334587167
+      Player_Caminar_Arriba_Caja_4: 1777809229
+      Player_Caminar_Arriba_Caja_5: 1956925729
+      Player_Caminar_Arriba_Caja_6: 1184864577
+      Player_Caminar_Arriba_Caja_7: 698125301
+      Player_Caminar_Arriba_Caja_8: 1827841263
+      Player_Caminar_Arriba_Caja_9: -1738987528
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

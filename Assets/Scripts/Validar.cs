@@ -16,6 +16,9 @@ public class Validar : MonoBehaviour
     public Sprite spriteDefault;
     public Sprite spriteCambio;
 
+    // Prender luz
+    public GameObject encenderLuz;
+
     private void Start()
     {
         terminoJuegoInterruptor = false;
@@ -38,6 +41,7 @@ public class Validar : MonoBehaviour
                             {
                                 // Cambia el sprite del objeto vinculado si interruptor5 es verdadero
                                 spriteRenderer.sprite = interruptor5.encendido ? spriteCambio : spriteDefault;
+                                encenderLuz.SetActive(false);
                                 terminoJuegoInterruptor = true;
                             }
                             else

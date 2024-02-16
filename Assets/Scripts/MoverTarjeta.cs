@@ -22,17 +22,23 @@ public class MoverTarjeta : MonoBehaviour
     public bool mensajeEnviado = false;
     public bool EmpezoTiempo = false;
 
-    // Para activar y desactivar y activar las respuestas
-    public GameObject rCorecta;
-    public GameObject rIncorecta;
-    public float desactivar;
-
     // Termino juego
     public bool terminoJuegoTarjeta = false;
 
     // Animacion de la cartera
     [Header("Animators")]
     public Animator salirCartera;
+
+    [Header("Sprites Validadores")]
+    public SpriteRenderer barraVerde;
+    public SpriteRenderer luzVerde;
+    public SpriteRenderer luzRoja;
+    public Sprite luzRojaApagada;
+    public Sprite luzRojaEncendida;
+    public Sprite luzVerdeEncendida;
+    public Sprite barraVerdeNormal;
+    public Sprite barraVerdeCorrecta;
+    public Sprite barraVerdeIncorrecta;
 
     void Start()
     {
@@ -51,13 +57,6 @@ public class MoverTarjeta : MonoBehaviour
             EstablecerEstadoInicial();
         }
     }
-
-    void OnDisable()
-    {
-        // Aquí puedes realizar acciones de limpieza o guardar estado si es necesario
-        ReiniciarEstado();
-    }
-
     void Update()
     {
         if (Input.GetMouseButton(0))
@@ -168,23 +167,16 @@ public class MoverTarjeta : MonoBehaviour
         {
             if (contadorActual <= 0)
             {
-                rCorecta.SetActive(true);
                 terminoJuegoTarjeta = true;
-                StartCoroutine(Desactivar());
+                luzVerde.sprite = luzVerdeEncendida;
+                barraVerde.sprite = barraVerdeCorrecta;
             }
             else
             {
-                rIncorecta.SetActive(true);
-                StartCoroutine(Desactivar());
+                StartCoroutine(Incorrecto());
+                StartCoroutine(BarraIncorrecta());
             }
         }
-    }
-
-    IEnumerator Desactivar()
-    {
-        yield return new WaitForSeconds(desactivar);
-        rCorecta.SetActive(false);
-        rIncorecta.SetActive(false);
     }
 
     void EstablecerEstadoInicial()
@@ -197,25 +189,18 @@ public class MoverTarjeta : MonoBehaviour
         terminoJuegoTarjeta = false;
 
         transform.position = posicionInicial;
-
-        rCorecta.SetActive(false);
-        rIncorecta.SetActive(false);
     }
 
-    void ReiniciarEstado()
+    IEnumerator Incorrecto()
     {
-        // Almacena la posición actual antes de reiniciar
-        posicionInicial = transform.position;
-
-        enMovimiento = false;
-        haLlegado = false;
-        puedeMoverHorizontal = false;
-        mensajeEnviado = false;
-        EmpezoTiempo = false;
-        terminoJuegoTarjeta = false;
-
-        rCorecta.SetActive(false);
-        rIncorecta.SetActive(false);
+        luzRoja.sprite = luzRojaEncendida;
+        yield return new WaitForSeconds(1);
+        luzRoja.sprite = luzRojaApagada;
     }
-
+    IEnumerator BarraIncorrecta()
+    {
+        barraVerde.sprite = barraVerdeIncorrecta;
+        yield return new WaitForSeconds(1.5f);
+        barraVerde.sprite = barraVerdeNormal;
+    }
 }
