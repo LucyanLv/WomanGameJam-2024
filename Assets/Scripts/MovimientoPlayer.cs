@@ -53,16 +53,28 @@ public class MovimientoPlayer : MonoBehaviour
     public Collider2D caja;
     public Collider2D llegarCaja;
 
-    // Colaiders Que se desactivan si esta en minijuego
-    public Collider2D enchufe2;
-    public Collider2D tarjeta2;
-    public Collider2D luz2;
-    public Collider2D maquina2;
-    public Collider2D encenderLuz2;
-    public Collider2D caja2;
-    public Collider2D llegarCaja2;
-
     public GameObject correcto;
+
+    [Header("Boleanos Corrutinas")]
+    public bool corrutinaEnchufe = false;
+    public bool corrutinaTarjeta = false;
+    public bool corrutinaLuz = false;
+    public bool corrutinaMaquina = false;
+    public bool corrutinaEncenderLuz = false;
+
+    [Header("Textos")]
+    public GameObject mensaje1;
+    public Animator primerMensaje;
+    public GameObject mensaje2;
+    public Animator segundoMensaje;
+    public GameObject mensaje3;
+    public Animator tercerMensaje;
+    public GameObject mensaje4;
+    public Animator cuartoMensaje;
+    public GameObject mensaje5;
+    public Animator quintoMensaje;
+    public GameObject mensaje6;
+    public Animator sextoMensaje;
 
     private void Start()
     {
@@ -81,24 +93,6 @@ public class MovimientoPlayer : MonoBehaviour
             playerAnimator.SetFloat("Horizontal", movimientoX);
             playerAnimator.SetFloat("Vertical", movimientoY);
             playerAnimator.SetFloat("Velocidad", movement.sqrMagnitude);
-
-            enchufe2.enabled = true;
-            tarjeta2.enabled = true;
-            luz2.enabled = true;
-            maquina2.enabled = true;
-            encenderLuz2.enabled = true;
-            caja2.enabled = true;
-            llegarCaja2.enabled = true;
-        }
-        else
-        {
-            enchufe2.enabled = false;
-            tarjeta2.enabled = false;
-            luz2.enabled = false;
-            maquina2.enabled = false;
-            encenderLuz2.enabled = false;
-            caja2.enabled = false;
-            llegarCaja2.enabled = false;
         }
 
         if ((juegoCaja || manteniendoEspacio) && Input.GetKey(KeyCode.Space))
@@ -129,9 +123,9 @@ public class MovimientoPlayer : MonoBehaviour
         // 2
         if (juegoTarjeta && Input.GetKeyDown(KeyCode.Space))
         {
+            estaEnMiniJuego = true;
             miniJuegoTarjeta.SetActive(true);
             tarjeta.enabled = false;
-            estaEnMiniJuego = true;
         }
         if (moverTarjeta.terminoJuegoTarjeta)
         {
@@ -165,9 +159,9 @@ public class MovimientoPlayer : MonoBehaviour
         // 5
         if (juegoInterruptor && Input.GetKeyDown(KeyCode.Space))
         {
+            estaEnMiniJuego = true;
             miniJuegoEncenderLuz.SetActive(true);
             encenderLuz.enabled = false;
-            estaEnMiniJuego = true;
         }
         if (validar.terminoJuegoInterruptor)
         {
@@ -177,9 +171,9 @@ public class MovimientoPlayer : MonoBehaviour
         // 6
         if (llegadasACaja == 2)
         {
-            StartCoroutine(Correcto());
             caja.enabled = false;
             llegarCaja.enabled = false;
+            StartCoroutine(Correcto());
         }
 
         // Desactivar Colaiders
@@ -281,38 +275,81 @@ public class MovimientoPlayer : MonoBehaviour
             speed = 5;
         }
     }
-    
-    IEnumerator DesactivarEnchufe()
-    {
-        yield return new WaitForSeconds(tiempoDesactivar);
-        miniJuegoEnchufe.SetActive(false);
-        estaEnMiniJuego = false;
-    }
 
+    IEnumerator DesactivarEncenderLuz()
+    {
+        if (!corrutinaEncenderLuz)
+        {
+            yield return new WaitForSeconds(tiempoDesactivar);
+            miniJuegoEncenderLuz.SetActive(false);
+            estaEnMiniJuego = false;
+            corrutinaEncenderLuz = true;
+            mensaje1.SetActive(true);
+            yield return new WaitForSeconds(5);
+            primerMensaje.SetBool("Desaparecer", true);
+            yield return new WaitForSeconds(1);
+            mensaje1.SetActive(false);
+        }
+    }
     IEnumerator DesactivarTarjeta()
     {
-        yield return new WaitForSeconds(tiempoDesactivar);
-        miniJuegoTarjeta.SetActive(false);
-        estaEnMiniJuego = false;
+        if (!corrutinaTarjeta)
+        {
+            yield return new WaitForSeconds(tiempoDesactivar);
+            miniJuegoTarjeta.SetActive(false);
+            estaEnMiniJuego = false;
+            corrutinaTarjeta = true;
+            mensaje2.SetActive(true);
+            yield return new WaitForSeconds(5);
+            segundoMensaje.SetBool("Desaparecer", true);
+            yield return new WaitForSeconds(1);
+            mensaje2.SetActive(false);
+        }
     }
-
+    IEnumerator DesactivarEnchufe()
+    {
+        if (!corrutinaEnchufe)
+        {
+            yield return new WaitForSeconds(tiempoDesactivar);
+            miniJuegoEnchufe.SetActive(false);
+            estaEnMiniJuego = false;
+            corrutinaEnchufe = true;
+            mensaje3.SetActive(true);
+            yield return new WaitForSeconds(5);
+            tercerMensaje.SetBool("Desaparecer", true);
+            yield return new WaitForSeconds(1);
+            mensaje3.SetActive(false);
+        }
+    }
     IEnumerator DesactivarLuz()
     {
-        yield return new WaitForSeconds(tiempoDesactivar);
-        miniJuegoLuces.SetActive(false);
-        estaEnMiniJuego = false;
+        if (!corrutinaLuz)
+        {
+            yield return new WaitForSeconds(tiempoDesactivar);
+            miniJuegoLuces.SetActive(false);
+            estaEnMiniJuego = false;
+            corrutinaLuz = true;
+            mensaje4.SetActive(true);
+            yield return new WaitForSeconds(7);
+            cuartoMensaje.SetBool("Desaparecer", true);
+            yield return new WaitForSeconds(1);
+            mensaje4.SetActive(false);
+        }
     }
     IEnumerator DesactivarMaquina()
     {
-        yield return new WaitForSeconds(tiempoDesactivar);
-        miniJuegoMaquina.SetActive(false);
-        estaEnMiniJuego = false;
-    }
-    IEnumerator DesactivarEncenderLuz()
-    {
-        yield return new WaitForSeconds(tiempoDesactivar);
-        miniJuegoEncenderLuz.SetActive(false);
-        estaEnMiniJuego = false;
+        if (!corrutinaMaquina)
+        {
+            yield return new WaitForSeconds(tiempoDesactivar);
+            miniJuegoMaquina.SetActive(false);
+            estaEnMiniJuego = false;
+            corrutinaMaquina = true;
+            mensaje5.SetActive(true);
+            yield return new WaitForSeconds(5);
+            quintoMensaje.SetBool("Desaparecer", true);
+            yield return new WaitForSeconds(1);
+            mensaje5.SetActive(false);
+        }
     }
 
     IEnumerator Correcto()
@@ -320,5 +357,10 @@ public class MovimientoPlayer : MonoBehaviour
         correcto.SetActive(true);
         yield return new WaitForSeconds(tiempoDesactivar);
         correcto.SetActive(false);
+        mensaje6.SetActive(true);
+        yield return new WaitForSeconds(5);
+        sextoMensaje.SetBool("Desaparecer", true);
+        yield return new WaitForSeconds(1);
+        mensaje6.SetActive(false);
     }
 }
