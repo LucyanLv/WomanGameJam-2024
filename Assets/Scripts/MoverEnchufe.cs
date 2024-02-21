@@ -9,7 +9,7 @@ public class MoverEnchufe : MonoBehaviour
     public bool estaSiendoArrastrado = false;
     public bool estaDetectandoEnchufe = false;
     public bool EmparentadoAEnchufe = false;
-    public Transform objetoApuntar; // Objeto al que se apuntará desde el Inspector
+    public Transform objetoApuntar; 
     public Transform objetoEscalar;
 
     void OnEnable()

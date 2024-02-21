@@ -4578,7 +4578,7 @@ GameObject:
   - component: {fileID: 583643727}
   m_Layer: 0
   m_Name: PuntoSeguir
-  m_TagString: Limite
+  m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4592,10 +4592,11 @@ Transform:
   m_GameObject: {fileID: 583643725}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.188857, y: 0, z: 6.8047667}
+  m_LocalPosition: {x: -12.85, y: 0, z: 6.8047667}
   m_LocalScale: {x: 0.041852076, y: 0.041852076, z: 0.041852076}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1715625428}
   m_Father: {fileID: 1452562432}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &583643727
@@ -9132,7 +9133,7 @@ GameObject:
   - component: {fileID: 1001046347}
   m_Layer: 0
   m_Name: Conector
-  m_TagString: Untagged
+  m_TagString: Limite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9198,11 +9199,10 @@ Transform:
   m_GameObject: {fileID: 1001046341}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -4.899, y: 0, z: 1}
+  m_LocalPosition: {x: -7.21, y: 0, z: 1}
   m_LocalScale: {x: 2.3081, y: 2.3081, z: 2.3081}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1715625428}
+  m_Children: []
   m_Father: {fileID: 1452562432}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!61 &1001046345
@@ -9234,7 +9234,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -14279,7 +14279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1452562432
 Transform:
   m_ObjectHideFlags: 0
@@ -15213,7 +15213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1542612191
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16712,7 +16712,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1715625428}
   - component: {fileID: 1715625427}
-  - component: {fileID: 1715625429}
   - component: {fileID: 1715625430}
   m_Layer: 0
   m_Name: Platos_7
@@ -16781,58 +16780,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715625426}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.372, y: 0, z: 0}
-  m_LocalScale: {x: 0.018132696, y: 0.018132696, z: 0.018132696}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -138.69722}
+  m_LocalScale: {x: 4.9587264, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1001046343}
+  m_Father: {fileID: 583643726}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1715625429
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715625426}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 13.213865, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0.5}
-    oldSize: {x: 26.427734, y: 26.430002}
-    newSize: {x: 26.427734, y: 26.430002}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 26.427734, y: 26.430002}
-  m_EdgeRadius: 0
 --- !u!114 &1715625430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16848,6 +16802,7 @@ MonoBehaviour:
   escalaMinima: 0.5
   escalaMaxima: 2
   velocidadEscalado: 1
+  enchufe: {fileID: 1001046341}
 --- !u!1 &1723465065
 GameObject:
   m_ObjectHideFlags: 0
