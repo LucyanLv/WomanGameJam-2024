@@ -8,10 +8,15 @@ public class MoverEnchufe : MonoBehaviour
     private Vector3 offset;
     public bool estaSiendoArrastrado = false;
     public bool estaDetectandoEnchufe = false;
-    public bool EmparentadoAEnchufe = false;
-    public Transform objetoApuntar; 
-    public Transform objetoEscalar;
+    public bool emparentadoAEnchufe = false;
+    public Transform objetoApuntar;
+    private SpriteRenderer spriteRenderer;
+    public Sprite enchufado;
 
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     void OnEnable()
     {
         posicionInicial = transform.position;
@@ -20,7 +25,7 @@ public class MoverEnchufe : MonoBehaviour
     void OnDisable()
     {
         transform.position = posicionInicial;
-        EmparentadoAEnchufe = false;
+        emparentadoAEnchufe = false;
     }
 
     void OnMouseDown()
@@ -33,7 +38,7 @@ public class MoverEnchufe : MonoBehaviour
     {
         estaSiendoArrastrado = false;
 
-        if (estaDetectandoEnchufe && EmparentadoAEnchufe)
+        if (estaDetectandoEnchufe && emparentadoAEnchufe)
         {
             Debug.Log("El objeto está emparentado con el enchufe y detectando el enchufe.");
         }
@@ -44,7 +49,7 @@ public class MoverEnchufe : MonoBehaviour
             if (enchufe != null)
             {
                 transform.position = enchufe.transform.position;
-                EmparentadoAEnchufe = true;
+                emparentadoAEnchufe = true;
             }
         }
         else
@@ -68,7 +73,7 @@ public class MoverEnchufe : MonoBehaviour
         if (other.CompareTag("Enchufe"))
         {
             estaDetectandoEnchufe = false;
-            EmparentadoAEnchufe = false;
+            emparentadoAEnchufe = false;
         }
     }
 
@@ -86,6 +91,10 @@ public class MoverEnchufe : MonoBehaviour
             Vector3 direccion = objetoApuntar.position - transform.position;
             float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angulo, Vector3.forward);
+        }
+        if (emparentadoAEnchufe)
+        {
+            spriteRenderer.sprite = enchufado;
         }
     }
 }

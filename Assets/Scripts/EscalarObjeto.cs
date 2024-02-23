@@ -1,44 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EscalarObjeto : MonoBehaviour
 {
-    public float escalaMinima = 0.5f;
-    public float escalaMaxima = 2.0f; 
-    public float velocidadEscalado = 1.0f; 
+    public Transform objetoAEscalar;
+    public float velocidadEscala = 1f;
 
-    private bool colisionConLimite = false;
-
-    public GameObject enchufe;
-
-    void Update()
+    private void Update()
     {
-        if (!colisionConLimite)
+        if (objetoAEscalar != null)
         {
-            GameObject limite = GameObject.FindGameObjectWithTag("Limite");
-            if (limite != null)
-            {
-                float distancia = Mathf.Abs(transform.position.x - enchufe.transform.position.x);
-                //gameObject.GetComponent<SpriteRenderer>().size = new Vector2(distancia, gameObject.GetComponent<SpriteRenderer>().size.y);
+            // Calculamos la diferencia en posición X entre este objeto y el objeto a escalar hacia él
+            float diferenciaX = objetoAEscalar.position.x - transform.position.x;
 
-                //float nuevaEscalaX = Mathf.Clamp(distancia * velocidadEscalado, escalaMinima, escalaMaxima);
-                transform.localScale = new Vector3(distancia, transform.localScale.y, transform.localScale.z);
-                if (enchufe != null)
-                {
-                    Vector3 direccion = enchufe.transform.position - transform.position;
-                    float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
-                    transform.rotation = Quaternion.AngleAxis(angulo, Vector3.forward);
-                }
-            }
-        }
-    }
+            // Calculamos la nueva escala en función de la diferencia X
+            float nuevaEscalaX = Mathf.Abs(diferenciaX);
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Limite"))
-        {
-            colisionConLimite = true;
+            // Aplicamos la nueva escala con una velocidad gradual
+            transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(nuevaEscalaX, transform.localScale.y, transform.localScale.z), velocidadEscala * Time.deltaTime);
         }
     }
 }

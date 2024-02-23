@@ -128,10 +128,10 @@ TextureImporter:
         serializedVersion: 2
         x: 141
         y: 643
-        width: 431
+        width: 353
         height: 277
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,6 +139,27 @@ TextureImporter:
       bones: []
       spriteID: 1a8e78c6516cc754fb7c0c85d7b02ce0
       internalID: -1551166906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enchufe_1
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 761
+        width: 78
+        height: 58
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06b6bd9f11630d648bbb5bf61bdb463b
+      internalID: -358793872
       vertices: []
       indices: 
       edges: []
@@ -155,6 +176,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Enchufe_0: -1551166906
+      Enchufe_1: -358793872
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

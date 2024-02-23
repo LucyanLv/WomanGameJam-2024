@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class MovimientoPlayer : MonoBehaviour
 {
@@ -44,7 +46,6 @@ public class MovimientoPlayer : MonoBehaviour
 
     // Colaiders para desactivarlos
     [Header("Desactivar Colaiders")]
-    public Collider2D personaje;
     public Collider2D enchufe;
     public Collider2D tarjeta;
     public Collider2D luz;
@@ -76,16 +77,37 @@ public class MovimientoPlayer : MonoBehaviour
     public GameObject mensaje6;
     public Animator sextoMensaje;
 
+    [Header("Tareas")]
+    public TMP_Text tarea1;
+    public TMP_Text tarea2;
+    public TMP_Text tarea3;
+    public TMP_Text tarea4;
+    public TMP_Text tarea5;
+    public TMP_Text tarea6;
+    public string texto1;
+    public string texto2;
+    public string texto3;
+    public Color tareaRealizada;
+    public Color tareaAMedia;
+    public Color tareaCasiCompleta;
+
+    [Header("Tareas")]
+    public GameObject tareas;
+    public GameObject use;
+    public bool useUnaVez = false;
+
     private void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
     }
-    
+
     void Update()
     {
         if (!estaEnMiniJuego)
         {
+            tareas.SetActive(true);
+            speed = 5f;
             float movimientoX = Input.GetAxisRaw("Horizontal");
             float movimientoY = Input.GetAxisRaw("Vertical");
             movement = new Vector2(movimientoX, movimientoY).normalized;
@@ -93,6 +115,11 @@ public class MovimientoPlayer : MonoBehaviour
             playerAnimator.SetFloat("Horizontal", movimientoX);
             playerAnimator.SetFloat("Vertical", movimientoY);
             playerAnimator.SetFloat("Velocidad", movement.sqrMagnitude);
+        }
+        else
+        {
+            tareas.SetActive(false);
+            speed = 0f;
         }
 
         if ((juegoCaja || manteniendoEspacio) && Input.GetKey(KeyCode.Space))
@@ -111,11 +138,12 @@ public class MovimientoPlayer : MonoBehaviour
         // 1 si esta en el mini juego y preciona espacio MINIJUEGO ENCHUFE
         if (juegoEnchufe && Input.GetKeyDown(KeyCode.Space))
         {
+            speed = 0;
             miniJuegoEnchufe.SetActive(true);
             enchufe.enabled = false;
             estaEnMiniJuego = true;
         }
-        if (moverEnchufe.EmparentadoAEnchufe)
+        if (moverEnchufe.emparentadoAEnchufe)
         {
             StartCoroutine(DesactivarEnchufe());
         }
@@ -169,21 +197,24 @@ public class MovimientoPlayer : MonoBehaviour
         }
 
         // 6
+        if (llegadasACaja == 1)
+        {
+            tarea6.text = texto1;
+            tarea6.color = tareaAMedia;
+        }
         if (llegadasACaja == 2)
+        {
+            tarea6.text = texto2;
+            tarea6.color = tareaCasiCompleta;
+        }
+        if (llegadasACaja == 3)
         {
             caja.enabled = false;
             llegarCaja.enabled = false;
-            StartCoroutine(Correcto());
-        }
+            tarea6.text = texto3;
+            tarea6.color = tareaRealizada;
 
-        // Desactivar Colaiders
-        if (estaEnMiniJuego)
-        {
-            personaje.enabled = false;
-        }
-        else
-        {
-            personaje.enabled = true;
+            StartCoroutine(Correcto());
         }
     }
     private void FixedUpdate()
@@ -194,7 +225,7 @@ public class MovimientoPlayer : MonoBehaviour
     // Método llamado cuando se produce una colisión en 2D
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("JuegoEnchufe"))
+        if (other.CompareTag("JuegoEnchufe"))
         {
             juegoEnchufe = true;
             puedeUsar.SetActive(true);
@@ -280,13 +311,16 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (!corrutinaEncenderLuz)
         {
+            tarea1.color = tareaRealizada;
             yield return new WaitForSeconds(tiempoDesactivar);
             miniJuegoEncenderLuz.SetActive(false);
             estaEnMiniJuego = false;
             corrutinaEncenderLuz = true;
             mensaje1.SetActive(true);
+            use.SetActive(false);
             yield return new WaitForSeconds(5);
             primerMensaje.SetBool("Desaparecer", true);
+            use.SetActive(true);
             yield return new WaitForSeconds(1);
             mensaje1.SetActive(false);
         }
@@ -295,13 +329,16 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (!corrutinaTarjeta)
         {
+            tarea2.color = tareaRealizada;
             yield return new WaitForSeconds(tiempoDesactivar);
             miniJuegoTarjeta.SetActive(false);
             estaEnMiniJuego = false;
             corrutinaTarjeta = true;
             mensaje2.SetActive(true);
+            use.SetActive(false);
             yield return new WaitForSeconds(5);
             segundoMensaje.SetBool("Desaparecer", true);
+            use.SetActive(true);
             yield return new WaitForSeconds(1);
             mensaje2.SetActive(false);
         }
@@ -310,13 +347,17 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (!corrutinaEnchufe)
         {
+            tarea3.color = tareaRealizada;
+
             yield return new WaitForSeconds(tiempoDesactivar);
             miniJuegoEnchufe.SetActive(false);
             estaEnMiniJuego = false;
             corrutinaEnchufe = true;
             mensaje3.SetActive(true);
+            use.SetActive(false);
             yield return new WaitForSeconds(5);
             tercerMensaje.SetBool("Desaparecer", true);
+            use.SetActive(true);
             yield return new WaitForSeconds(1);
             mensaje3.SetActive(false);
         }
@@ -325,13 +366,17 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (!corrutinaLuz)
         {
+            tarea4.color = tareaRealizada;
+
             yield return new WaitForSeconds(tiempoDesactivar);
             miniJuegoLuces.SetActive(false);
             estaEnMiniJuego = false;
             corrutinaLuz = true;
             mensaje4.SetActive(true);
+            use.SetActive(false);
             yield return new WaitForSeconds(7);
             cuartoMensaje.SetBool("Desaparecer", true);
+            use.SetActive(true);
             yield return new WaitForSeconds(1);
             mensaje4.SetActive(false);
         }
@@ -340,13 +385,17 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (!corrutinaMaquina)
         {
+            tarea5.color = tareaRealizada;
+
             yield return new WaitForSeconds(tiempoDesactivar);
             miniJuegoMaquina.SetActive(false);
             estaEnMiniJuego = false;
             corrutinaMaquina = true;
             mensaje5.SetActive(true);
+            use.SetActive(false);
             yield return new WaitForSeconds(5);
             quintoMensaje.SetBool("Desaparecer", true);
+            use.SetActive(true);
             yield return new WaitForSeconds(1);
             mensaje5.SetActive(false);
         }
@@ -358,9 +407,15 @@ public class MovimientoPlayer : MonoBehaviour
         yield return new WaitForSeconds(tiempoDesactivar);
         correcto.SetActive(false);
         mensaje6.SetActive(true);
-        yield return new WaitForSeconds(5);
-        sextoMensaje.SetBool("Desaparecer", true);
-        yield return new WaitForSeconds(1);
-        mensaje6.SetActive(false);
+        if (!useUnaVez)
+        {
+            use.SetActive(false);
+            yield return new WaitForSeconds(5);
+            sextoMensaje.SetBool("Desaparecer", true);
+            use.SetActive(true);
+            yield return new WaitForSeconds(1);
+            mensaje6.SetActive(false);
+        }
+        useUnaVez = true;
     }
 }
