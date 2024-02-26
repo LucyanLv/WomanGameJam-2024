@@ -70,12 +70,6 @@ public class MovimientoPlayer : MonoBehaviour
     public Animator segundoMensaje;
     public GameObject mensaje3;
     public Animator tercerMensaje;
-    public GameObject mensaje4;
-    public Animator cuartoMensaje;
-    public GameObject mensaje5;
-    public Animator quintoMensaje;
-    public GameObject mensaje6;
-    public Animator sextoMensaje;
 
     [Header("Tareas")]
     public TMP_Text tarea1;
@@ -96,10 +90,21 @@ public class MovimientoPlayer : MonoBehaviour
     public GameObject use;
     public bool useUnaVez = false;
 
+    [Header("Tutorial")]
+    public GameObject fondoNegro;
+    public Animator negroFondo;
+    public GameObject bienvenidos;
+    public Animator bienvenido;
+    public GameObject resto;
+    public Animator restoBienvenido;
+    public GameObject comencemos;
+    public Animator comencemo;
+
     private void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        StartCoroutine(Tutorial());
     }
 
     void Update()
@@ -209,11 +214,11 @@ public class MovimientoPlayer : MonoBehaviour
         }
         if (llegadasACaja == 3)
         {
-            caja.enabled = false;
-            llegarCaja.enabled = false;
             tarea6.text = texto3;
             tarea6.color = tareaRealizada;
-
+            caja.enabled = false;
+            llegarCaja.enabled = false;
+            
             StartCoroutine(Correcto());
         }
     }
@@ -318,7 +323,7 @@ public class MovimientoPlayer : MonoBehaviour
             corrutinaEncenderLuz = true;
             mensaje1.SetActive(true);
             use.SetActive(false);
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(6);
             primerMensaje.SetBool("Desaparecer", true);
             use.SetActive(true);
             yield return new WaitForSeconds(1);
@@ -336,7 +341,7 @@ public class MovimientoPlayer : MonoBehaviour
             corrutinaTarjeta = true;
             mensaje2.SetActive(true);
             use.SetActive(false);
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(7);
             segundoMensaje.SetBool("Desaparecer", true);
             use.SetActive(true);
             yield return new WaitForSeconds(1);
@@ -353,13 +358,6 @@ public class MovimientoPlayer : MonoBehaviour
             miniJuegoEnchufe.SetActive(false);
             estaEnMiniJuego = false;
             corrutinaEnchufe = true;
-            mensaje3.SetActive(true);
-            use.SetActive(false);
-            yield return new WaitForSeconds(5);
-            tercerMensaje.SetBool("Desaparecer", true);
-            use.SetActive(true);
-            yield return new WaitForSeconds(1);
-            mensaje3.SetActive(false);
         }
     }
     IEnumerator DesactivarLuz()
@@ -372,13 +370,6 @@ public class MovimientoPlayer : MonoBehaviour
             miniJuegoLuces.SetActive(false);
             estaEnMiniJuego = false;
             corrutinaLuz = true;
-            mensaje4.SetActive(true);
-            use.SetActive(false);
-            yield return new WaitForSeconds(7);
-            cuartoMensaje.SetBool("Desaparecer", true);
-            use.SetActive(true);
-            yield return new WaitForSeconds(1);
-            mensaje4.SetActive(false);
         }
     }
     IEnumerator DesactivarMaquina()
@@ -391,13 +382,6 @@ public class MovimientoPlayer : MonoBehaviour
             miniJuegoMaquina.SetActive(false);
             estaEnMiniJuego = false;
             corrutinaMaquina = true;
-            mensaje5.SetActive(true);
-            use.SetActive(false);
-            yield return new WaitForSeconds(5);
-            quintoMensaje.SetBool("Desaparecer", true);
-            use.SetActive(true);
-            yield return new WaitForSeconds(1);
-            mensaje5.SetActive(false);
         }
     }
 
@@ -406,16 +390,37 @@ public class MovimientoPlayer : MonoBehaviour
         correcto.SetActive(true);
         yield return new WaitForSeconds(tiempoDesactivar);
         correcto.SetActive(false);
-        mensaje6.SetActive(true);
+        mensaje3.SetActive(true);
         if (!useUnaVez)
         {
             use.SetActive(false);
-            yield return new WaitForSeconds(5);
-            sextoMensaje.SetBool("Desaparecer", true);
+            yield return new WaitForSeconds(6   );
+            tercerMensaje.SetBool("Desaparecer", true);
             use.SetActive(true);
             yield return new WaitForSeconds(1);
-            mensaje6.SetActive(false);
+            mensaje3.SetActive(false);
         }
         useUnaVez = true;
+    }
+    IEnumerator Tutorial()
+    {
+        yield return new WaitForSeconds(1.5f);
+        bienvenidos.SetActive(true);
+
+        yield return new WaitForSeconds(2);
+        bienvenido.SetBool("Desaparecer", true);
+        yield return new WaitForSeconds(2);
+        resto.SetActive(true);
+        yield return new WaitForSeconds(15);
+        restoBienvenido.SetBool("Desaparecer", true);
+        yield return new WaitForSeconds(2);
+        comencemos.SetActive(true);
+        yield return new WaitForSeconds(2);
+        comencemo.SetBool("Desaparecer", true);
+        yield return new WaitForSeconds(2);
+        negroFondo.SetBool("Desaparecer", true);
+        yield return new WaitForSeconds(1);
+        fondoNegro.SetActive(false);
+        comencemos.SetActive(false);
     }
 }
