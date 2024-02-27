@@ -71,6 +71,7 @@ public class MovimientoPlayer : MonoBehaviour
     public GameObject mensaje3;
     public Animator tercerMensaje;
     public GameObject mensaje4;
+    public Animator cuartoMensaje;
 
     [Header("Tareas")]
     public TMP_Text tarea1;
@@ -90,6 +91,7 @@ public class MovimientoPlayer : MonoBehaviour
     public GameObject tareas;
     public GameObject use;
     public bool useUnaVez = false;
+    public bool enchufeUnaVez = false;
 
     [Header("Tutorial")]
     public GameObject fondoNegro;
@@ -416,16 +418,20 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (!corrutinaEnchufe)
         {
-            enchufe.enabled = false;
-            tarea3.color = tareaRealizada;
-            yield return new WaitForSeconds(tiempoDesactivar);
-            miniJuegoEnchufe.SetActive(false);
-            estaEnMiniJuego = false;
-            corrutinaEnchufe = true;
-            if (subeContador == 2)
+            if (!enchufeUnaVez)
             {
-                contadorHacer = contadorHacer + 1;
-                subeContador = subeContador + 1;
+                enchufe.enabled = false;
+                tarea3.color = tareaRealizada;
+                yield return new WaitForSeconds(tiempoDesactivar);
+                miniJuegoEnchufe.SetActive(false);
+                estaEnMiniJuego = false;
+                corrutinaEnchufe = true;
+                if (subeContador == 2)
+                {
+                    contadorHacer = contadorHacer + 1;
+                    subeContador = subeContador + 1;
+                }
+                enchufeUnaVez = true;
             }
         }
     }
@@ -473,22 +479,22 @@ public class MovimientoPlayer : MonoBehaviour
             contadorHacer = contadorHacer + 1;
             subeContador = subeContador + 1;
         }
-        correcto.SetActive(true);
-        yield return new WaitForSeconds(tiempoDesactivar);
-        correcto.SetActive(false);
-        mensaje3.SetActive(true);
+        
         if (!useUnaVez)
         {
+            correcto.SetActive(true);
+            yield return new WaitForSeconds(tiempoDesactivar);
+            correcto.SetActive(false);
+            mensaje3.SetActive(true);
             use.SetActive(false);
-            yield return new WaitForSeconds(6);
+            yield return new WaitForSeconds(7);
             tercerMensaje.SetBool("Desaparecer", true);
             yield return new WaitForSeconds(1);
             mensaje3.SetActive(false);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1.5f);
             mensaje4.SetActive(true);
-            use.SetActive(true);
+            useUnaVez = true;
         }
-        useUnaVez = true;
     }
     IEnumerator MensajesJuego()
     {
