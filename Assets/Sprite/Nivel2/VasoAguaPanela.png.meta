@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef35814a7ac3a234dbda65007cae4615
+guid: 34ccb90c33cd2ee49bc3e63e63a2bf75
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,22 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mesas_0
+      name: VasoAguaPanela_6
       rect:
         serializedVersion: 2
-        x: 302
-        y: 798
-        width: 203
-        height: 324
+        x: 398
+        y: 150
+        width: 508
+        height: 947
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 989f3b75267b07543be0959cbdddf60c
-      internalID: 1856048611
+      spriteID: b009f7e4cb83cd047b8ec6c9c245da66
+      internalID: -1695731828
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mesas_0: 1856048611
+      VasoAguaPanela_0: -1002076614
+      VasoAguaPanela_1: 983960436
+      VasoAguaPanela_2: -1806853326
+      VasoAguaPanela_3: -1884351898
+      VasoAguaPanela_4: 1430239859
+      VasoAguaPanela_5: 1316513202
+      VasoAguaPanela_6: -1695731828
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

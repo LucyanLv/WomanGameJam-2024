@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef35814a7ac3a234dbda65007cae4615
+guid: 8e31768af73401747a5241d86d8b4eb8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mesas_0
+      name: Alimentos_10
       rect:
         serializedVersion: 2
-        x: 302
-        y: 798
-        width: 203
-        height: 324
+        x: 750
+        y: 66
+        width: 378
+        height: 208
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 989f3b75267b07543be0959cbdddf60c
-      internalID: 1856048611
+      spriteID: dd568c4315cf97846a5edeeff7087a93
+      internalID: 865870313
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mesas_0: 1856048611
+      Alimentos_0: -2119642225
+      Alimentos_1: 1301116784
+      Alimentos_10: 865870313
+      Alimentos_2: -659443748
+      Alimentos_3: 1823629299
+      Alimentos_4: -236373689
+      Alimentos_5: -1311551412
+      Alimentos_6: 1270906746
+      Alimentos_7: 695709680
+      Alimentos_8: -1701404036
+      Alimentos_9: 1393961935
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

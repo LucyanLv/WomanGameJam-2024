@@ -8,6 +8,7 @@ public class ValidarPlatoCompleto : MonoBehaviour
     public ValidarPlato validarPlato2;
     public ValidarPlato validarPlato3;
     public ValidarPlato validarPlato4;
+    public ValidarPlato validarVaso;
 
     void Update()
     {
@@ -19,7 +20,14 @@ public class ValidarPlatoCompleto : MonoBehaviour
                 {
                     if (validarPlato4.platoCorrecto)
                     {
-                        Debug.Log("EL PLATO ESTA BIEN ARMADO");
+                        if (validarVaso.platoCorrecto)
+                        {
+                            Debug.Log("EL PLATO ESTA BIEN ARMADO");
+                        }
+                        else
+                        {
+                            Debug.Log("MAL");
+                        }
                     }
                     else
                     {

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef35814a7ac3a234dbda65007cae4615
+guid: 086bfd640e4c6f441af10ab7d27ade8c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,22 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mesas_0
+      name: PapasFritas_0
       rect:
         serializedVersion: 2
-        x: 302
-        y: 798
-        width: 203
-        height: 324
+        x: 204
+        y: 482
+        width: 872
+        height: 353
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 989f3b75267b07543be0959cbdddf60c
-      internalID: 1856048611
+      spriteID: 8b541073f42edf54f99627423acf8300
+      internalID: 784392711
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mesas_0: 1856048611
+      PapasFritas_0: 784392711
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

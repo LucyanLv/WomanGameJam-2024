@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef35814a7ac3a234dbda65007cae4615
+guid: 8502bcd10452c964bab2a9550fbc6b69
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,22 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mesas_0
+      name: Arberjas_0
       rect:
         serializedVersion: 2
-        x: 302
-        y: 798
-        width: 203
-        height: 324
+        x: 231
+        y: 521
+        width: 818
+        height: 347
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 989f3b75267b07543be0959cbdddf60c
-      internalID: 1856048611
+      spriteID: ff78f4bc0f5b0d041b378d29b5ae158a
+      internalID: -1416015931
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mesas_0: 1856048611
+      Arberjas_0: -1416015931
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
