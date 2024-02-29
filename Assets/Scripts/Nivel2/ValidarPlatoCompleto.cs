@@ -9,44 +9,60 @@ public class ValidarPlatoCompleto : MonoBehaviour
     public ValidarPlato validarPlato3;
     public ValidarPlato validarPlato4;
     public ValidarPlato validarVaso;
+    public bool armado;
+    public bool completo;
 
+    //public float intervaloMensajeMal = 5f;
+    //public float tiempoUltimoMensajeMal;
+
+    public GameObject feliz;
+    public GameObject enojado;
+
+    private void Start()
+    {
+        armado = true;
+        completo = true;
+        //tiempoUltimoMensajeMal = -intervaloMensajeMal;
+    }
     void Update()
     {
-        if (validarPlato1.platoCorrecto)
+        if (completo)
         {
-            if (validarPlato2.platoCorrecto)
+            if (validarPlato1.platoCorrecto && validarPlato2.platoCorrecto &&
+                validarPlato3.platoCorrecto && validarPlato4.platoCorrecto &&
+                validarVaso.platoCorrecto)
             {
-                if (validarPlato3.platoCorrecto)
+                if (armado)
                 {
-                    if (validarPlato4.platoCorrecto)
-                    {
-                        if (validarVaso.platoCorrecto)
-                        {
-                            Debug.Log("EL PLATO ESTA BIEN ARMADO");
-                        }
-                        else
-                        {
-                            Debug.Log("MAL");
-                        }
-                    }
-                    else
-                    {
-                        Debug.Log("MAL");
-                    }
-                }
-                else
-                {
-                    Debug.Log("MAL");
+                    Debug.Log("EL PLATO ESTA BIEN ARMADO");
+                    armado = false;
+                    completo = false;
+                    StartCoroutine(Feliz());
                 }
             }
-            else
-            {
-                Debug.Log("MAL");
-            }
+            //else
+            //{
+            //    siguienteValidar.SetActive(true);
+            //    // Verificar si ha pasado el tiempo suficiente desde el último mensaje "MAL"
+            //    if (Time.time - tiempoUltimoMensajeMal >= intervaloMensajeMal)
+            //    {
+            //        Debug.Log("MAL");
+            //        StartCoroutine(Enojado());
+            //        tiempoUltimoMensajeMal = Time.time; // Actualizar el tiempo del último mensaje "MAL"
+            //    }
+            //}
         }
-        else
-        {
-            Debug.Log("MAL");
-        }
+    }
+    IEnumerator Feliz()
+    {
+        feliz.SetActive(true);
+        yield return new WaitForSeconds(3);
+        feliz.SetActive(false);
+    }
+    IEnumerator Enojado()
+    {
+        enojado.SetActive(true);
+        yield return new WaitForSeconds(3);
+        enojado.SetActive(false);
     }
 }

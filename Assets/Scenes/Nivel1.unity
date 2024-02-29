@@ -6392,7 +6392,7 @@ Transform:
   m_GameObject: {fileID: 565426945}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.15, y: -11.66, z: 11.169022}
+  m_LocalPosition: {x: -11.24, y: 3.23, z: 11.169022}
   m_LocalScale: {x: 1, y: 6.075, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7421,7 +7421,7 @@ MonoBehaviour:
   spriteEste: {fileID: 647503468}
   focoApagado: {fileID: -161031269, guid: 8d42980fe12b4704e9b8f7291ac54d0e, type: 3}
   focoEncendido: {fileID: -1212023190, guid: 8d42980fe12b4704e9b8f7291ac54d0e, type: 3}
-  tiempoParaPosicionInicial: 2
+  tiempoParaPosicionInicial: 1.2
 --- !u!61 &647503471
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8982,7 +8982,7 @@ MonoBehaviour:
   spriteEste: {fileID: 816248151}
   focoApagado: {fileID: -1217014965, guid: 8d42980fe12b4704e9b8f7291ac54d0e, type: 3}
   focoEncendido: {fileID: 1321356768, guid: 8d42980fe12b4704e9b8f7291ac54d0e, type: 3}
-  tiempoParaPosicionInicial: 2
+  tiempoParaPosicionInicial: 1.2
 --- !u!61 &816248154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9321,7 +9321,7 @@ MonoBehaviour:
   spriteEste: {fileID: 820050019}
   focoApagado: {fileID: 1575953448, guid: 8d42980fe12b4704e9b8f7291ac54d0e, type: 3}
   focoEncendido: {fileID: 1370346190, guid: 8d42980fe12b4704e9b8f7291ac54d0e, type: 3}
-  tiempoParaPosicionInicial: 1
+  tiempoParaPosicionInicial: 1.2
 --- !u!61 &820050022
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9503,7 +9503,7 @@ MonoBehaviour:
   spriteEste: {fileID: 828838723}
   focoApagado: {fileID: -1025629993, guid: 8d42980fe12b4704e9b8f7291ac54d0e, type: 3}
   focoEncendido: {fileID: 345970614, guid: 8d42980fe12b4704e9b8f7291ac54d0e, type: 3}
-  tiempoParaPosicionInicial: 2
+  tiempoParaPosicionInicial: 1.2
 --- !u!61 &828838726
 BoxCollider2D:
   m_ObjectHideFlags: 0

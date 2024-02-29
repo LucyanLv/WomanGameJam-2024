@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - ObjetoAgarrable
-  - Plato
   - Enchufe
   - Roseta
   - JuegoEnchufe
@@ -19,6 +18,11 @@ TagManager:
   - JuegoCaja
   - LlegoCaja
   - Limite
+  - Vaso
+  - Plato1
+  - Plato2
+  - Plato3
+  - Plato4
   layers:
   - Default
   - TransparentFX

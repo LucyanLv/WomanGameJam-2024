@@ -2,24 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoverObjeto : MonoBehaviour
+public class MoverPlato2 : MonoBehaviour
 {
     private Vector3 posicionInicial;
     private Vector3 offset;
     public bool arrastrando = false;
     public bool enPlato = false;
+    private GameObject platoActual;
 
-    public GameObject objetoACambiarSprite;
-    public Sprite nuevoSpriteEnPlato;
-
-    private SpriteRenderer spriteRendererObjetoACambiar;
+    public Sprite nuevoSpritePlato;
 
     private void Start()
     {
         posicionInicial = transform.position;
-
-        // Obtener el SpriteRenderer del objeto a cambiar sprite
-        spriteRendererObjetoACambiar = objetoACambiarSprite.GetComponent<SpriteRenderer>();
     }
 
     private void OnMouseDown()
@@ -31,13 +26,11 @@ public class MoverObjeto : MonoBehaviour
     private void OnMouseUp()
     {
         arrastrando = false;
-        // Siempre regresa a la posición inicial
-        transform.position = posicionInicial;
-
-        if (enPlato && nuevoSpriteEnPlato != null && spriteRendererObjetoACambiar != null)
+        if (enPlato && platoActual != null)
         {
-            spriteRendererObjetoACambiar.sprite = nuevoSpriteEnPlato;
+            CambiarSpritePlato(platoActual);
         }
+        transform.position = posicionInicial;
     }
 
     private void Update()
@@ -51,16 +44,32 @@ public class MoverObjeto : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Plato"))
+        if (collision.CompareTag("Plato2"))
         {
             enPlato = true;
+            platoActual = collision.gameObject;
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Plato"))
+        if (collision.CompareTag("Plato2"))
         {
             enPlato = false;
+            platoActual = null;
+        }
+    }
+
+    private void CambiarSpritePlato(GameObject plato)
+    {
+        SpriteRenderer spriteRendererPlato = plato.GetComponent<SpriteRenderer>();
+        if (spriteRendererPlato != null && nuevoSpritePlato != null)
+        {
+            spriteRendererPlato.sprite = nuevoSpritePlato;
+        }
+        else
+        {
+            Debug.LogError("No se pudo cambiar el sprite del plato");
         }
     }
 
