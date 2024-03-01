@@ -134,6 +134,13 @@ public class MovimientoPlayer : MonoBehaviour
     public GameObject particula5;
     public GameObject particula6;
     public GameObject particula7;
+    public GameObject particula8;
+
+    [Header("Termino Nivel")]
+    public GameObject abrirPuerta;
+
+    [Header("Camion")]
+    public Animator camion;
 
     private void Start()
     {
@@ -271,8 +278,10 @@ public class MovimientoPlayer : MonoBehaviour
             caja.enabled = false;
             llegarCaja.enabled = false;
             queHacer6.SetBool("Desaparecer", true);
-
+            abrirPuerta.SetActive(false);
+            particula8.SetActive(true);
             StartCoroutine(Correcto());
+            correcto.SetActive(false);
         }
     }
     private void FixedUpdate()
@@ -494,6 +503,7 @@ public class MovimientoPlayer : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
             mensaje4.SetActive(true);
             useUnaVez = true;
+            camion.SetBool("Arrancar", true);
         }
     }
     IEnumerator MensajesJuego()

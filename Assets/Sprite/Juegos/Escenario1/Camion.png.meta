@@ -1,0 +1,359 @@
+fileFormatVersion: 2
+guid: 6725a6f2a9bbba54199905be5837c32b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Camion_0
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 935
+        width: 282
+        height: 184
+      alignment: 9
+      pivot: {x: 0.9515572, y: 0.20800051}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2e041adcd8c0e4a9a727104996606f
+      internalID: 987263497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camion_1
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 936
+        width: 292
+        height: 184
+      alignment: 9
+      pivot: {x: 0.9198424, y: 0.20984815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1572981f97525c47897983a4176f8fd
+      internalID: 1039980110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camion_3
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 936
+        width: 295
+        height: 184
+      alignment: 9
+      pivot: {x: 0.9086769, y: 0.21226601}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f52e388365f4e884a8a7f0d19aac3370
+      internalID: -1153132058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camion_8
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 622
+        width: 299
+        height: 183
+      alignment: 9
+      pivot: {x: 0.8984762, y: 0.21091348}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9474ac811dc024b8696832034e01ae
+      internalID: -1405981956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camion_9
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 623
+        width: 306
+        height: 183
+      alignment: 9
+      pivot: {x: 0.8782784, y: 0.20720735}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4424142bdbd908541b538c97997bc6d1
+      internalID: 911186349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camion_11
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 623
+        width: 300
+        height: 184
+      alignment: 9
+      pivot: {x: 0.89564043, y: 0.21002728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb74b000e18e7d4c8ce4cd12a9196a9
+      internalID: 1500701641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camion_17
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 266
+        width: 301
+        height: 186
+      alignment: 9
+      pivot: {x: 0.892087, y: 0.22085096}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 712e80a5aeffd83438b2c87ce2da3402
+      internalID: 1105675480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camion_18
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 267
+        width: 307
+        height: 185
+      alignment: 9
+      pivot: {x: 0.8737568, y: 0.21302606}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88211ecec993c14408447d65bf6928ed
+      internalID: 1903893999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camion_20
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 270
+        width: 310
+        height: 185
+      alignment: 9
+      pivot: {x: 0.8658432, y: 0.21405458}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f16bdb7768d7c44cb72a7ce603c9d6e
+      internalID: -1152031034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Camion_0: 987263497
+      Camion_1: 1039980110
+      Camion_10: 565155783
+      Camion_11: 1500701641
+      Camion_12: -1472226534
+      Camion_13: 1129271719
+      Camion_14: -812167278
+      Camion_15: -1228242716
+      Camion_16: 29314528
+      Camion_17: 1105675480
+      Camion_18: 1903893999
+      Camion_19: -1210789262
+      Camion_2: -699601351
+      Camion_20: -1152031034
+      Camion_21: -1989693984
+      Camion_22: -495272907
+      Camion_23: -639637517
+      Camion_24: -1273170449
+      Camion_25: 1492664198
+      Camion_26: 2075535700
+      Camion_27: -443449879
+      Camion_28: -503153129
+      Camion_29: 1288440419
+      Camion_3: -1153132058
+      Camion_4: -45600306
+      Camion_5: 494668435
+      Camion_6: -259799794
+      Camion_7: 1873718150
+      Camion_8: -1405981956
+      Camion_9: 911186349
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d1e01bb0cb6dda5469ec9cfcbce76c9e
+guid: 4deffd504cbe6dc4e887ab232c74195c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,64 +123,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bandeja_0
+      name: Camion1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 4541
-        height: 10907
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 60
+        y: 791
+        width: 282
+        height: 184
+      alignment: 9
+      pivot: {x: 0.95562506, y: 0.20757326}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e153f872073ae4e4db17f185bc7c738b
-      internalID: 847757740
+      spriteID: 52e3f9996c14bdf43ac2b3f4f7eed533
+      internalID: 801583623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bandeja_1
+      name: Camion1_1
       rect:
         serializedVersion: 2
-        x: 5473
-        y: 5853
-        width: 4216
-        height: 1036
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 450
+        y: 791
+        width: 315
+        height: 189
+      alignment: 9
+      pivot: {x: 0.8535598, y: 0.20446584}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba9a66f71bced8d47b30227823a651c9
-      internalID: -373459889
+      spriteID: 06da8ec0876bf0d48a2e207aa37c4187
+      internalID: -1134217238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bandeja_2
+      name: Camion1_2
       rect:
         serializedVersion: 2
-        x: 5926
-        y: 7635
-        width: 3375
-        height: 2629
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 892
+        y: 792
+        width: 322
+        height: 199
+      alignment: 9
+      pivot: {x: 0.830008, y: 0.20220211}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2394f83674e1f114b8795c48f7a0edae
-      internalID: 2101098373
+      spriteID: 621241d22c1e4a140a2c1776c62b08e1
+      internalID: 1057043328
       vertices: []
       indices: 
       edges: []
@@ -196,9 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bandeja_0: 847757740
-      Bandeja_1: -373459889
-      Bandeja_2: 2101098373
+      Camion1_0: 801583623
+      Camion1_1: -1134217238
+      Camion1_2: 1057043328
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

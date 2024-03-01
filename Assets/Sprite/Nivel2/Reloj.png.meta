@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d1e01bb0cb6dda5469ec9cfcbce76c9e
+guid: 5c1540aaa7d138f48bd2f5c75b3c23ce
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,70 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Bandeja_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 4541
-        height: 10907
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e153f872073ae4e4db17f185bc7c738b
-      internalID: 847757740
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bandeja_1
-      rect:
-        serializedVersion: 2
-        x: 5473
-        y: 5853
-        width: 4216
-        height: 1036
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba9a66f71bced8d47b30227823a651c9
-      internalID: -373459889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bandeja_2
-      rect:
-        serializedVersion: 2
-        x: 5926
-        y: 7635
-        width: 3375
-        height: 2629
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2394f83674e1f114b8795c48f7a0edae
-      internalID: 2101098373
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -195,10 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Bandeja_0: 847757740
-      Bandeja_1: -373459889
-      Bandeja_2: 2101098373
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

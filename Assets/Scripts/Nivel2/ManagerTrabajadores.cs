@@ -1,155 +1,75 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ManagerTrabajadores : MonoBehaviour
 {
-    public Animator trabajador1;
-    public Animator mensaje1;
-    public Animator trabajador2;
-    public Animator mensaje2;
-    public Animator trabajador3;
-    public Animator mensaje3;
-    public Animator trabajador4;
-    public Animator mensaje4;
-    public Animator trabajador5;
-    public Animator mensaje5;
-    public Animator trabajador6;
-    public Animator mensaje6;
-    public Animator trabajador7;
-    public Animator mensaje7;
-    public Animator trabajador8;
-    public Animator mensaje8;
-    public Animator trabajador9;
-    public Animator mensaje9;
-    public Animator trabajador10;
-    public Animator mensaje10;
+    public Animator[] trabajadores;
+    public Animator[] mensajes;
     public Animator fondo;
-
     public float tiempoEspera;
+    public float tiempoTotal;
+
+    //Cronometro
+    [SerializeField] private float tiempoActual;
+    [SerializeField] private bool tiempoActivado = false;
+    [SerializeField] private Slider slider;
+    // Boton
+    public GameObject boton;
+
     void Start()
     {
-        StartCoroutine(Trabajadores());
+        StartCoroutine(EjecutarTrabajadores());
     }
-    IEnumerator Trabajadores()
+
+    private void Update()
     {
-        //**TRABAJADOR #1**//
-        yield return new WaitForSeconds(1F);
-        trabajador1.SetBool("Entrar", true);
-        yield return new WaitForSeconds(tiempoEspera);
-        trabajador1.SetBool("Salir", true);
-        yield return new WaitForSeconds(1f);
-        fondo.SetBool("FondoEntrar", true);
-        mensaje1.SetBool("Entrar", true);
-        yield return new WaitForSeconds(8);
-        fondo.SetBool("FondoEntrar", false);
-        mensaje1.SetBool("Salir", true);
-
-        //**TRABAJADOR #2**//
-        yield return new WaitForSeconds(1F);
-        trabajador2.SetBool("Entrar", true);
-        yield return new WaitForSeconds(tiempoEspera);
-        trabajador2.SetBool("Salir", true);
-        yield return new WaitForSeconds(1f);
-        fondo.SetBool("FondoEntrar", true);
-        mensaje2.SetBool("Entrar", true);
-        yield return new WaitForSeconds(8);
-        fondo.SetBool("FondoEntrar", false);
-        mensaje2.SetBool("Salir", true);
-
-        //**TRABAJADOR #3**//
-        yield return new WaitForSeconds(1f);
-        trabajador3.SetBool("Entrar", true);
-        yield return new WaitForSeconds(tiempoEspera);
-        trabajador3.SetBool("Salir", true);
-        yield return new WaitForSeconds(1f);
-        fondo.SetBool("FondoEntrar", true);
-        mensaje3.SetBool("Entrar", true);
-        yield return new WaitForSeconds(8);
-        fondo.SetBool("FondoEntrar", false);
-        mensaje3.SetBool("Salir", true);
-
-        //**TRABAJADOR #4**//
-        yield return new WaitForSeconds(1f);
-        trabajador4.SetBool("Entrar", true);
-        yield return new WaitForSeconds(tiempoEspera);
-        trabajador4.SetBool("Salir", true);
-        yield return new WaitForSeconds(1f);
-        fondo.SetBool("FondoEntrar", true);
-        mensaje4.SetBool("Entrar", true);
-        yield return new WaitForSeconds(8);
-        fondo.SetBool("FondoEntrar", false);
-        mensaje4.SetBool("Salir", true);
-
-        //**TRABAJADOR #5**//
-        yield return new WaitForSeconds(1f);
-        trabajador5.SetBool("Entrar", true);
-        yield return new WaitForSeconds(tiempoEspera);
-        trabajador5.SetBool("Salir", true);
-        yield return new WaitForSeconds(1f);
-        fondo.SetBool("FondoEntrar", true);
-        mensaje5.SetBool("Entrar", true);
-        yield return new WaitForSeconds(8);
-        fondo.SetBool("FondoEntrar", false);
-        mensaje5.SetBool("Salir", true);
-
-        //**TRABAJADOR #6**//
-        yield return new WaitForSeconds(1F);
-        trabajador6.SetBool("Entrar", true);
-        yield return new WaitForSeconds(tiempoEspera);
-        trabajador6.SetBool("Salir", true);
-        yield return new WaitForSeconds(1f);
-        fondo.SetBool("FondoEntrar", true);
-        mensaje6.SetBool("Entrar", true);
-        yield return new WaitForSeconds(8);
-        fondo.SetBool("FondoEntrar", false);
-        mensaje6.SetBool("Salir", true);
-
-        //**TRABAJADOR #7**//
-        yield return new WaitForSeconds(1f);
-        trabajador7.SetBool("Entrar", true);
-        yield return new WaitForSeconds(tiempoEspera);
-        trabajador7.SetBool("Salir", true);
-        yield return new WaitForSeconds(1f);
-        fondo.SetBool("FondoEntrar", true);
-        mensaje7.SetBool("Entrar", true);
-        yield return new WaitForSeconds(8);
-        fondo.SetBool("FondoEntrar", false);
-        mensaje7.SetBool("Salir", true);
-
-        //**TRABAJADOR #8**//
-        yield return new WaitForSeconds(1f);
-        trabajador8.SetBool("Entrar", true);
-        yield return new WaitForSeconds(tiempoEspera);
-        trabajador8.SetBool("Salir", true);
-        yield return new WaitForSeconds(1f);
-        fondo.SetBool("FondoEntrar", true);
-        mensaje8.SetBool("Entrar", true);
-        yield return new WaitForSeconds(8);
-        fondo.SetBool("FondoEntrar", false);
-        mensaje8.SetBool("Salir", true);
-
-        //**TRABAJADOR #9**//
-        yield return new WaitForSeconds(1F);
-        trabajador9.SetBool("Entrar", true);
-        yield return new WaitForSeconds(tiempoEspera);
-        trabajador9.SetBool("Salir", true);
-        yield return new WaitForSeconds(1f);
-        fondo.SetBool("FondoEntrar", true);
-        mensaje9.SetBool("Entrar", true);
-        yield return new WaitForSeconds(8);
-        fondo.SetBool("FondoEntrar", false);
-        mensaje9.SetBool("Salir", true);
-
-        //**TRABAJADOR #10**//
-        yield return new WaitForSeconds(1F);
-        trabajador10.SetBool("Entrar", true);
-        yield return new WaitForSeconds(tiempoEspera);
-        trabajador10.SetBool("Salir", true);
-        yield return new WaitForSeconds(1f);
-        fondo.SetBool("FondoEntrar", true);
-        mensaje10.SetBool("Entrar", true);
-        yield return new WaitForSeconds(8);
-        fondo.SetBool("FondoEntrar", false);
-        mensaje10.SetBool("Salir", true);
+        if (tiempoActivado)
+        {
+            Contador();
+        }
     }
+    private void Contador()
+    {
+        tiempoActual -= Time.deltaTime;
+        if (tiempoActual >= 0)
+        {
+            slider.value = tiempoActual;
+        }
+        if (tiempoActual <= 0)
+        {
+            Debug.Log("DEVUELVE");
+            tiempoActual = tiempoEspera;
+        }
+    }
+    IEnumerator EjecutarTrabajadores()
+    {
+        while (true)
+        {
+            // Recorrer todos los trabajadores
+            for (int i = 0; i < trabajadores.Length; i++)
+            {
+                tiempoActivado = true;
+                slider.maxValue = tiempoEspera;
+                // Entrada del trabajador
+                trabajadores[i].SetBool("Entrar", true);
+                yield return new WaitForSeconds(tiempoEspera);
+
+                // Salida del trabajador
+                trabajadores[i].SetBool("Salir", true);
+                tiempoActivado = false;
+                yield return new WaitForSeconds(1);
+
+                // Animación del mensaje
+                fondo.SetBool("FondoEntrar", true);
+                mensajes[i].SetBool("Entrar", true);
+                yield return new WaitForSeconds(tiempoTotal);
+                fondo.SetBool("FondoEntrar", false);
+                mensajes[i].SetBool("Salir", true);
+                yield return new WaitForSeconds(1.5f);
+            }
+            boton.SetActive(true);
+        }
+    }
+
 }
