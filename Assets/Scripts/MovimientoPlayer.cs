@@ -54,7 +54,7 @@ public class MovimientoPlayer : MonoBehaviour
     public Collider2D caja;
     public Collider2D llegarCaja;
 
-    public GameObject correcto;
+    public Animator correcto;
 
     [Header("Boleanos Corrutinas")]
     public bool corrutinaEnchufe = false;
@@ -72,6 +72,7 @@ public class MovimientoPlayer : MonoBehaviour
     public Animator tercerMensaje;
     public GameObject mensaje4;
     public Animator cuartoMensaje;
+    public Animator fondoMensaje;
 
     [Header("Tareas")]
     public TMP_Text tarea1;
@@ -127,14 +128,14 @@ public class MovimientoPlayer : MonoBehaviour
     public Animator queHacer6;
 
     [Header("Particula")]
-    public GameObject particula1;
-    public GameObject particula2;
-    public GameObject particula3;
-    public GameObject particula4;
-    public GameObject particula5;
-    public GameObject particula6;
-    public GameObject particula7;
-    public GameObject particula8;
+    public Animator particula1;
+    public Animator particula2;
+    public Animator particula3;
+    public Animator particula4;
+    public Animator particula5;
+    public Animator particula6;
+    public Animator particula7;
+    public Animator particula8;
 
     [Header("Termino Nivel")]
     public GameObject abrirPuerta;
@@ -142,6 +143,7 @@ public class MovimientoPlayer : MonoBehaviour
     [Header("Camion")]
     public Animator camion;
 
+    public MoverEnchufe validarEnchufe;
     private void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
@@ -279,9 +281,7 @@ public class MovimientoPlayer : MonoBehaviour
             llegarCaja.enabled = false;
             queHacer6.SetBool("Desaparecer", true);
             abrirPuerta.SetActive(false);
-            particula8.SetActive(true);
             StartCoroutine(Correcto());
-            correcto.SetActive(false);
         }
     }
     private void FixedUpdate()
@@ -392,7 +392,7 @@ public class MovimientoPlayer : MonoBehaviour
             corrutinaEncenderLuz = true;
             mensaje1.SetActive(true);
             use.SetActive(false);
-            yield return new WaitForSeconds(6);
+            yield return new WaitForSeconds(8);
             primerMensaje.SetBool("Desaparecer", true);
             use.SetActive(true);
             yield return new WaitForSeconds(1);
@@ -416,7 +416,7 @@ public class MovimientoPlayer : MonoBehaviour
             corrutinaTarjeta = true;
             mensaje2.SetActive(true);
             use.SetActive(false);
-            yield return new WaitForSeconds(7);
+            yield return new WaitForSeconds(10);
             segundoMensaje.SetBool("Desaparecer", true);
             use.SetActive(true);
             yield return new WaitForSeconds(1);
@@ -488,22 +488,23 @@ public class MovimientoPlayer : MonoBehaviour
             contadorHacer = contadorHacer + 1;
             subeContador = subeContador + 1;
         }
-        
+
         if (!useUnaVez)
         {
-            correcto.SetActive(true);
+            camion.SetBool("Arrancar", true);
+            yield return new WaitForSeconds(1);
+            camion.SetBool("Arrancar", false);
+            correcto.SetBool("Aparecer", true);
             yield return new WaitForSeconds(tiempoDesactivar);
-            correcto.SetActive(false);
             mensaje3.SetActive(true);
             use.SetActive(false);
-            yield return new WaitForSeconds(7);
+            yield return new WaitForSeconds(10);
             tercerMensaje.SetBool("Desaparecer", true);
             yield return new WaitForSeconds(1);
             mensaje3.SetActive(false);
             yield return new WaitForSeconds(1.5f);
             mensaje4.SetActive(true);
             useUnaVez = true;
-            camion.SetBool("Arrancar", true);
         }
     }
     IEnumerator MensajesJuego()
@@ -514,53 +515,54 @@ public class MovimientoPlayer : MonoBehaviour
             encenderLuz.enabled = true;
             hacer1.SetActive(true);
             yield return new WaitForSeconds(1);
-            particula1.SetActive(true);
+            particula1.SetBool("CirculoEntrar", true);
         }
         else
         {
             hacer1.SetActive(false);
-            particula1.SetActive(false);
+            particula1.SetBool("CirculoEntrar", false);
             encenderLuz.enabled = false;
         }
         if (contadorHacer == 1)
         {
-            yield return new WaitForSeconds(7);
+            yield return new WaitForSeconds(9.5f);
             tarjeta.enabled = true;
             hacer2.SetActive(true);
             yield return new WaitForSeconds(1);
-            particula2.SetActive(true);
+            particula2.SetBool("CirculoEntrar", true);
         }
         else
         {
             hacer2.SetActive(false);
-            particula2.SetActive(false);
+            particula2.SetBool("CirculoEntrar", false);
             tarjeta.enabled = false;
         }
         if (contadorHacer == 2)
         {
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(14);
             enchufe.enabled = true;
             hacer3.SetActive(true);
-            yield return new WaitForSeconds(1);
-            particula3.SetActive(true);
+            particula3.SetBool("CirculoEntrar", true);
         }
         else
         {
-            particula3.SetActive(false);
-            hacer3.SetActive(false);
             enchufe.enabled = false;
+            hacer3.SetActive(false);
+            particula3.SetBool("CirculoEntrar", false);
         }
         if (contadorHacer == 3)
         {
             luz.enabled = true;
             hacer4.SetActive(true);
             yield return new WaitForSeconds(1);
-            particula4.SetActive(true);
+            particula4.SetBool("CirculoEntrar", true);
+
         }
         else
         {
             hacer4.SetActive(false);
-            particula4.SetActive(false);
+            particula4.SetBool("CirculoEntrar", false);
+
             luz.enabled = false;
         }
         if (contadorHacer == 4)
@@ -568,12 +570,14 @@ public class MovimientoPlayer : MonoBehaviour
             maquina.enabled = true;
             hacer5.SetActive(true);
             yield return new WaitForSeconds(1);
-            particula5.SetActive(true);
+            particula5.SetBool("CirculoEntrar", true);
+
         }
         else
         {
             hacer5.SetActive(false);
-            particula5.SetActive(false);
+            particula5.SetBool("CirculoEntrar", false);
+
             maquina.enabled = false;
         }
         if (contadorHacer == 5)
@@ -581,16 +585,23 @@ public class MovimientoPlayer : MonoBehaviour
             caja.enabled = true;
             hacer6.SetActive(true);
             yield return new WaitForSeconds(1);
-            particula6.SetActive(true);
+            particula6.SetBool("CirculoEntrar", true);
+
             yield return new WaitForSeconds(1);
-            particula7.SetActive(true);
+            particula7.SetBool("CirculoEntrar", true);
+
         }
         else
         {
             hacer6.SetActive(false);
-            particula6.SetActive(false);
-            particula7.SetActive(false);
+            particula6.SetBool("CirculoEntrar", false);
+            particula7.SetBool("CirculoEntrar", false);
+
             caja.enabled = false;
+        }
+        if (contadorHacer == 6)
+        {
+            particula8.SetBool("CirculoEntrar", true);
         }
     }
     IEnumerator TutorialInicial()

@@ -16,8 +16,6 @@ public class VolverMenu : MonoBehaviour
     {
         pantallaNegra.SetActive(true);
         yield return new WaitForSeconds(1f);
-
         SceneManager.LoadScene(nombreEscena);
-
     }
 }

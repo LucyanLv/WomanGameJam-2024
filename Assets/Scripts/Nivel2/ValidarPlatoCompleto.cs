@@ -56,7 +56,7 @@ public class ValidarPlatoCompleto : MonoBehaviour
     IEnumerator Feliz()
     {
         feliz.SetActive(true);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(15);
         feliz.SetActive(false);
     }
     IEnumerator Enojado()

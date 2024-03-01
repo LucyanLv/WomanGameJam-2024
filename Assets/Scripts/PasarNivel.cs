@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PasarNivel : MonoBehaviour
 {
     public string nombreProximaEscena; // Nombre de la próxima escena
-    public Animator fondoNegro;
+    public GameObject fondoNegro;
     // Este método se llama cuando algo entra en contacto con el collider del objeto
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,7 +17,7 @@ public class PasarNivel : MonoBehaviour
     }
     IEnumerator ActivarPantalla()
     {
-        fondoNegro.SetBool("Aparecer", true);
+        fondoNegro.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(nombreProximaEscena);
     }
