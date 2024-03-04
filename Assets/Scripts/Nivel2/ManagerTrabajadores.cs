@@ -10,7 +10,7 @@ public class ManagerTrabajadores : MonoBehaviour
     public float tiempoEspera;
     public float tiempoTotal;
 
-    //Cronometro
+    // Cronometro
     [SerializeField] private float tiempoActual;
     [SerializeField] private bool tiempoActivado = false;
     [SerializeField] private Slider slider;
@@ -18,7 +18,7 @@ public class ManagerTrabajadores : MonoBehaviour
     // Boton
     public GameObject boton;
 
-    //Tutorial
+    // Tutorial
     public Animator mensaje1;
     public Animator mensaje2;
     public Animator fondoGris;
