@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DetectarProducto : MonoBehaviour
 {
@@ -18,6 +19,22 @@ public class DetectarProducto : MonoBehaviour
     public SpriteRenderer spriteIncorrecto;
     public Sprite luzRoja;
 
+    [Header("Mensajes En MiniJuego")]
+    public TMP_Text numeroCajas;
+    public string caja1;
+    public string caja2;
+    public string caja3;
+    public string caja4;
+    public string caja5;
+    public string caja6;
+    public string caja7;
+    public string caja8;
+    public string caja9;
+    public string caja10;
+
+    public Color tareaRealizada;
+    public Color tareaAMedia;
+    public Color tareaCasiCompleta;
     private void Start()
     {
         // Guardar el tamaño original del objeto al inicio
@@ -26,11 +43,52 @@ public class DetectarProducto : MonoBehaviour
 
     private void Update()
     {
+        if (contador == 1)
+        {
+            numeroCajas.text = caja1;
+        }
+        if (contador == 2)
+        {
+            numeroCajas.text = caja2;
+        }
+        if (contador == 3)
+        {
+            numeroCajas.text = caja3;
+            numeroCajas.color = tareaCasiCompleta;
+        }
+        if (contador == 4)
+        {
+            numeroCajas.text = caja4;
+        }
+        if (contador == 5)
+        {
+            numeroCajas.text = caja5;
+        }
+        if (contador == 6)
+        {
+            numeroCajas.text = caja6;
+            numeroCajas.color = tareaAMedia;
+        }
+        if (contador == 7)
+        {
+            numeroCajas.text = caja7;
+        }
+        if (contador == 8)
+        {
+            numeroCajas.text = caja8;
+        }
+        if (contador == 9)
+        {
+            numeroCajas.text = caja9;
+        }
         if (contador >= 10)
         {
-            terminoJuegoMaquina = true;
+            numeroCajas.text = caja10;
+            numeroCajas.color = tareaRealizada;
+            StartCoroutine(Desactivar());
             spriteCorrecto.sprite = luzVerde;
             spriteIncorrecto.sprite = luzRoja;
+            terminoJuegoMaquina = true;
             StartCoroutine(Desactivar());
         }
     }
@@ -62,7 +120,7 @@ public class DetectarProducto : MonoBehaviour
 
     IEnumerator Desactivar()
     {
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.5f);
     }
 
     private void OnDisable()

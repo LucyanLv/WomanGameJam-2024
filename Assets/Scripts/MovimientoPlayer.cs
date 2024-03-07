@@ -144,6 +144,14 @@ public class MovimientoPlayer : MonoBehaviour
     public Animator camion;
 
     public MoverEnchufe validarEnchufe;
+
+    [Header("Mensajes En MiniJuego")]
+    public Animator m1;
+    public Animator m2;
+    public Animator m3;
+    public Animator m4;
+    public Animator m5;
+
     private void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
@@ -208,6 +216,7 @@ public class MovimientoPlayer : MonoBehaviour
             miniJuegoEnchufe.SetActive(true);
             enchufe.enabled = false;
             estaEnMiniJuego = true;
+            StartCoroutine(MensajeM3());
         }
         if (moverEnchufe.emparentadoAEnchufe)
         {
@@ -220,6 +229,7 @@ public class MovimientoPlayer : MonoBehaviour
             estaEnMiniJuego = true;
             miniJuegoTarjeta.SetActive(true);
             tarjeta.enabled = false;
+            StartCoroutine(MensajeM2());
         }
         if (moverTarjeta.terminoJuegoTarjeta)
         {
@@ -232,6 +242,7 @@ public class MovimientoPlayer : MonoBehaviour
             miniJuegoLuces.SetActive(true);
             luz.enabled = false;
             estaEnMiniJuego = true;
+            StartCoroutine(MensajeM4());
         }
         if (botonEncender.terminoJuegoLuz)
         {
@@ -244,6 +255,7 @@ public class MovimientoPlayer : MonoBehaviour
             miniJuegoMaquina.SetActive(true);
             maquina.enabled = false;
             estaEnMiniJuego = true;
+            StartCoroutine(MensajeM5());
         }
         if (detectarProducto.terminoJuegoMaquina)
         {
@@ -256,6 +268,7 @@ public class MovimientoPlayer : MonoBehaviour
             estaEnMiniJuego = true;
             miniJuegoEncenderLuz.SetActive(true);
             encenderLuz.enabled = false;
+            StartCoroutine(MensajeM1());
         }
         if (validar.terminoJuegoInterruptor)
         {
@@ -374,9 +387,34 @@ public class MovimientoPlayer : MonoBehaviour
             speed = 5;
         }
     }
-
+    IEnumerator MensajeM1()
+    {
+        yield return new WaitForSeconds(1);
+        m1.SetBool("Entrar", true);
+    }
+    IEnumerator MensajeM2()
+    {
+        yield return new WaitForSeconds(1);
+        m2.SetBool("Entrar", true);
+    }
+    IEnumerator MensajeM3()
+    {
+        yield return new WaitForSeconds(1);
+        m3.SetBool("Entrar", true);
+    }
+    IEnumerator MensajeM4()
+    {
+        yield return new WaitForSeconds(1);
+        m4.SetBool("Entrar", true);
+    }
+    IEnumerator MensajeM5()
+    {
+        yield return new WaitForSeconds(1);
+        m5.SetBool("Entrar", true);
+    }
     IEnumerator DesactivarEncenderLuz()
     {
+        m1.SetBool("Salir", true);
         if (!corrutinaEncenderLuz)
         {
             if (subeContador == 0)
@@ -401,6 +439,7 @@ public class MovimientoPlayer : MonoBehaviour
     }
     IEnumerator DesactivarTarjeta()
     {
+        m2.SetBool("Salir", true);
         if (!corrutinaTarjeta)
         {
             if (subeContador == 1)
@@ -425,6 +464,7 @@ public class MovimientoPlayer : MonoBehaviour
     }
     IEnumerator DesactivarEnchufe()
     {
+        m3.SetBool("Salir", true);
         if (!corrutinaEnchufe)
         {
             if (!enchufeUnaVez)
@@ -446,6 +486,7 @@ public class MovimientoPlayer : MonoBehaviour
     }
     IEnumerator DesactivarLuz()
     {
+        m4.SetBool("Salir", true);
         if (!corrutinaLuz)
         {
             luz.enabled = false;
@@ -464,6 +505,7 @@ public class MovimientoPlayer : MonoBehaviour
     }
     IEnumerator DesactivarMaquina()
     {
+        m5.SetBool("Salir", true);
         if (!corrutinaMaquina)
         {
             maquina.enabled = false;
