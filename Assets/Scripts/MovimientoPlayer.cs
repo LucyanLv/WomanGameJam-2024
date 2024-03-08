@@ -131,6 +131,7 @@ public class MovimientoPlayer : MonoBehaviour
     public Animator particula1;
     public Animator particula2;
     public Animator particula3;
+    public GameObject par3;
     public Animator particula4;
     public Animator particula5;
     public Animator particula6;
@@ -146,6 +147,7 @@ public class MovimientoPlayer : MonoBehaviour
     public MoverEnchufe validarEnchufe;
 
     [Header("Mensajes En MiniJuego")]
+    public Animator fondoM;
     public Animator m1;
     public Animator m2;
     public Animator m3;
@@ -390,33 +392,39 @@ public class MovimientoPlayer : MonoBehaviour
     IEnumerator MensajeM1()
     {
         yield return new WaitForSeconds(1);
+        fondoM.SetBool("FondoEntrar", true);
         m1.SetBool("Entrar", true);
     }
     IEnumerator MensajeM2()
     {
         yield return new WaitForSeconds(1);
+        fondoM.SetBool("FondoEntrar", true);
         m2.SetBool("Entrar", true);
     }
     IEnumerator MensajeM3()
     {
         yield return new WaitForSeconds(1);
+        fondoM.SetBool("FondoEntrar", true);
         m3.SetBool("Entrar", true);
     }
     IEnumerator MensajeM4()
     {
         yield return new WaitForSeconds(1);
+        fondoM.SetBool("FondoEntrar", true);
         m4.SetBool("Entrar", true);
     }
     IEnumerator MensajeM5()
     {
         yield return new WaitForSeconds(1);
+        fondoM.SetBool("FondoEntrar", true);
         m5.SetBool("Entrar", true);
     }
     IEnumerator DesactivarEncenderLuz()
     {
-        m1.SetBool("Salir", true);
         if (!corrutinaEncenderLuz)
         {
+            fondoM.SetBool("FondoEntrar", false);
+            m1.SetBool("Salir", true);
             if (subeContador == 0)
             {
                 contadorHacer = contadorHacer + 1;
@@ -439,9 +447,10 @@ public class MovimientoPlayer : MonoBehaviour
     }
     IEnumerator DesactivarTarjeta()
     {
-        m2.SetBool("Salir", true);
         if (!corrutinaTarjeta)
         {
+            fondoM.SetBool("FondoEntrar", false);
+            m2.SetBool("Salir", true);
             if (subeContador == 1)
             {
                 contadorHacer = contadorHacer + 1;
@@ -464,9 +473,10 @@ public class MovimientoPlayer : MonoBehaviour
     }
     IEnumerator DesactivarEnchufe()
     {
-        m3.SetBool("Salir", true);
         if (!corrutinaEnchufe)
         {
+            fondoM.SetBool("FondoEntrar", false);
+            m3.SetBool("Salir", true);
             if (!enchufeUnaVez)
             {
                 enchufe.enabled = false;
@@ -486,9 +496,10 @@ public class MovimientoPlayer : MonoBehaviour
     }
     IEnumerator DesactivarLuz()
     {
-        m4.SetBool("Salir", true);
         if (!corrutinaLuz)
         {
+            fondoM.SetBool("FondoEntrar", false);
+            m4.SetBool("Salir", true);
             luz.enabled = false;
             tarea4.color = tareaRealizada;
 
@@ -505,9 +516,10 @@ public class MovimientoPlayer : MonoBehaviour
     }
     IEnumerator DesactivarMaquina()
     {
-        m5.SetBool("Salir", true);
         if (!corrutinaMaquina)
         {
+            fondoM.SetBool("FondoEntrar", false);
+            m5.SetBool("Salir", true);
             maquina.enabled = false;
             tarea5.color = tareaRealizada;
 
@@ -581,6 +593,7 @@ public class MovimientoPlayer : MonoBehaviour
         }
         if (contadorHacer == 2)
         {
+            par3.SetActive(true);
             yield return new WaitForSeconds(14);
             enchufe.enabled = true;
             hacer3.SetActive(true);
@@ -590,7 +603,7 @@ public class MovimientoPlayer : MonoBehaviour
         {
             enchufe.enabled = false;
             hacer3.SetActive(false);
-            particula3.SetBool("CirculoEntrar", false);
+            par3.SetActive(false);
         }
         if (contadorHacer == 3)
         {

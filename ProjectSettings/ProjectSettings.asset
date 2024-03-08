@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: SODEZO S.A.S
-  productName: Proyecto Sodexo
+  productName: Marcas VS Perfiles
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -282,7 +282,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 95fa835042789714da533300236f8288, type: 3}
+      m_Icon: {fileID: 2800000, guid: 5ad0d1a434430fb4095d4bfeb91159f9, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

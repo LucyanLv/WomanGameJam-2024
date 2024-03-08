@@ -1616,7 +1616,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.016656078, y: 0.24556994}
+  m_Offset: {x: -0.004503578, y: -0.83190155}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1627,7 +1627,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19963576, y: 2.0010982}
+  m_Size: {x: 0.5201449, y: 0.39828515}
   m_EdgeRadius: 0
 --- !u!212 &88845932
 SpriteRenderer:
@@ -3744,6 +3744,103 @@ Transform:
   - {fileID: 1922728242}
   m_Father: {fileID: 2069992851}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &293526041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 293526042}
+  - component: {fileID: 293526045}
+  - component: {fileID: 293526044}
+  - component: {fileID: 293526043}
+  m_Layer: 5
+  m_Name: FondoMensaje
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &293526042
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293526041}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 12.694924, y: 1.7783604, z: 1.2590165}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 773645625}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -466.91623}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &293526043
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293526041}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5d8c6c381a57cc643ac48281a44c783b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &293526044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293526041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &293526045
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293526041}
+  m_CullTransparentMesh: 1
 --- !u!1 &295550793
 GameObject:
   m_ObjectHideFlags: 0
@@ -7142,9 +7239,9 @@ MonoBehaviour:
   tarea4: {fileID: 429501379}
   tarea5: {fileID: 103904756}
   tarea6: {fileID: 523569262}
-  texto1: Carga el camion (1/3)
-  texto2: Carga el camion (2/3)
-  texto3: Carga el camion (3/3)
+  texto1: "Carga el cami\xF3n (1/3)"
+  texto2: "Carga el cami\xF3n (2/3)"
+  texto3: "Carga el cami\xF3n (3/3)"
   tareaRealizada: {r: 0.4117647, g: 0.7058824, b: 0.1764706, a: 1}
   tareaAMedia: {r: 1, g: 1, b: 0, a: 1}
   tareaCasiCompleta: {r: 1, g: 0.28841394, b: 0, a: 1}
@@ -7182,6 +7279,7 @@ MonoBehaviour:
   particula1: {fileID: 1185118007}
   particula2: {fileID: 450990203}
   particula3: {fileID: 2146181820}
+  par3: {fileID: 2146181818}
   particula4: {fileID: 196299949}
   particula5: {fileID: 1492562719}
   particula6: {fileID: 1829686480}
@@ -7190,6 +7288,7 @@ MonoBehaviour:
   abrirPuerta: {fileID: 891864729}
   camion: {fileID: 1864654914}
   validarEnchufe: {fileID: 1001046347}
+  fondoM: {fileID: 293526043}
   m1: {fileID: 2052020107}
   m2: {fileID: 1307731875}
   m3: {fileID: 2020838566}
@@ -9883,7 +9982,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.016656078, y: 0.24556994}
+  m_Offset: {x: -0.004503578, y: -0.83190155}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9894,7 +9993,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19963576, y: 2.0010982}
+  m_Size: {x: 0.5201449, y: 0.39828515}
   m_EdgeRadius: 0
 --- !u!212 &722848940
 SpriteRenderer:
@@ -10036,8 +10135,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 0
-  m_fontColor: {r: 0, g: 0, b: 0, a: 0}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10558,6 +10657,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 293526042}
   - {fileID: 2052020106}
   - {fileID: 1307731874}
   - {fileID: 2020838565}
@@ -15903,7 +16003,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.016656078, y: 0.24556994}
+  m_Offset: {x: -0.004503578, y: -0.83190155}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -15914,7 +16014,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19963576, y: 2.0010982}
+  m_Size: {x: 0.5201449, y: 0.39828515}
   m_EdgeRadius: 0
 --- !u!212 &1098451786
 SpriteRenderer:
@@ -19534,8 +19634,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 0
-  m_fontColor: {r: 0, g: 0, b: 0, a: 0}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -22198,7 +22298,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.016656078, y: 0.24556994}
+  m_Offset: {x: -0.004503578, y: -0.83190155}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -22209,7 +22309,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19963576, y: 2.0010982}
+  m_Size: {x: 0.5201449, y: 0.39828515}
   m_EdgeRadius: 0
 --- !u!212 &1499732038
 SpriteRenderer:
@@ -29598,8 +29698,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 0
-  m_fontColor: {r: 0, g: 0, b: 0, a: 0}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -29949,8 +30049,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 0
-  m_fontColor: {r: 0, g: 0, b: 0, a: 0}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
