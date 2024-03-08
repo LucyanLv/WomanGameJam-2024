@@ -14,9 +14,12 @@ public class ManagerTrabajadores : MonoBehaviour
     [SerializeField] private float tiempoActual;
     [SerializeField] private bool tiempoActivado = false;
     [SerializeField] private Slider slider;
+    public GameObject sliderReloj;
 
     // Boton
     public GameObject boton;
+    public Animator mensajeFinal;
+    public Animator mensajeMenu;
 
     // Tutorial
     public Animator mensaje1;
@@ -89,6 +92,14 @@ public class ManagerTrabajadores : MonoBehaviour
                 mensajes[i].SetBool("Salir", true);
                 yield return new WaitForSeconds(1.5f);
             }
+            sliderReloj.SetActive(false);
+            fondoNegro.SetBool("FondoEntrar", true);
+            mensajeFinal.SetBool("Entrar", true);
+            yield return new WaitForSeconds(10f);
+            mensajeFinal.SetBool("Salir", true);
+            yield return new WaitForSeconds(1f);
+            mensajeMenu.SetBool("Entrar", true);
+            yield return new WaitForSeconds(1f);
             boton.SetActive(true);
         }
     }
