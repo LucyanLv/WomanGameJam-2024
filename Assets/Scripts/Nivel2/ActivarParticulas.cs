@@ -48,18 +48,18 @@ public class ActivarParticulas : MonoBehaviour
         particula15.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         particula6.SetActive(true);
-        particula16.SetActive(true);
         yield return new WaitForSeconds(1.75f);
-        particula17.SetActive(true);
         particula7.SetActive(true);
+        particula16.SetActive(true);
+        particula17.SetActive(true);
         yield return new WaitForSeconds(2f);
-        particula18.SetActive(true);
         particula8.SetActive(true);
+        particula18.SetActive(true);
         yield return new WaitForSeconds(2.25f);
-        particula19.SetActive(true);
         particula9.SetActive(true);
+        particula19.SetActive(true);
         yield return new WaitForSeconds(2.5f);
-        particula20.SetActive(true);
         particula10.SetActive(true);
+        particula20.SetActive(true);
     }
 }

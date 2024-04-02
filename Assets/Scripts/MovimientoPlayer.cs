@@ -72,7 +72,6 @@ public class MovimientoPlayer : MonoBehaviour
     public Animator tercerMensaje;
     public GameObject mensaje4;
     public Animator cuartoMensaje;
-    public Animator fondoMensaje;
 
     [Header("Tareas")]
     public TMP_Text tarea1;
@@ -105,8 +104,12 @@ public class MovimientoPlayer : MonoBehaviour
     public Animator comencemo;
 
     [Header("Tutorial Moverse")]
+    public GameObject eresUsuario;
+    public Animator eres;
     public GameObject moverse;
     public Animator mMoverse;
+    public GameObject acercateMisiones;
+    public Animator acercate;
     public GameObject interactuar;
     public Animator mInteractuar;
 
@@ -398,32 +401,28 @@ public class MovimientoPlayer : MonoBehaviour
     IEnumerator MensajeM2()
     {
         yield return new WaitForSeconds(1);
-        fondoM.SetBool("FondoEntrar", true);
         m2.SetBool("Entrar", true);
     }
     IEnumerator MensajeM3()
     {
         yield return new WaitForSeconds(1);
-        fondoM.SetBool("FondoEntrar", true);
         m3.SetBool("Entrar", true);
     }
     IEnumerator MensajeM4()
     {
         yield return new WaitForSeconds(1);
-        fondoM.SetBool("FondoEntrar", true);
         m4.SetBool("Entrar", true);
     }
     IEnumerator MensajeM5()
     {
         yield return new WaitForSeconds(1);
-        fondoM.SetBool("FondoEntrar", true);
         m5.SetBool("Entrar", true);
     }
     IEnumerator DesactivarEncenderLuz()
     {
         if (!corrutinaEncenderLuz)
         {
-            fondoM.SetBool("FondoEntrar", false);
+
             m1.SetBool("Salir", true);
             if (subeContador == 0)
             {
@@ -449,7 +448,6 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (!corrutinaTarjeta)
         {
-            fondoM.SetBool("FondoEntrar", false);
             m2.SetBool("Salir", true);
             if (subeContador == 1)
             {
@@ -475,7 +473,6 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (!corrutinaEnchufe)
         {
-            fondoM.SetBool("FondoEntrar", false);
             m3.SetBool("Salir", true);
             if (!enchufeUnaVez)
             {
@@ -498,7 +495,6 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (!corrutinaLuz)
         {
-            fondoM.SetBool("FondoEntrar", false);
             m4.SetBool("Salir", true);
             luz.enabled = false;
             tarea4.color = tareaRealizada;
@@ -518,7 +514,6 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (!corrutinaMaquina)
         {
-            fondoM.SetBool("FondoEntrar", false);
             m5.SetBool("Salir", true);
             maquina.enabled = false;
             tarea5.color = tareaRealizada;
@@ -545,6 +540,7 @@ public class MovimientoPlayer : MonoBehaviour
 
         if (!useUnaVez)
         {
+            useUnaVez = true;
             camion.SetBool("Arrancar", true);
             yield return new WaitForSeconds(1);
             camion.SetBool("Arrancar", false);
@@ -554,11 +550,10 @@ public class MovimientoPlayer : MonoBehaviour
             use.SetActive(false);
             yield return new WaitForSeconds(10);
             tercerMensaje.SetBool("Desaparecer", true);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1f);
             mensaje3.SetActive(false);
             yield return new WaitForSeconds(1.5f);
             mensaje4.SetActive(true);
-            useUnaVez = true;
         }
     }
     IEnumerator MensajesJuego()
@@ -594,7 +589,7 @@ public class MovimientoPlayer : MonoBehaviour
         if (contadorHacer == 2)
         {
             par3.SetActive(true);
-            yield return new WaitForSeconds(14);
+            yield return new WaitForSeconds(13);
             enchufe.enabled = true;
             hacer3.SetActive(true);
             particula3.SetBool("CirculoEntrar", true);
@@ -681,13 +676,23 @@ public class MovimientoPlayer : MonoBehaviour
         comencemos.SetActive(false);
         // Empezo Juego
         yield return new WaitForSeconds(1);
+        eresUsuario.SetActive(true);
+        yield return new WaitForSeconds(12);
+        eres.SetBool("Desaparecer", true);
+        yield return new WaitForSeconds(1);
         moverse.SetActive(true);
-        yield return new WaitForSeconds(5);
+        eresUsuario.SetActive(false);
+        yield return new WaitForSeconds(12);
         mMoverse.SetBool("Desaparecer", true);
         yield return new WaitForSeconds(1);
+        acercateMisiones.SetActive(true);
         moverse.SetActive(false);
+        yield return new WaitForSeconds(12);
+        acercate.SetBool("Desaparecer", true);
+        yield return new WaitForSeconds(1);
         interactuar.SetActive(true);
-        yield return new WaitForSeconds(6);
+        acercateMisiones.SetActive(false);
+        yield return new WaitForSeconds(14);
         mInteractuar.SetBool("Desaparecer", true);
         yield return new WaitForSeconds(1);
         interactuar.SetActive(false);

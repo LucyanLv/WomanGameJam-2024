@@ -23,6 +23,8 @@ TagManager:
   - Plato2
   - Plato3
   - Plato4
+  - Sopa
+  - Postre
   layers:
   - Default
   - TransparentFX

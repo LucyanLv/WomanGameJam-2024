@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bed907cc629ba1840a5557a2e2bc7f9d
+guid: b4dbd4835e04f96488b46531a9fb013f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,43 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Carne_0
+      name: Postre_0
       rect:
         serializedVersion: 2
-        x: 286
-        y: 488
-        width: 655
-        height: 357
+        x: 378
+        y: 359
+        width: 584
+        height: 589
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bd0c84c6bf279a4fba3f6052b9f76cc
-      internalID: 773690534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blanco
-      rect:
-        serializedVersion: 2
-        x: 649
-        y: 872
-        width: 631
-        height: 408
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2eb88ac9bccd0354281e3c8fa8cfc7c3
-      internalID: 1376017913
+      spriteID: c586d511f270ffc40be3cf6583b1bbf8
+      internalID: -2014653677
       vertices: []
       indices: 
       edges: []
@@ -175,8 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Blanco: 1376017913
-      Carne_0: 773690534
+      Postre_0: -2014653677
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

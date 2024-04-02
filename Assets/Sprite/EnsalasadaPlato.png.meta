@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bed907cc629ba1840a5557a2e2bc7f9d
+guid: bab6f09bcf89c6d468cb337f0562be81
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,43 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Carne_0
+      name: Ensalada_1
       rect:
         serializedVersion: 2
-        x: 286
-        y: 488
-        width: 655
-        height: 357
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 651
+        y: 432
+        width: 491
+        height: 202
+      alignment: 9
+      pivot: {x: 0.008656924, y: 0.9329012}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bd0c84c6bf279a4fba3f6052b9f76cc
-      internalID: 773690534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blanco
-      rect:
-        serializedVersion: 2
-        x: 649
-        y: 872
-        width: 631
-        height: 408
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2eb88ac9bccd0354281e3c8fa8cfc7c3
-      internalID: 1376017913
+      spriteID: 641f40939ba57fd4dbeafa22c2076e7b
+      internalID: 1268705106
       vertices: []
       indices: 
       edges: []
@@ -175,8 +154,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Blanco: 1376017913
-      Carne_0: 773690534
+      Ensalada_1: 1268705106
+      EnsalasadaPlato_0: 1438322218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

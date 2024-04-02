@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ManagerTrabajadores : MonoBehaviour
 {
@@ -26,6 +27,10 @@ public class ManagerTrabajadores : MonoBehaviour
     public Animator mensaje2;
     public Animator fondoGris;
     public Animator fondoNegro;
+
+    public GameObject activarClientes;
+    public TMP_Text clientes;
+    public string[] nombresClientes; // Lista de nombres de clientes
 
     void Start()
     {
@@ -67,7 +72,9 @@ public class ManagerTrabajadores : MonoBehaviour
         fondoGris.SetBool("SalirGris", true);
         fondoNegro.SetBool("FondoEntrar", false);
         yield return new WaitForSeconds(2);
+        activarClientes.SetActive(true);
 
+        int clienteIndex = 0; // Índice del cliente actual
         while (true)
         {
             // Recorrer todos los trabajadores
@@ -81,6 +88,14 @@ public class ManagerTrabajadores : MonoBehaviour
 
                 // Salida del trabajador
                 trabajadores[i].SetBool("Salir", true);
+
+                // Actualizar el texto de los clientes
+                if (clienteIndex < nombresClientes.Length)
+                {
+                    clientes.text = nombresClientes[clienteIndex];
+                    clienteIndex++;
+                }
+
                 tiempoActivado = false;
                 yield return new WaitForSeconds(1);
 
@@ -91,8 +106,12 @@ public class ManagerTrabajadores : MonoBehaviour
                 fondo.SetBool("FondoEntrar", false);
                 mensajes[i].SetBool("Salir", true);
                 yield return new WaitForSeconds(1.5f);
+
+                
             }
+
             sliderReloj.SetActive(false);
+            activarClientes.SetActive(false);
             fondoNegro.SetBool("FondoEntrar", true);
             mensajeFinal.SetBool("Entrar", true);
             yield return new WaitForSeconds(10f);
@@ -103,5 +122,4 @@ public class ManagerTrabajadores : MonoBehaviour
             boton.SetActive(true);
         }
     }
-
 }

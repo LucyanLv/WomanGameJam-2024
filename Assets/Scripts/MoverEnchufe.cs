@@ -12,6 +12,8 @@ public class MoverEnchufe : MonoBehaviour
     public Transform objetoApuntar;
     private SpriteRenderer spriteRenderer;
     public Sprite enchufado;
+    public GameObject desconectado;
+    public GameObject conectado;
 
     private void Start()
     {
@@ -95,6 +97,8 @@ public class MoverEnchufe : MonoBehaviour
         if (emparentadoAEnchufe)
         {
             spriteRenderer.sprite = enchufado;
+            desconectado.SetActive(false);
+            conectado.SetActive(true);
         }
     }
 }

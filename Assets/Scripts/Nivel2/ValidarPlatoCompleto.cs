@@ -9,6 +9,8 @@ public class ValidarPlatoCompleto : MonoBehaviour
     public ValidarPlato validarPlato3;
     public ValidarPlato validarPlato4;
     public ValidarPlato validarVaso;
+    public ValidarPlato validarSopa;
+    public ValidarPlato validarPostre;
     public bool armado;
     public bool completo;
 
@@ -30,7 +32,8 @@ public class ValidarPlatoCompleto : MonoBehaviour
         {
             if (validarPlato1.platoCorrecto && validarPlato2.platoCorrecto &&
                 validarPlato3.platoCorrecto && validarPlato4.platoCorrecto &&
-                validarVaso.platoCorrecto)
+                validarVaso.platoCorrecto && validarSopa.platoCorrecto && 
+                validarPostre.platoCorrecto)
             {
                 if (armado)
                 {

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bed907cc629ba1840a5557a2e2bc7f9d
+guid: f58069ef097a0344c8a31ac9a2e5d52c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,43 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Carne_0
+      name: Sancocho_0
       rect:
         serializedVersion: 2
-        x: 286
-        y: 488
-        width: 655
-        height: 357
+        x: 0
+        y: 181
+        width: 1280
+        height: 990
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bd0c84c6bf279a4fba3f6052b9f76cc
-      internalID: 773690534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blanco
-      rect:
-        serializedVersion: 2
-        x: 649
-        y: 872
-        width: 631
-        height: 408
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2eb88ac9bccd0354281e3c8fa8cfc7c3
-      internalID: 1376017913
+      spriteID: 16f3ba23c20d655498b81e3870a36e00
+      internalID: -202630797
       vertices: []
       indices: 
       edges: []
@@ -175,8 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Blanco: 1376017913
-      Carne_0: 773690534
+      Sancocho_0: -202630797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
