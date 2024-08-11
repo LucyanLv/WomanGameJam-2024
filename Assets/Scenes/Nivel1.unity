@@ -10436,7 +10436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a356c5f608471c4b93eacb47bfc9a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreProximaEscena: Nivel2
+  nombreProximaEscena: Nivel3
   fondoNegro: {fileID: 757908803}
 --- !u!61 &565426948
 BoxCollider2D:
