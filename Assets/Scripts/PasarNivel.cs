@@ -12,6 +12,8 @@ public class PasarNivel : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            collision.gameObject.GetComponent<MovimientoPlayer>().validateResponses();
+            nombreProximaEscena = collision.gameObject.GetComponent<MovimientoPlayer>().nextLevel;
             StartCoroutine(ActivarPantalla());
         }
     }

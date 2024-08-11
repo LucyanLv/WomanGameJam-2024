@@ -10,6 +10,9 @@ public class MovimientoPlayer : MonoBehaviour
     public float velocidadCaja;
     public bool manteniendoEspacio = false;
     public int llegadasACaja = 0;
+    public int respuestasHappy = 0;
+    public int respuestasSad = 0;
+    public string nextLevel;
     private Animator playerAnimator;
     private Rigidbody2D playerRb;
     private Vector2 movement;
@@ -696,5 +699,20 @@ public class MovimientoPlayer : MonoBehaviour
         yield return new WaitForSeconds(1);
         interactuar.SetActive(false);
         activarMensajes = true;
+    }
+
+    public void moreHappy()
+    {
+        respuestasHappy++;
+    }
+
+    public void moreSad()
+    {
+        respuestasSad++;
+    }
+
+    public void validateResponses()
+    {
+        nextLevel = respuestasHappy>respuestasSad?"Nivel2" : "Nivel1";
     }
 }
