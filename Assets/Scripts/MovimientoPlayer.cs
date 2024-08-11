@@ -422,7 +422,6 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (!corrutinaEncenderLuz)
         {
-
             m1.SetBool("Salir", true);
             if (subeContador == 0)
             {
@@ -659,15 +658,15 @@ public class MovimientoPlayer : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         bienvenidos.SetActive(true);
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(6);
         bienvenido.SetBool("Desaparecer", true);
         yield return new WaitForSeconds(2);
         resto.SetActive(true);
-        yield return new WaitForSeconds(12);
+        yield return new WaitForSeconds(6);
         restoBienvenido.SetBool("Desaparecer", true);
         yield return new WaitForSeconds(2);
         comencemos.SetActive(true);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         comencemo.SetBool("Desaparecer", true);
         yield return new WaitForSeconds(2);
         negroFondo.SetBool("Desaparecer", true);
@@ -677,22 +676,22 @@ public class MovimientoPlayer : MonoBehaviour
         // Empezo Juego
         yield return new WaitForSeconds(1);
         eresUsuario.SetActive(true);
-        yield return new WaitForSeconds(12);
+        yield return new WaitForSeconds(10);
         eres.SetBool("Desaparecer", true);
         yield return new WaitForSeconds(1);
         moverse.SetActive(true);
         eresUsuario.SetActive(false);
-        yield return new WaitForSeconds(12);
+        yield return new WaitForSeconds(7);
         mMoverse.SetBool("Desaparecer", true);
         yield return new WaitForSeconds(1);
         acercateMisiones.SetActive(true);
         moverse.SetActive(false);
-        yield return new WaitForSeconds(12);
+        yield return new WaitForSeconds(6);
         acercate.SetBool("Desaparecer", true);
         yield return new WaitForSeconds(1);
         interactuar.SetActive(true);
         acercateMisiones.SetActive(false);
-        yield return new WaitForSeconds(14);
+        yield return new WaitForSeconds(6);
         mInteractuar.SetBool("Desaparecer", true);
         yield return new WaitForSeconds(1);
         interactuar.SetActive(false);
