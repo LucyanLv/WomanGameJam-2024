@@ -151,11 +151,11 @@ public class MovimientoPlayer : MonoBehaviour
 
     [Header("Mensajes En MiniJuego")]
     public Animator fondoM;
-    public Animator m1;
-    public Animator m2;
-    public Animator m3;
-    public Animator m4;
-    public Animator m5;
+    public GameObject m1;
+    public GameObject m2;
+    public GameObject m3;
+    public GameObject m4;
+    public GameObject m5;
 
     private void Start()
     {
@@ -396,33 +396,33 @@ public class MovimientoPlayer : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         fondoM.SetBool("FondoEntrar", true);
-        m1.SetBool("Entrar", true);
+        m1.SetActive(true);
     }
     IEnumerator MensajeM2()
     {
         yield return new WaitForSeconds(1);
-        m2.SetBool("Entrar", true);
+        m2.SetActive(true);
     }
     IEnumerator MensajeM3()
     {
         yield return new WaitForSeconds(1);
-        m3.SetBool("Entrar", true);
+        m3.SetActive(true);
     }
     IEnumerator MensajeM4()
     {
         yield return new WaitForSeconds(1);
-        m4.SetBool("Entrar", true);
+        m4.SetActive(true);
     }
     IEnumerator MensajeM5()
     {
         yield return new WaitForSeconds(1);
-        m5.SetBool("Entrar", true);
+        m5.SetActive(true);
     }
     IEnumerator DesactivarEncenderLuz()
     {
         if (!corrutinaEncenderLuz)
         {
-            m1.SetBool("Salir", true);
+            m1.SetActive(false);
             if (subeContador == 0)
             {
                 contadorHacer = contadorHacer + 1;
@@ -447,7 +447,7 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (!corrutinaTarjeta)
         {
-            m2.SetBool("Salir", true);
+            m2.SetActive(false);
             if (subeContador == 1)
             {
                 contadorHacer = contadorHacer + 1;
@@ -472,7 +472,7 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (!corrutinaEnchufe)
         {
-            m3.SetBool("Salir", true);
+            m3.SetActive(false);
             if (!enchufeUnaVez)
             {
                 enchufe.enabled = false;
@@ -494,7 +494,7 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (!corrutinaLuz)
         {
-            m4.SetBool("Salir", true);
+            m4.SetActive(false);
             luz.enabled = false;
             tarea4.color = tareaRealizada;
 
@@ -513,7 +513,7 @@ public class MovimientoPlayer : MonoBehaviour
     {
         if (!corrutinaMaquina)
         {
-            m5.SetBool("Salir", true);
+            m5.SetActive(false);
             maquina.enabled = false;
             tarea5.color = tareaRealizada;
 
@@ -681,7 +681,7 @@ public class MovimientoPlayer : MonoBehaviour
         yield return new WaitForSeconds(1);
         moverse.SetActive(true);
         eresUsuario.SetActive(false);
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(5);
         mMoverse.SetBool("Desaparecer", true);
         yield return new WaitForSeconds(1);
         acercateMisiones.SetActive(true);
