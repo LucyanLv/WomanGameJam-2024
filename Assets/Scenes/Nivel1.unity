@@ -14420,8 +14420,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dato #3: \xA1El 58% de los usuarios \nde Kitchen Works son\nmenores de
-    35 a\xF1os! "
+  m_text: "Dato #3: Los pensamientos intrusivos pueden generar una intensa ansiedad
+    y desesperanza, especialmente si la persona no busca ayuda profesional. La persistencia
+    de estos pensamientos puede erosionar la salud mental y aumentar la ideaci\xF3n
+    suicida."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14451,7 +14453,7 @@ MonoBehaviour:
   m_fontSize: 34
   m_fontSizeBase: 34
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -20530,7 +20532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xA1Ahora que terminaste las labores\npuedes ir a almorzar! "
+  m_text: "\xA1Ahora que terminaste las labores\npuedes ir a descansar! "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -25350,8 +25352,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dato #2: \xA1El 69% de los usuarios\nde Kitchen Works tienen horarios\nde
-    trabajo fijo!"
+  m_text: "Dato #2: En personas vulnerables, estos pensamientos pueden volverse obsesivos
+    y contribuir a trastornos como la depresi\xF3n mayor, el trastorno obsesivo-compulsivo
+    (TOC) y el trastorno de estr\xE9s postraum\xE1tico (TEPT), todos ellos vinculados
+    a un mayor riesgo de suicidio."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -25381,7 +25385,7 @@ MonoBehaviour:
   m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -34907,7 +34911,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dato #1: \xA1El 70% de usuarios de \nKitchen Works son hombres! "
+  m_text: "Dato #1: Los pensamientos intrusivos son ideas, im\xE1genes o impulsos
+    no deseados que pueden ser perturbadores y dif\xEDciles de controlar."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -34937,7 +34942,7 @@ MonoBehaviour:
   m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
